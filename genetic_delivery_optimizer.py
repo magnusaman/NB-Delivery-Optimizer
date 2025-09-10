@@ -194,30 +194,105 @@ class GeneticDeliveryOptimizer:
         idx = int(np.argmin(distances))
         return tuple(nodes[idx])
     
-    def compute_travel_matrix_fast(self):
-        """Fast travel time matrix computation using Euclidean distance"""
-        print("Computing travel time matrix (fast Euclidean method)...")
-        
+    def compute_travel_matrix_dijkstra(self):
+        """Compute travel time matrix using Dijkstra shortest paths on real road network"""
+        print("Computing travel time matrix (Dijkstra shortest paths)...")
+
         depot_nodes = [depot['snapped_coords'] for depot in self.depots]
         order_nodes = [order['location'] for order in self.orders]
         all_locations = depot_nodes + order_nodes
-        
-        self.location_index = {loc: i for i, loc in enumerate(all_locations)}
+
         n_locations = len(all_locations)
+        self.travel_matrix = np.full((n_locations, n_locations), np.inf)
+
+        # Create a subgraph around our locations for faster computation
+        subgraph = self._create_subgraph_around_locations(all_locations, buffer_km=20)
+        print(f"Using subgraph with {subgraph.number_of_nodes()} nodes for faster computation")
+
+        for i, loc in enumerate(all_locations):
+            if i % 5 == 0:  # Progress indicator
+                print(f"  Processing location {i+1}/{n_locations}")
+            
+            try:
+                # Use subgraph for faster computation
+                if loc in subgraph.nodes:
+                    lengths = nx.single_source_dijkstra_path_length(subgraph, loc, weight="length", cutoff=100000)
+                else:
+                    # Fallback to full graph
+                    lengths = nx.single_source_dijkstra_path_length(self.G, loc, weight="length", cutoff=100000)
+                
+                for j, target in enumerate(all_locations):
+                    if target in lengths:
+                        meters = lengths[target]
+                        minutes = (meters / 1000.0) / 30.0 * 60.0  # assume 30 km/h
+                        self.travel_matrix[i, j] = minutes
+            except nx.NetworkXNoPath:
+                continue
+
+        # Fill diagonal with zeros
+        np.fill_diagonal(self.travel_matrix, 0)
         
-        # Initialize travel time matrix
-        self.travel_matrix = np.zeros((n_locations, n_locations))
-        
-        # Compute Euclidean distances and convert to time
-        for i, loc1 in enumerate(all_locations):
-            for j, loc2 in enumerate(all_locations):
-                if i != j:
-                    distance = math.hypot(loc1[0] - loc2[0], loc1[1] - loc2[1])
-                    # Convert to time using average speed
-                    time_minutes = (distance / 1000.0) / 30.0 * 60.0  # 30 km/h
-                    self.travel_matrix[i, j] = time_minutes
-        
+        # Debug: Check for infinite values
+        inf_count = np.sum(np.isinf(self.travel_matrix))
         print(f"Travel matrix computed: {n_locations}x{n_locations}")
+        print(f"Matrix has {inf_count} infinite values out of {n_locations*n_locations} total")
+        
+        if inf_count > 0:
+            print("Warning: Some locations are unreachable from others!")
+            # Replace infinite values with large finite values
+            self.travel_matrix = np.where(np.isinf(self.travel_matrix), 999999, self.travel_matrix)
+    
+    def _create_subgraph_around_locations(self, locations, buffer_km=20):
+        """Create a subgraph around our locations for faster computation"""
+        # Convert buffer from km to meters
+        buffer_m = buffer_km * 1000
+        
+        # Find bounding box of all locations
+        min_x = min(loc[0] for loc in locations) - buffer_m
+        max_x = max(loc[0] for loc in locations) + buffer_m
+        min_y = min(loc[1] for loc in locations) - buffer_m
+        max_y = max(loc[1] for loc in locations) + buffer_m
+        
+        # Create subgraph with nodes in bounding box
+        subgraph_nodes = []
+        for node in self.G.nodes():
+            x, y = node
+            if min_x <= x <= max_x and min_y <= y <= max_y:
+                subgraph_nodes.append(node)
+        
+        # Create subgraph
+        subgraph = self.G.subgraph(subgraph_nodes).copy()
+        
+        # Ensure all our locations are in the subgraph
+        for loc in locations:
+            if loc not in subgraph.nodes:
+                # Find nearest node and add it
+                nearest = self._find_nearest_node(loc, subgraph_nodes)
+                if nearest:
+                    subgraph.add_node(loc, x=loc[0], y=loc[1])
+                    # Connect to nearest node
+                    if nearest in subgraph.nodes:
+                        distance = math.hypot(loc[0] - nearest[0], loc[1] - nearest[1])
+                        subgraph.add_edge(loc, nearest, length=distance, speed_kmh=30)
+        
+        return subgraph
+    
+    def _find_nearest_node(self, target_loc, candidate_nodes):
+        """Find nearest node to target location"""
+        if not candidate_nodes:
+            return None
+        
+        min_dist = float('inf')
+        nearest = None
+        
+        for node in candidate_nodes:
+            dist = math.hypot(target_loc[0] - node[0], target_loc[1] - node[1])
+            if dist < min_dist:
+                min_dist = dist
+                nearest = node
+        
+        return nearest
+
     
     def create_initial_population(self) -> List[Individual]:
         """Create initial population of solutions"""
@@ -283,12 +358,29 @@ class GeneticDeliveryOptimizer:
                 if current_capacity > courier['capacity']:
                     penalty += 1000  # Heavy penalty for capacity violation
                 
-                # Add travel time
-                route_distance += self.travel_matrix[prev_location, order_idx + len(self.depots)]
-                prev_location = order_idx + len(self.depots)
+                # Add travel time (with bounds checking)
+                order_location_idx = order_idx + len(self.depots)
+                if (prev_location < self.travel_matrix.shape[0] and 
+                    order_location_idx < self.travel_matrix.shape[1]):
+                    travel_time = self.travel_matrix[prev_location, order_location_idx]
+                    if np.isfinite(travel_time):
+                        route_distance += travel_time
+                    else:
+                        penalty += 1000  # Penalty for unreachable locations
+                else:
+                    penalty += 1000  # Penalty for invalid indices
+                
+                prev_location = order_location_idx
             
-            # Return to depot
-            route_distance += self.travel_matrix[prev_location, depot_idx]
+            # Return to depot (with bounds checking)
+            if (prev_location < self.travel_matrix.shape[0] and 
+                depot_idx < self.travel_matrix.shape[1]):
+                return_time = self.travel_matrix[prev_location, depot_idx]
+                if np.isfinite(return_time):
+                    route_distance += return_time
+                else:
+                    penalty += 1000  # Penalty for unreachable depot
+            
             total_distance += route_distance
         
         # Fitness = total distance + penalties
@@ -656,8 +748,8 @@ class GeneticDeliveryOptimizer:
         """Export results to GeoPackage"""
         print(f"Exporting results to {output_file}...")
         
-        if not self.best_solution:
-            print("No solution to export!")
+        if not self.best_solution or not np.isfinite(self.best_solution.fitness):
+            print("No valid solution to export!")
             return
         
         # Prepare data for export
@@ -666,19 +758,38 @@ class GeneticDeliveryOptimizer:
         order_records = []
         
         # Routes
+        print("  Processing routes...")
         for i, route in enumerate(self.best_solution.routes):
             if route:  # Non-empty route
-                geometry = self._get_route_geometry(route, i)
-                if geometry:
+                print(f"    Processing route {i+1}/{len(self.best_solution.routes)}")
+                try:
+                    geometry = self._get_route_geometry(route, i)
+                    if geometry:
+                        route_records.append({
+                            'courier_id': self.couriers[i]['id'],
+                            'depot_id': self.couriers[i]['depot_id'],
+                            'num_stops': len(route),
+                            'route_cost': self._calculate_route_cost(route),
+                            'geometry': geometry
+                        })
+                except Exception as e:
+                    print(f"    Warning: Could not generate geometry for route {i+1}: {e}")
+                    # Create a simple straight-line geometry as fallback
+                    depot_coords = self.depots[self._get_depot_index(self.couriers[i]['depot_id'])]['snapped_coords']
+                    coords = [depot_coords]
+                    for order_idx in route:
+                        coords.append(self.orders[order_idx]['location'])
+                    coords.append(depot_coords)
                     route_records.append({
                         'courier_id': self.couriers[i]['id'],
                         'depot_id': self.couriers[i]['depot_id'],
                         'num_stops': len(route),
                         'route_cost': self._calculate_route_cost(route),
-                        'geometry': geometry
+                        'geometry': LineString(coords)
                     })
         
         # Depots
+        print("  Processing depots...")
         for depot in self.depots:
             depot_records.append({
                 'depot_id': depot['id'],
@@ -686,6 +797,7 @@ class GeneticDeliveryOptimizer:
             })
         
         # Orders
+        print("  Processing orders...")
         for order in self.orders:
             order_records.append({
                 'order_id': order['id'],
@@ -697,11 +809,13 @@ class GeneticDeliveryOptimizer:
             })
         
         # Create GeoDataFrames
+        print("  Creating GeoDataFrames...")
         routes_gdf = gpd.GeoDataFrame(route_records, geometry='geometry', crs=self.roads_gdf.crs)
         depots_gdf = gpd.GeoDataFrame(depot_records, geometry='geometry', crs=self.roads_gdf.crs)
         orders_gdf = gpd.GeoDataFrame(order_records, geometry='geometry', crs=self.roads_gdf.crs)
         
         # Export
+        print("  Writing to file...")
         routes_gdf.to_file(output_file, layer='routes', driver='GPKG')
         depots_gdf.to_file(output_file, layer='depots', driver='GPKG')
         orders_gdf.to_file(output_file, layer='orders', driver='GPKG')
@@ -710,26 +824,47 @@ class GeneticDeliveryOptimizer:
         print(f"Results exported to {output_file}")
         self.print_summary()
     
-    def _get_route_geometry(self, route: List[int], courier_idx: int) -> LineString:
-        """Convert route to actual road geometry"""
+    def _get_route_geometry(self, route, courier_idx):
+        """Convert route to actual road geometry using shortest paths"""
         if not route:
             return None
-        
-        # Get depot location
+
         depot_idx = self._get_depot_index(self.couriers[courier_idx]['depot_id'])
         depot_coords = self.depots[depot_idx]['snapped_coords']
-        
-        # Build path
-        path_coords = [depot_coords]
-        
+
+        # Build path following actual roads
+        path_coords = []
+        prev = depot_coords
+
         for order_idx in route:
             order_coords = self.orders[order_idx]['location']
-            path_coords.append(order_coords)
-        
+            try:
+                # Get shortest path on road network
+                sp = nx.shortest_path(self.G, prev, order_coords, weight="length")
+                # Convert node coordinates to actual coordinates
+                for node in sp:
+                    if node in self.G.nodes:
+                        x, y = self.G.nodes[node]['x'], self.G.nodes[node]['y']
+                        path_coords.append((x, y))
+            except (nx.NetworkXNoPath, nx.NodeNotFound):
+                # Fallback: direct connection if no path found
+                path_coords.append(order_coords)
+            prev = order_coords
+
         # Return to depot
-        path_coords.append(depot_coords)
-        
-        return LineString(path_coords)
+        try:
+            sp = nx.shortest_path(self.G, prev, depot_coords, weight="length")
+            for node in sp:
+                if node in self.G.nodes:
+                    x, y = self.G.nodes[node]['x'], self.G.nodes[node]['y']
+                    path_coords.append((x, y))
+        except (nx.NetworkXNoPath, nx.NodeNotFound):
+            path_coords.append(depot_coords)
+
+        if len(path_coords) >= 2:
+            return LineString(path_coords)
+        return None
+
     
     def print_summary(self):
         """Print optimization summary"""
@@ -798,14 +933,14 @@ def main():
     optimizer.generate_sample_orders(num_orders=20, seed=42)
     
     # Compute travel matrix (fast method)
-    optimizer.compute_travel_matrix_fast()
+    optimizer.compute_travel_matrix_dijkstra()
     
     # Optimize routes using GA + LS
     best_solution = optimizer.optimize_routes(max_time_seconds=180)  # 3 minutes
     
     if best_solution:
         # Export results
-        optimizer.export_results("genetic_new_brunswick_delivery_routes.gpkg")
+        optimizer.export_results("New_routes.gpkg")
     else:
         print("Optimization failed!")
 
