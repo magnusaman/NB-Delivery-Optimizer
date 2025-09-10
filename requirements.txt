@@ -1,0 +1,8 @@
+geopandas>=0.13.0
+shapely>=2.0.0
+networkx>=3.0
+ortools>=9.6.0
+numpy>=1.24.0
+pandas>=2.0.0
+fiona>=1.9.0
+pyproj>=3.5.0
