@@ -239,8 +239,9 @@ class GeneticDeliveryOptimizer:
         
         if inf_count > 0:
             print("Warning: Some locations are unreachable from others!")
-            # Replace infinite values with large finite values
-            self.travel_matrix = np.where(np.isinf(self.travel_matrix), 999999, self.travel_matrix)
+            print("This usually means store locations are not properly connected to the road network.")
+            # Replace infinite values with large finite values (but not too large)
+            self.travel_matrix = np.where(np.isinf(self.travel_matrix), 10000, self.travel_matrix)  # 10,000 minutes max
     
     def _create_subgraph_around_locations(self, locations, buffer_km=20):
         """Create a subgraph around our locations for faster computation"""
@@ -356,19 +357,19 @@ class GeneticDeliveryOptimizer:
                 
                 # Check capacity constraint
                 if current_capacity > courier['capacity']:
-                    penalty += 1000  # Heavy penalty for capacity violation
+                    penalty += 10000  # Heavy penalty for capacity violation
                 
                 # Add travel time (with bounds checking)
                 order_location_idx = order_idx + len(self.depots)
                 if (prev_location < self.travel_matrix.shape[0] and 
                     order_location_idx < self.travel_matrix.shape[1]):
                     travel_time = self.travel_matrix[prev_location, order_location_idx]
-                    if np.isfinite(travel_time):
+                    if np.isfinite(travel_time) and travel_time < 10000:  # Reasonable travel time
                         route_distance += travel_time
                     else:
-                        penalty += 1000  # Penalty for unreachable locations
+                        penalty += 10000  # Penalty for unreachable locations
                 else:
-                    penalty += 1000  # Penalty for invalid indices
+                    penalty += 10000  # Penalty for invalid indices
                 
                 prev_location = order_location_idx
             
@@ -376,10 +377,10 @@ class GeneticDeliveryOptimizer:
             if (prev_location < self.travel_matrix.shape[0] and 
                 depot_idx < self.travel_matrix.shape[1]):
                 return_time = self.travel_matrix[prev_location, depot_idx]
-                if np.isfinite(return_time):
+                if np.isfinite(return_time) and return_time < 10000:  # Reasonable travel time
                     route_distance += return_time
                 else:
-                    penalty += 1000  # Penalty for unreachable depot
+                    penalty += 10000  # Penalty for unreachable depot
             
             total_distance += route_distance
         
@@ -906,31 +907,56 @@ def main():
     # Load road network
     optimizer.load_road_network()
     
-    # Add sample depots (Sobeys-like stores in major NB cities)
-    depot_locations = [
-        (2540000, 7385000),  # Fredericton area
-        (2550000, 7370000),  # Moncton area  
-        (2530000, 7360000),  # Saint John area
-        (2560000, 7390000),  # Bathurst area
-    ]
-    depot_names = ["Fredericton_Sobeys", "Moncton_Sobeys", "SaintJohn_Sobeys", "Bathurst_Sobeys"]
+    # Fetch real store locations
+    print("Fetching real store locations...")
+    try:
+        from accurate_store_fetcher import AccurateStoreFetcher
+        fetcher = AccurateStoreFetcher()
+        depot_locations, depot_names = fetcher.get_stores_for_optimization()
+        
+        print(f"Using {len(depot_locations)} real store locations")
+        print("Sample locations:")
+        for i, (loc, name) in enumerate(zip(depot_locations[:5], depot_names[:5])):
+            print(f"  {name}: ({loc[0]:.0f}, {loc[1]:.0f})")
+        
+    except ImportError:
+        print("Accurate fetcher not available, using sample locations...")
+        depot_locations = [
+            (2540000, 7385000),  # Fredericton area
+            (2550000, 7370000),  # Moncton area  
+            (2530000, 7360000),  # Saint John area
+            (2560000, 7390000),  # Bathurst area
+        ]
+        depot_names = ["Fredericton_Sobeys", "Moncton_Sobeys", "SaintJohn_Sobeys", "Bathurst_Sobeys"]
     
     optimizer.add_depots(depot_locations, depot_names)
     
-    # Add couriers
-    courier_configs = [
-        {'id': 'C1', 'depot_id': 'Fredericton_Sobeys', 'capacity': 8, 'vehicle_type': 'bike'},
-        {'id': 'C2', 'depot_id': 'Fredericton_Sobeys', 'capacity': 10, 'vehicle_type': 'car'},
-        {'id': 'C3', 'depot_id': 'Moncton_Sobeys', 'capacity': 8, 'vehicle_type': 'bike'},
-        {'id': 'C4', 'depot_id': 'Moncton_Sobeys', 'capacity': 12, 'vehicle_type': 'car'},
-        {'id': 'C5', 'depot_id': 'SaintJohn_Sobeys', 'capacity': 6, 'vehicle_type': 'bike'},
-        {'id': 'C6', 'depot_id': 'Bathurst_Sobeys', 'capacity': 8, 'vehicle_type': 'bike'},
-    ]
+    # Add couriers (distribute among available depots)
+    courier_configs = []
+    courier_id = 1
+    
+    for depot_name in depot_names:
+        # Add 2 couriers per depot (1 bike, 1 car)
+        courier_configs.append({
+            'id': f'C{courier_id}', 
+            'depot_id': depot_name, 
+            'capacity': 8, 
+            'vehicle_type': 'bike'
+        })
+        courier_id += 1
+        
+        courier_configs.append({
+            'id': f'C{courier_id}', 
+            'depot_id': depot_name, 
+            'capacity': 12, 
+            'vehicle_type': 'car'
+        })
+        courier_id += 1
     
     optimizer.add_couriers(courier_configs)
     
-    # Generate sample orders
-    optimizer.generate_sample_orders(num_orders=20, seed=42)
+    # Generate sample orders (fewer for better results)
+    optimizer.generate_sample_orders(num_orders=10, seed=42)
     
     # Compute travel matrix (fast method)
     optimizer.compute_travel_matrix_dijkstra()

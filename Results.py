@@ -2,11 +2,11 @@ import geopandas as gpd
 import fiona
 
 # list layers
-layers = fiona.listlayers("genetic_new_brunswick_delivery_routes.gpkg")
+layers = fiona.listlayers("New_routes.gpkg")
 print(layers)
 
 # read specific layer
-routes = gpd.read_file("genetic_new_brunswick_delivery_routes.gpkg", layer="routes")
+routes = gpd.read_file("New_routes.gpkg", layer="routes")
 print(routes.head())
 
 # plot quick map
