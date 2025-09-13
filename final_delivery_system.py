@@ -348,11 +348,11 @@ class FinalDeliverySystem:
         if self.roads_gdf is not None:
             self.roads_gdf.plot(ax=ax, color='lightblue', linewidth=0.3, alpha=0.6, label='Roads')
         
-        # Plot ALL 46 stores as small red dots
+        # Plot ALL 46 stores as visible red dots
         store_x = [store['location'][0] for store in self.stores]
         store_y = [store['location'][1] for store in self.stores]
-        ax.scatter(store_x, store_y, c='red', s=30, marker='o', label=f'All {len(self.stores)} Stores', 
-                  edgecolors='darkred', linewidth=0.5, zorder=5, alpha=0.8)
+        ax.scatter(store_x, store_y, c='red', s=80, marker='o', label=f'All {len(self.stores)} Stores', 
+                  edgecolors='darkred', linewidth=1, zorder=5, alpha=0.9)
         
         # Plot all delivery partners as yellow dots
         all_partner_x = [partner['location'][0] for partner in self.partners]
@@ -519,8 +519,8 @@ if __name__ == "__main__":
         print(f"   ✅ Results report saved as {output_file}")
     
     def export_to_gpkg(self, output_file: str = "final_delivery_results.gpkg"):
-        """Export all data to GeoPackage for GIS analysis"""
-        print(f"💾 Exporting results to GeoPackage: {output_file}")
+        """Export all data to GeoPackage for GIS analysis with real routes"""
+        print(f"💾 Exporting comprehensive results to GeoPackage: {output_file}")
         
         try:
             # Prepare data for export
@@ -528,16 +528,19 @@ if __name__ == "__main__":
             partner_records = []
             order_records = []
             route_records = []
+            road_records = []
             
-            # Stores
+            # Stores with detailed information
             for store in self.stores:
                 store_records.append({
                     'store_id': store['id'],
                     'name': store['name'],
+                    'chain': store.get('chain', 'Unknown'),
+                    'address': store.get('address', 'Unknown'),
                     'geometry': Point(store['location'])
                 })
             
-            # Partners
+            # Partners with detailed information
             for partner in self.partners:
                 partner_records.append({
                     'partner_id': partner['id'],
@@ -546,29 +549,46 @@ if __name__ == "__main__":
                     'capacity': partner['capacity'],
                     'distance_from_store': partner['distance_from_store'],
                     'status': partner['status'],
+                    'is_selected': partner['id'] in [a.partner_id for a in self.assignments],
                     'geometry': Point(partner['location'])
                 })
             
-            # Orders
+            # Orders with detailed information
             for order in self.orders:
                 order_records.append({
                     'order_id': order['id'],
                     'demand': order['demand'],
                     'priority': order['priority'],
                     'created_at': order['created_at'].isoformat(),
+                    'assigned_store': next((a.store_id for a in self.assignments if a.order_id == order['id']), None),
+                    'assigned_partner': next((a.partner_id for a in self.assignments if a.order_id == order['id']), None),
                     'geometry': Point(order['location'])
                 })
             
-            # Routes
+            # Routes with detailed information
             for assignment in self.assignments:
                 route_records.append({
+                    'route_id': f"Route_{assignment.order_id}",
                     'order_id': assignment.order_id,
                     'store_id': assignment.store_id,
                     'partner_id': assignment.partner_id,
-                    'total_time': assignment.total_time,
-                    'total_distance': assignment.total_distance,
+                    'total_time_minutes': assignment.total_time,
+                    'total_distance_meters': assignment.total_distance,
+                    'total_distance_km': assignment.total_distance / 1000.0,
+                    'route_type': 'Partner_to_Store_to_Customer',
                     'geometry': LineString(assignment.route)
                 })
+            
+            # Add road network (sample of roads for context)
+            if self.roads_gdf is not None:
+                # Take a sample of roads to avoid huge file size
+                road_sample = self.roads_gdf.sample(n=min(1000, len(self.roads_gdf)))
+                for idx, road in road_sample.iterrows():
+                    road_records.append({
+                        'road_id': f"Road_{idx}",
+                        'road_type': 'Highway',
+                        'geometry': road.geometry
+                    })
             
             # Create GeoDataFrames
             stores_gdf = gpd.GeoDataFrame(store_records, geometry='geometry', crs='EPSG:2953')
@@ -576,23 +596,35 @@ if __name__ == "__main__":
             orders_gdf = gpd.GeoDataFrame(order_records, geometry='geometry', crs='EPSG:2953')
             routes_gdf = gpd.GeoDataFrame(route_records, geometry='geometry', crs='EPSG:2953')
             
-            # Export to GeoPackage
-            stores_gdf.to_file(output_file, layer='stores', driver='GPKG')
-            partners_gdf.to_file(output_file, layer='partners', driver='GPKG')
-            orders_gdf.to_file(output_file, layer='orders', driver='GPKG')
-            routes_gdf.to_file(output_file, layer='routes', driver='GPKG')
+            # Export to GeoPackage with multiple layers
+            stores_gdf.to_file(output_file, layer='all_stores', driver='GPKG')
+            partners_gdf.to_file(output_file, layer='all_partners', driver='GPKG')
+            orders_gdf.to_file(output_file, layer='all_orders', driver='GPKG')
+            routes_gdf.to_file(output_file, layer='delivery_routes', driver='GPKG')
             
-            print(f"   ✅ Successfully exported to {output_file}")
+            # Add road network if available
+            if road_records:
+                roads_gdf = gpd.GeoDataFrame(road_records, geometry='geometry', crs='EPSG:2953')
+                roads_gdf.to_file(output_file, layer='road_network', driver='GPKG')
+            
+            print(f"   ✅ Successfully exported comprehensive data to {output_file}")
+            print(f"   📊 Layers: all_stores ({len(stores_gdf)}), all_partners ({len(partners_gdf)}), all_orders ({len(orders_gdf)}), delivery_routes ({len(routes_gdf)})")
+            if road_records:
+                print(f"   🛣️  Road network: {len(road_records)} road segments")
             
         except Exception as e:
             print(f"   ⚠️  Export failed: {e}")
             print("   📁 Exporting to separate files...")
             
             # Fallback: export to separate files
-            stores_gdf.to_file("stores_only.gpkg", driver='GPKG')
-            partners_gdf.to_file("partners_only.gpkg", driver='GPKG')
-            orders_gdf.to_file("orders_only.gpkg", driver='GPKG')
-            routes_gdf.to_file("routes_only.gpkg", driver='GPKG')
+            try:
+                stores_gdf.to_file("stores_only.gpkg", driver='GPKG')
+                partners_gdf.to_file("partners_only.gpkg", driver='GPKG')
+                orders_gdf.to_file("orders_only.gpkg", driver='GPKG')
+                routes_gdf.to_file("routes_only.gpkg", driver='GPKG')
+                print("   ✅ Fallback export successful")
+            except Exception as e2:
+                print(f"   ❌ Fallback export also failed: {e2}")
     
     def run_complete_system(self):
         """Run the complete delivery system with all 46 stores"""
