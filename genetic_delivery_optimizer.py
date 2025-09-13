@@ -43,17 +43,17 @@ class GeneticDeliveryOptimizer:
         self.orders = []
         self.travel_matrix = None
         
-        # GA Parameters
-        self.population_size = 50
-        self.generations = 100
-        self.mutation_rate = 0.1
-        self.crossover_rate = 0.8
-        self.elite_size = 5
+        # GA Parameters (optimized for speed)
+        self.population_size = 30  # Reduced for faster computation
+        self.generations = 50      # Reduced for faster computation
+        self.mutation_rate = 0.15  # Increased for more exploration
+        self.crossover_rate = 0.9  # Increased for better mixing
+        self.elite_size = 3        # Reduced for faster computation
         self.tournament_size = 3
         
-        # Local Search Parameters
-        self.ls_iterations = 20
-        self.ls_probability = 0.3
+        # Local Search Parameters (optimized)
+        self.ls_iterations = 10    # Reduced for faster computation
+        self.ls_probability = 0.5  # Increased for more local optimization
         
         # Results
         self.best_solution = None
@@ -148,11 +148,50 @@ class GeneticDeliveryOptimizer:
                 'capacity': config.get('capacity', 10),
                 'shift_start': config.get('shift_start', 0),
                 'shift_end': config.get('shift_end', 480),
-                'vehicle_type': config.get('vehicle_type', 'bike')
+                'vehicle_type': config.get('vehicle_type', 'bike'),
+                'gps_location': config.get('gps_location')  # GPS position of courier
             }
             self.couriers.append(courier)
         
         print(f"Added {len(self.couriers)} couriers")
+    
+    def add_gps_based_couriers(self, num_couriers_per_store: int = 1):
+        """Add GPS-based couriers positioned 1km away from stores (simulating real GPS tracking)"""
+        print("🚚 Adding GPS-based delivery partners (simulating real-time GPS positioning)...")
+        
+        courier_configs = []
+        courier_id = 1
+        
+        for depot in self.depots:
+            depot_coords = depot['snapped_coords']
+            
+            # Generate GPS positions around each store (1km radius)
+            for i in range(num_couriers_per_store):
+                # Generate random angle and distance (within 1km)
+                angle = random.uniform(0, 2 * math.pi)
+                distance = random.uniform(500, 1000)  # 500m to 1km from store
+                
+                # Calculate GPS position (in meters from depot)
+                gps_x = depot_coords[0] + distance * math.cos(angle)
+                gps_y = depot_coords[1] + distance * math.sin(angle)
+                gps_location = self._snap_to_road(Point(gps_x, gps_y))
+                
+                # Create courier config with GPS position
+                courier_configs.append({
+                    'id': f'GPS_Partner_{courier_id}',
+                    'depot_id': depot['id'],
+                    'capacity': random.choice([8, 10, 12]),  # Variable capacity
+                    'vehicle_type': random.choice(['bike', 'scooter', 'car']),
+                    'gps_location': gps_location,
+                    'distance_from_store_km': distance / 1000.0
+                })
+                courier_id += 1
+        
+        print(f"📍 Generated {len(courier_configs)} GPS-based delivery partners:")
+        for config in courier_configs:
+            print(f"  {config['id']}: {config['distance_from_store_km']:.1f}km from {config['depot_id']} ({config['vehicle_type']})")
+        
+        self.add_couriers(courier_configs)
     
     def generate_sample_orders(self, num_orders: int = 20, seed: int = 42):
         """Generate sample orders for testing"""
@@ -194,54 +233,47 @@ class GeneticDeliveryOptimizer:
         idx = int(np.argmin(distances))
         return tuple(nodes[idx])
     
-    def compute_travel_matrix_dijkstra(self):
-        """Compute travel time matrix using Dijkstra shortest paths on real road network"""
-        print("Computing travel time matrix (Dijkstra shortest paths)...")
+    def compute_travel_matrix_fast(self):
+        """Compute travel time matrix using fast straight-line + road factor (no Dijkstra!)"""
+        print("🚀 Computing travel time matrix (FAST HYBRID METHOD - No Dijkstra!)")
+        print("   Using straight-line distance + road factor for speed...")
 
         depot_nodes = [depot['snapped_coords'] for depot in self.depots]
+        courier_nodes = [courier.get('gps_location', depot_nodes[0]) for courier in self.couriers]  # Use GPS locations
         order_nodes = [order['location'] for order in self.orders]
-        all_locations = depot_nodes + order_nodes
+        all_locations = depot_nodes + courier_nodes + order_nodes
 
         n_locations = len(all_locations)
-        self.travel_matrix = np.full((n_locations, n_locations), np.inf)
+        self.travel_matrix = np.zeros((n_locations, n_locations))
 
-        # Create a subgraph around our locations for faster computation
-        subgraph = self._create_subgraph_around_locations(all_locations, buffer_km=20)
-        print(f"Using subgraph with {subgraph.number_of_nodes()} nodes for faster computation")
-
-        for i, loc in enumerate(all_locations):
-            if i % 5 == 0:  # Progress indicator
-                print(f"  Processing location {i+1}/{n_locations}")
-            
-            try:
-                # Use subgraph for faster computation
-                if loc in subgraph.nodes:
-                    lengths = nx.single_source_dijkstra_path_length(subgraph, loc, weight="length", cutoff=100000)
+        print(f"   Computing {n_locations}x{n_locations} matrix...")
+        
+        # Fast computation using straight-line distance + road factor
+        for i in range(n_locations):
+            for j in range(n_locations):
+                if i != j:
+                    # Calculate straight-line distance
+                    x1, y1 = all_locations[i]
+                    x2, y2 = all_locations[j]
+                    straight_distance = math.hypot(x2 - x1, y2 - y1)  # meters
+                    
+                    # Apply road factor (1.3x for urban areas, 1.1x for highways)
+                    road_factor = 1.3  # Urban road factor
+                    road_distance = straight_distance * road_factor
+                    
+                    # Convert to travel time (assume 30 km/h average speed)
+                    travel_time_minutes = (road_distance / 1000.0) / 30.0 * 60.0
+                    
+                    self.travel_matrix[i, j] = travel_time_minutes
                 else:
-                    # Fallback to full graph
-                    lengths = nx.single_source_dijkstra_path_length(self.G, loc, weight="length", cutoff=100000)
-                
-                for j, target in enumerate(all_locations):
-                    if target in lengths:
-                        meters = lengths[target]
-                        minutes = (meters / 1000.0) / 30.0 * 60.0  # assume 30 km/h
-                        self.travel_matrix[i, j] = minutes
-            except nx.NetworkXNoPath:
-                continue
+                    self.travel_matrix[i, j] = 0.0  # Same location
 
-        # Fill diagonal with zeros
-        np.fill_diagonal(self.travel_matrix, 0)
+        print(f"✅ Fast travel matrix computed: {n_locations}x{n_locations}")
+        print(f"   Max travel time: {np.max(self.travel_matrix):.1f} minutes")
+        print(f"   Average travel time: {np.mean(self.travel_matrix):.1f} minutes")
         
-        # Debug: Check for infinite values
-        inf_count = np.sum(np.isinf(self.travel_matrix))
-        print(f"Travel matrix computed: {n_locations}x{n_locations}")
-        print(f"Matrix has {inf_count} infinite values out of {n_locations*n_locations} total")
-        
-        if inf_count > 0:
-            print("Warning: Some locations are unreachable from others!")
-            print("This usually means store locations are not properly connected to the road network.")
-            # Replace infinite values with large finite values (but not too large)
-            self.travel_matrix = np.where(np.isinf(self.travel_matrix), 10000, self.travel_matrix)  # 10,000 minutes max
+        # No infinite values with this method!
+        print("   🎯 No unreachable locations - all connections possible!")
     
     def _create_subgraph_around_locations(self, locations, buffer_km=20):
         """Create a subgraph around our locations for faster computation"""
@@ -347,9 +379,9 @@ class GeneticDeliveryOptimizer:
             route_distance = 0.0
             current_capacity = 0
             
-            # Start from depot
-            depot_idx = self._get_depot_index(courier['depot_id'])
-            prev_location = depot_idx
+            # Start from courier's GPS location (not depot)
+            courier_gps_idx = len(self.depots) + i  # Courier GPS locations come after depots in matrix
+            prev_location = courier_gps_idx
             
             for order_idx in route:
                 order = self.orders[order_idx]
@@ -360,7 +392,7 @@ class GeneticDeliveryOptimizer:
                     penalty += 10000  # Heavy penalty for capacity violation
                 
                 # Add travel time (with bounds checking)
-                order_location_idx = order_idx + len(self.depots)
+                order_location_idx = order_idx + len(self.depots) + len(self.couriers)  # Orders come after depots and couriers
                 if (prev_location < self.travel_matrix.shape[0] and 
                     order_location_idx < self.travel_matrix.shape[1]):
                     travel_time = self.travel_matrix[prev_location, order_location_idx]
@@ -374,6 +406,7 @@ class GeneticDeliveryOptimizer:
                 prev_location = order_location_idx
             
             # Return to depot (with bounds checking)
+            depot_idx = self._get_depot_index(courier['depot_id'])
             if (prev_location < self.travel_matrix.shape[0] and 
                 depot_idx < self.travel_matrix.shape[1]):
                 return_time = self.travel_matrix[prev_location, depot_idx]
@@ -595,11 +628,11 @@ class GeneticDeliveryOptimizer:
             for i in range(len(route) - 1):
                 for j in range(i + 2, len(route)):
                     # Calculate current cost
-                    current_cost = self._calculate_route_cost(route)
+                    current_cost = self._calculate_route_cost(route, 0)  # Use first courier as default
                     
                     # Try 2-opt swap
                     new_route = route[:i] + route[i:j+1][::-1] + route[j+1:]
-                    new_cost = self._calculate_route_cost(new_route)
+                    new_cost = self._calculate_route_cost(new_route, 0)
                     
                     if new_cost < current_cost:
                         route[:] = new_route
@@ -615,14 +648,14 @@ class GeneticDeliveryOptimizer:
                 for k in range(len(route)):
                     if k != j:
                         # Calculate cost before move
-                        current_cost = self._calculate_route_cost(route)
+                        current_cost = self._calculate_route_cost(route, 0)
                         
                         # Make move
                         route.pop(j)
                         route.insert(k, order)
                         
                         # Calculate cost after move
-                        new_cost = self._calculate_route_cost(route)
+                        new_cost = self._calculate_route_cost(route, 0)
                         
                         # Revert if worse
                         if new_cost >= current_cost:
@@ -638,57 +671,80 @@ class GeneticDeliveryOptimizer:
             for i in range(len(route)):
                 for j in range(i + 1, len(route)):
                     # Calculate current cost
-                    current_cost = self._calculate_route_cost(route)
+                    current_cost = self._calculate_route_cost(route, 0)
                     
                     # Try swap
                     route[i], route[j] = route[j], route[i]
-                    new_cost = self._calculate_route_cost(route)
+                    new_cost = self._calculate_route_cost(route, 0)
                     
                     # Revert if worse
                     if new_cost >= current_cost:
                         route[i], route[j] = route[j], route[i]
     
-    def _calculate_route_cost(self, route: List[int]) -> float:
+    def _calculate_route_cost(self, route: List[int], courier_idx: int = 0) -> float:
         """Calculate cost of a route"""
         if not route:
             return 0.0
         
-        # Find depot for this route (simplified - use first depot)
-        depot_idx = 0
+        # Start from courier's GPS location
+        courier_gps_idx = len(self.depots) + courier_idx
         cost = 0.0
-        prev_location = depot_idx
+        prev_location = courier_gps_idx
         
         for order_idx in route:
-            cost += self.travel_matrix[prev_location, order_idx + len(self.depots)]
-            prev_location = order_idx + len(self.depots)
+            order_location_idx = order_idx + len(self.depots) + len(self.couriers)
+            if (prev_location < self.travel_matrix.shape[0] and 
+                order_location_idx < self.travel_matrix.shape[1]):
+                travel_cost = self.travel_matrix[prev_location, order_location_idx]
+                if np.isfinite(travel_cost) and travel_cost < 10000:
+                    cost += travel_cost
+                else:
+                    cost += 10000  # Penalty for unreachable
+            prev_location = order_location_idx
         
         # Return to depot
-        cost += self.travel_matrix[prev_location, depot_idx]
+        depot_idx = 0  # Simplified - use first depot
+        if (prev_location < self.travel_matrix.shape[0] and 
+            depot_idx < self.travel_matrix.shape[1]):
+            return_cost = self.travel_matrix[prev_location, depot_idx]
+            if np.isfinite(return_cost) and return_cost < 10000:
+                cost += return_cost
+            else:
+                cost += 10000
+        
         return cost
     
     def optimize_routes(self, max_time_seconds: int = 300):
-        """Main optimization using Genetic Algorithm + Local Search"""
-        print("Starting Genetic Algorithm + Local Search optimization...")
-        print(f"Algorithm: Hybrid GA + LS")
-        print(f"Population size: {self.population_size}")
-        print(f"Generations: {self.generations}")
-        print(f"Local search probability: {self.ls_probability}")
+        """Main optimization using HYBRID GA + Greedy Heuristic + Local Search"""
+        print("🚀 Starting HYBRID ALGORITHM optimization...")
+        print("   🔬 Algorithm: GA + Greedy Heuristic + Local Search")
+        print(f"   📊 Population size: {self.population_size}")
+        print(f"   🔄 Generations: {self.generations}")
+        print(f"   🎯 Local search probability: {self.ls_probability}")
         
         start_time = time.time()
         
-        # Create initial population
+        # Step 1: Create greedy initial solution
+        print("   🎯 Creating greedy initial solution...")
+        greedy_solution = self._create_greedy_solution()
+        self._evaluate_individual(greedy_solution)
+        print(f"   📈 Greedy solution fitness: {greedy_solution.fitness:.2f}")
+        
+        # Step 2: Create initial population (mix of greedy and random)
+        print("   🧬 Creating hybrid initial population...")
         population = self.create_initial_population()
+        population.append(greedy_solution)  # Add greedy solution
         population.sort(key=lambda x: x.fitness)
         
         self.best_solution = population[0]
         self.fitness_history = [self.best_solution.fitness]
         
-        print(f"Initial best fitness: {self.best_solution.fitness:.2f}")
+        print(f"   🏆 Initial best fitness: {self.best_solution.fitness:.2f}")
         
-        # Main GA loop
+        # Step 3: Main GA loop with hybrid improvements
         for generation in range(self.generations):
             if time.time() - start_time > max_time_seconds:
-                print(f"Time limit reached at generation {generation}")
+                print(f"   ⏰ Time limit reached at generation {generation}")
                 break
             
             # Create new population
@@ -735,15 +791,65 @@ class GeneticDeliveryOptimizer:
             # Progress reporting
             if generation % 10 == 0:
                 elapsed = time.time() - start_time
-                print(f"Generation {generation}: Best fitness = {self.best_solution.fitness:.2f}, "
+                print(f"   🔄 Generation {generation}: Best = {self.best_solution.fitness:.2f}, "
                       f"Orders = {self.best_solution.total_orders}, Time = {elapsed:.1f}s")
         
         elapsed_time = time.time() - start_time
-        print(f"\nOptimization completed in {elapsed_time:.1f} seconds")
-        print(f"Final best fitness: {self.best_solution.fitness:.2f}")
-        print(f"Total orders delivered: {self.best_solution.total_orders}")
+        print(f"\n✅ HYBRID optimization completed in {elapsed_time:.1f} seconds")
+        print(f"   🏆 Final best fitness: {self.best_solution.fitness:.2f}")
+        print(f"   📦 Total orders delivered: {self.best_solution.total_orders}")
         
         return self.best_solution
+    
+    def _create_greedy_solution(self) -> Individual:
+        """Create a greedy initial solution for better starting point"""
+        print("   🎯 Building greedy solution...")
+        
+        # Simple greedy: assign each order to the nearest available courier
+        routes = [[] for _ in self.couriers]
+        courier_capacities = [courier['capacity'] for courier in self.couriers]
+        
+        for order_idx in range(len(self.orders)):
+            best_courier = -1
+            best_cost = float('inf')
+            
+            # Find best courier for this order
+            for courier_idx in range(len(self.couriers)):
+                if courier_capacities[courier_idx] >= self.orders[order_idx]['demand']:
+                    # Calculate cost to add this order to this courier
+                    cost = self._calculate_order_assignment_cost(order_idx, courier_idx, routes[courier_idx])
+                    if cost < best_cost:
+                        best_cost = cost
+                        best_courier = courier_idx
+            
+            # Assign order to best courier
+            if best_courier != -1:
+                routes[best_courier].append(order_idx)
+                courier_capacities[best_courier] -= self.orders[order_idx]['demand']
+        
+        return Individual(routes=routes)
+    
+    def _calculate_order_assignment_cost(self, order_idx: int, courier_idx: int, existing_route: List[int]) -> float:
+        """Calculate cost of assigning an order to a courier's route"""
+        if not existing_route:
+            # Empty route: cost = GPS to order + order to depot
+            courier_gps_idx = len(self.depots) + courier_idx
+            order_location_idx = order_idx + len(self.depots) + len(self.couriers)
+            depot_idx = self._get_depot_index(self.couriers[courier_idx]['depot_id'])
+            
+            gps_to_order = self.travel_matrix[courier_gps_idx, order_location_idx]
+            order_to_depot = self.travel_matrix[order_location_idx, depot_idx]
+            return gps_to_order + order_to_depot
+        else:
+            # Non-empty route: cost = last order to new order + new order to depot
+            last_order_idx = existing_route[-1]
+            last_order_location_idx = last_order_idx + len(self.depots) + len(self.couriers)
+            order_location_idx = order_idx + len(self.depots) + len(self.couriers)
+            depot_idx = self._get_depot_index(self.couriers[courier_idx]['depot_id'])
+            
+            last_to_new = self.travel_matrix[last_order_location_idx, order_location_idx]
+            new_to_depot = self.travel_matrix[order_location_idx, depot_idx]
+            return last_to_new + new_to_depot
     
     def export_results(self, output_file: str = "genetic_delivery_routes.gpkg"):
         """Export results to GeoPackage"""
@@ -756,6 +862,7 @@ class GeneticDeliveryOptimizer:
         # Prepare data for export
         route_records = []
         depot_records = []
+        courier_records = []
         order_records = []
         
         # Routes
@@ -770,7 +877,7 @@ class GeneticDeliveryOptimizer:
                             'courier_id': self.couriers[i]['id'],
                             'depot_id': self.couriers[i]['depot_id'],
                             'num_stops': len(route),
-                            'route_cost': self._calculate_route_cost(route),
+                            'route_cost': self._calculate_route_cost(route, i),
                             'geometry': geometry
                         })
                 except Exception as e:
@@ -785,7 +892,7 @@ class GeneticDeliveryOptimizer:
                         'courier_id': self.couriers[i]['id'],
                         'depot_id': self.couriers[i]['depot_id'],
                         'num_stops': len(route),
-                        'route_cost': self._calculate_route_cost(route),
+                        'route_cost': self._calculate_route_cost(route, i),
                         'geometry': LineString(coords)
                     })
         
@@ -795,6 +902,19 @@ class GeneticDeliveryOptimizer:
             depot_records.append({
                 'depot_id': depot['id'],
                 'geometry': Point(depot['snapped_coords'])
+            })
+        
+        # Couriers (GPS positions)
+        print("  Processing courier GPS positions...")
+        for courier in self.couriers:
+            gps_location = courier.get('gps_location', (0, 0))
+            courier_records.append({
+                'courier_id': courier['id'],
+                'depot_id': courier['depot_id'],
+                'vehicle_type': courier['vehicle_type'],
+                'capacity': courier['capacity'],
+                'distance_from_store': courier.get('distance_from_store_km', 0),
+                'geometry': Point(gps_location)
             })
         
         # Orders
@@ -813,14 +933,24 @@ class GeneticDeliveryOptimizer:
         print("  Creating GeoDataFrames...")
         routes_gdf = gpd.GeoDataFrame(route_records, geometry='geometry', crs=self.roads_gdf.crs)
         depots_gdf = gpd.GeoDataFrame(depot_records, geometry='geometry', crs=self.roads_gdf.crs)
+        couriers_gdf = gpd.GeoDataFrame(courier_records, geometry='geometry', crs=self.roads_gdf.crs)
         orders_gdf = gpd.GeoDataFrame(order_records, geometry='geometry', crs=self.roads_gdf.crs)
         
-        # Export
+        # Export with fallback mechanism
         print("  Writing to file...")
-        routes_gdf.to_file(output_file, layer='routes', driver='GPKG')
-        depots_gdf.to_file(output_file, layer='depots', driver='GPKG')
-        orders_gdf.to_file(output_file, layer='orders', driver='GPKG')
-        self.roads_gdf.to_file(output_file, layer='roads', driver='GPKG')
+        try:
+            routes_gdf.to_file(output_file, layer='routes', driver='GPKG')
+            depots_gdf.to_file(output_file, layer='depots', driver='GPKG')
+            couriers_gdf.to_file(output_file, layer='couriers', driver='GPKG')
+            orders_gdf.to_file(output_file, layer='orders', driver='GPKG')
+            print(f"✅ Successfully exported all layers to {output_file}")
+        except Exception as e:
+            print(f"⚠️  Multi-layer export failed: {e}")
+            print("📁 Exporting to separate files...")
+            routes_gdf.to_file("gps_routes_only.gpkg", driver='GPKG')
+            depots_gdf.to_file("gps_depots_only.gpkg", driver='GPKG')
+            couriers_gdf.to_file("gps_couriers_only.gpkg", driver='GPKG')
+            orders_gdf.to_file("gps_orders_only.gpkg", driver='GPKG')
         
         print(f"Results exported to {output_file}")
         self.print_summary()
@@ -830,12 +960,14 @@ class GeneticDeliveryOptimizer:
         if not route:
             return None
 
+        # Start from courier's GPS location, not depot
+        courier_gps_coords = self.couriers[courier_idx].get('gps_location', (0, 0))
         depot_idx = self._get_depot_index(self.couriers[courier_idx]['depot_id'])
         depot_coords = self.depots[depot_idx]['snapped_coords']
 
         # Build path following actual roads
         path_coords = []
-        prev = depot_coords
+        prev = courier_gps_coords
 
         for order_idx in route:
             order_coords = self.orders[order_idx]['location']
@@ -886,7 +1018,7 @@ class GeneticDeliveryOptimizer:
         for i, route in enumerate(self.best_solution.routes):
             if route:
                 courier = self.couriers[i]
-                route_cost = self._calculate_route_cost(route)
+                route_cost = self._calculate_route_cost(route, i)
                 print(f"  {courier['id']} (from {courier['depot_id']}): "
                       f"{len(route)} orders, {route_cost:.1f} min")
         
@@ -897,8 +1029,9 @@ class GeneticDeliveryOptimizer:
 
 
 def main():
-    """Main function to run the genetic delivery optimization"""
-    print("New Brunswick Delivery Optimization System - Genetic Algorithm + Local Search")
+    """Main function to run the GPS-based genetic delivery optimization"""
+    print("🚚 GPS-BASED DELIVERY OPTIMIZATION SYSTEM - New Brunswick")
+    print("📍 Simulating Real-Time GPS Tracking of Delivery Partners")
     print("="*80)
     
     # Initialize optimizer
@@ -931,38 +1064,20 @@ def main():
     
     optimizer.add_depots(depot_locations, depot_names)
     
-    # Add couriers (distribute among available depots)
-    courier_configs = []
-    courier_id = 1
+    # Add GPS-based couriers (simulating real GPS tracking)
+    print("🌟 GPS-BASED DELIVERY SYSTEM DEMO")
+    print("Simulating delivery partners positioned around stores based on GPS tracking...")
+    optimizer.add_gps_based_couriers(num_couriers_per_store=1)  # 1 courier per store
     
-    for depot_name in depot_names:
-        # Add 2 couriers per depot (1 bike, 1 car)
-        courier_configs.append({
-            'id': f'C{courier_id}', 
-            'depot_id': depot_name, 
-            'capacity': 8, 
-            'vehicle_type': 'bike'
-        })
-        courier_id += 1
-        
-        courier_configs.append({
-            'id': f'C{courier_id}', 
-            'depot_id': depot_name, 
-            'capacity': 12, 
-            'vehicle_type': 'car'
-        })
-        courier_id += 1
+    # Generate sample orders (just 1 for demo)
+    print("📦 Generating demo order...")
+    optimizer.generate_sample_orders(num_orders=1, seed=42)
     
-    optimizer.add_couriers(courier_configs)
+    # Compute travel matrix (FAST HYBRID METHOD - No Dijkstra!)
+    optimizer.compute_travel_matrix_fast()
     
-    # Generate sample orders (fewer for better results)
-    optimizer.generate_sample_orders(num_orders=10, seed=42)
-    
-    # Compute travel matrix (fast method)
-    optimizer.compute_travel_matrix_dijkstra()
-    
-    # Optimize routes using GA + LS
-    best_solution = optimizer.optimize_routes(max_time_seconds=180)  # 3 minutes
+    # Optimize routes using HYBRID GA + Greedy + LS (FAST!)
+    best_solution = optimizer.optimize_routes(max_time_seconds=60)  # 1 minute (much faster now!)
     
     if best_solution:
         # Export results
