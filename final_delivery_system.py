@@ -408,7 +408,7 @@ class FinalDeliverySystem:
                       edgecolors='red', linewidth=2, zorder=7)
         
         # Customize the plot
-        ax.set_title('🚚 New Brunswick Delivery System - All 46 Stores\n' + 
+        ax.set_title('🚚 New Brunswick Delivery System - All 77 Stores\n' + 
                     'Red Dots: Stores | Yellow Dots: Partners | Green Triangles: Orders | Blue Lines: Routes', 
                     fontsize=18, fontweight='bold', pad=20)
         ax.set_xlabel('X Coordinate (meters)', fontsize=14)
@@ -628,11 +628,11 @@ if __name__ == "__main__":
     
     def run_complete_system(self):
         """Run the complete delivery system with all 46 stores"""
-        print("🚀 FINAL DELIVERY SYSTEM - NEW BRUNSWICK (ALL 46 STORES)")
+        print("🚀 FINAL DELIVERY SYSTEM - NEW BRUNSWICK (ALL 77 STORES)")
         print("=" * 70)
         
-        # Step 1: Load all 46 real verified stores
-        if not self.load_real_stores("nb_verified_stores.gpkg"):
+        # Step 1: Load all 77 comprehensive stores
+        if not self.load_real_stores("nb_comprehensive_stores.gpkg"):
             print("❌ Failed to load stores, using fallback...")
             # Fallback to sample stores if loading fails
             sample_stores = [
