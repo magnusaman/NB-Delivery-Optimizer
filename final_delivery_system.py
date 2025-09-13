@@ -79,18 +79,77 @@ class FinalDeliverySystem:
         
         print(f"🏪 Added {len(self.stores)} stores")
     
-    def add_delivery_partners(self, partners_per_store: int = 3):
-        """Add multiple delivery partners per store (2-3 within 1km)"""
-        print(f"🚚 Adding {partners_per_store} delivery partners per store...")
+    def load_real_stores(self, stores_file: str = "nb_verified_stores.gpkg"):
+        """Load all 46 real verified stores from the GPKG file"""
+        print(f"🏪 Loading all 46 verified stores from {stores_file}...")
+        
+        try:
+            stores_gdf = gpd.read_file(stores_file)
+            print(f"   ✅ Loaded {len(stores_gdf)} verified stores")
+            print(f"   📍 Original CRS: {stores_gdf.crs}")
+            
+            # Convert to New Brunswick projected coordinate system (EPSG:2953)
+            if stores_gdf.crs != 'EPSG:2953':
+                print(f"   🔄 Converting from {stores_gdf.crs} to EPSG:2953...")
+                stores_gdf = stores_gdf.to_crs('EPSG:2953')
+                print(f"   ✅ Converted to {stores_gdf.crs}")
+            
+            self.stores = []
+            for idx, row in stores_gdf.iterrows():
+                # Get coordinates from geometry (now in meters)
+                x, y = row.geometry.x, row.geometry.y
+                
+                store = {
+                    'id': row.get('store_id', f"Store_{idx+1}"),
+                    'location': (x, y),
+                    'name': row.get('name', f"Store_{idx+1}"),
+                    'chain': row.get('chain', 'Unknown'),
+                    'address': row.get('address', 'Unknown')
+                }
+                self.stores.append(store)
+            
+            print(f"   📍 Store distribution:")
+            chain_counts = {}
+            for store in self.stores:
+                chain = store['chain']
+                chain_counts[chain] = chain_counts.get(chain, 0) + 1
+            
+            for chain, count in chain_counts.items():
+                print(f"      - {chain}: {count} stores")
+            
+            # Show coordinate bounds
+            all_x = [store['location'][0] for store in self.stores]
+            all_y = [store['location'][1] for store in self.stores]
+            print(f"   📊 Coordinate bounds: X({min(all_x):.0f} to {max(all_x):.0f}), Y({min(all_y):.0f} to {max(all_y):.0f})")
+            
+            return True
+            
+        except Exception as e:
+            print(f"   ❌ Error loading stores: {e}")
+            return False
+    
+    def add_delivery_partners(self, total_partners: int = 100):
+        """Add delivery partners distributed across all stores (2-3 per store)"""
+        print(f"🚚 Adding {total_partners} delivery partners across all stores...")
         
         self.partners = []
         partner_id = 1
         
-        for store in self.stores:
+        # Calculate partners per store (distribute evenly)
+        partners_per_store = max(2, total_partners // len(self.stores))
+        remaining_partners = total_partners - (partners_per_store * len(self.stores))
+        
+        for store_idx, store in enumerate(self.stores):
             store_coords = store['location']
             
+            # Add base partners per store
+            num_partners = partners_per_store
+            # Add one extra partner to some stores if we have remaining
+            if store_idx < remaining_partners:
+                num_partners += 1
+            
             # Generate partners around each store (within 1km)
-            for i in range(partners_per_store):
+            for i in range(num_partners):
                 # Generate random position within 1km of store
                 angle = random.uniform(0, 2 * math.pi)
                 distance = random.uniform(200, 1000)  # 200m to 1km from store
@@ -112,36 +171,46 @@ class FinalDeliverySystem:
                 partner_id += 1
         
         print(f"   ✅ Generated {len(self.partners)} delivery partners")
-        for store in self.stores:
+        print(f"   📊 Average partners per store: {len(self.partners)/len(self.stores):.1f}")
+        
+        # Show distribution for first few stores
+        for i, store in enumerate(self.stores[:5]):
             store_partners = [p for p in self.partners if p['store_id'] == store['id']]
             print(f"   📍 {store['id']}: {len(store_partners)} partners")
+        if len(self.stores) > 5:
+            print(f"   ... and {len(self.stores) - 5} more stores")
     
-    def generate_orders(self, num_orders: int = 5):
-        """Generate sample orders"""
-        print(f"📦 Generating {num_orders} orders...")
+    def generate_orders(self, num_orders: int = 6):
+        """Generate random orders across the entire New Brunswick map"""
+        print(f"📦 Generating {num_orders} random orders across New Brunswick...")
         
-        # Generate random order locations
-        all_coords = []
-        for store in self.stores:
-            all_coords.append(store['location'])
-        for partner in self.partners:
-            all_coords.append(partner['location'])
+        # Use actual store bounds to determine New Brunswick area
+        if self.stores:
+            all_x = [store['location'][0] for store in self.stores]
+            all_y = [store['location'][1] for store in self.stores]
+            
+            # Expand bounds slightly to cover more of New Brunswick
+            margin = 50000  # 50km margin
+            nb_bounds = {
+                'min_x': min(all_x) - margin,
+                'max_x': max(all_x) + margin,
+                'min_y': min(all_y) - margin,
+                'max_y': max(all_y) + margin
+            }
+        else:
+            # Fallback bounds if no stores loaded
+            nb_bounds = {
+                'min_x': 2400000, 'max_x': 2700000,
+                'min_y': 7200000, 'max_y': 7500000
+            }
         
-        if not all_coords:
-            print("   ⚠️  No locations available for order generation")
-            return
-        
-        # Find bounding box
-        min_x = min(coord[0] for coord in all_coords)
-        max_x = max(coord[0] for coord in all_coords)
-        min_y = min(coord[1] for coord in all_coords)
-        max_y = max(coord[1] for coord in all_coords)
+        print(f"   📊 Using bounds: X({nb_bounds['min_x']:.0f} to {nb_bounds['max_x']:.0f}), Y({nb_bounds['min_y']:.0f} to {nb_bounds['max_y']:.0f})")
         
         self.orders = []
         for i in range(num_orders):
-            # Generate random order location within bounding box
-            order_x = random.uniform(min_x - 2000, max_x + 2000)
-            order_y = random.uniform(min_y - 2000, max_y + 2000)
+            # Generate random order location within New Brunswick bounds
+            order_x = random.uniform(nb_bounds['min_x'], nb_bounds['max_x'])
+            order_y = random.uniform(nb_bounds['min_y'], nb_bounds['max_y'])
             
             order = {
                 'id': f"Order_{i+1}",
@@ -152,7 +221,8 @@ class FinalDeliverySystem:
             }
             self.orders.append(order)
         
-        print(f"   ✅ Generated {len(self.orders)} orders")
+        print(f"   ✅ Generated {len(self.orders)} orders across New Brunswick")
+        print(f"   📍 Order locations distributed across the province")
     
     def find_closest_store(self, order_location: Tuple[float, float]) -> str:
         """Find closest store to order location"""
@@ -268,35 +338,62 @@ class FinalDeliverySystem:
         print(f"   ✅ Processed {len(self.assignments)} orders successfully")
     
     def create_comprehensive_map(self, output_file: str = "delivery_map.png"):
-        """Create comprehensive map visualization showing all elements"""
+        """Create comprehensive map visualization showing all elements as requested"""
         print(f"🗺️  Creating comprehensive delivery map: {output_file}")
         
         # Set up the plot
-        fig, ax = plt.subplots(1, 1, figsize=(16, 12))
+        fig, ax = plt.subplots(1, 1, figsize=(20, 16))
         
-        # Plot roads if available
+        # Plot roads with blue color as requested
         if self.roads_gdf is not None:
-            self.roads_gdf.plot(ax=ax, color='lightgray', linewidth=0.5, alpha=0.7, label='Roads')
+            self.roads_gdf.plot(ax=ax, color='lightblue', linewidth=0.3, alpha=0.6, label='Roads')
         
-        # Plot stores
+        # Plot ALL 46 stores as small red dots
         store_x = [store['location'][0] for store in self.stores]
         store_y = [store['location'][1] for store in self.stores]
-        ax.scatter(store_x, store_y, c='red', s=200, marker='s', label='Stores', 
-                  edgecolors='darkred', linewidth=2, zorder=5)
+        ax.scatter(store_x, store_y, c='red', s=30, marker='o', label=f'All {len(self.stores)} Stores', 
+                  edgecolors='darkred', linewidth=0.5, zorder=5, alpha=0.8)
         
-        # Add store labels
-        for store in self.stores:
-            ax.annotate(store['id'], (store['location'][0], store['location'][1]), 
-                       xytext=(5, 5), textcoords='offset points', fontsize=10, 
-                       bbox=dict(boxstyle='round,pad=0.3', facecolor='white', alpha=0.8))
-        
-        # Plot all delivery partners
+        # Plot all delivery partners as yellow dots
         all_partner_x = [partner['location'][0] for partner in self.partners]
         all_partner_y = [partner['location'][1] for partner in self.partners]
-        ax.scatter(all_partner_x, all_partner_y, c='blue', s=100, marker='o', 
-                  label='All Partners', alpha=0.6, zorder=3)
+        ax.scatter(all_partner_x, all_partner_y, c='yellow', s=40, marker='o', 
+                  label=f'All {len(self.partners)} Partners', alpha=0.8, zorder=4, 
+                  edgecolors='orange', linewidth=0.5)
         
-        # Plot selected delivery partners (those assigned to orders)
+        # Plot orders as green triangles
+        order_x = [order['location'][0] for order in self.orders]
+        order_y = [order['location'][1] for order in self.orders]
+        ax.scatter(order_x, order_y, c='green', s=100, marker='^', 
+                  label=f'Orders ({len(self.orders)})', edgecolors='darkgreen', linewidth=2, zorder=6)
+        
+        # Add order labels
+        for order in self.orders:
+            ax.annotate(order['id'], (order['location'][0], order['location'][1]), 
+                       xytext=(8, 8), textcoords='offset points', fontsize=10, fontweight='bold',
+                       bbox=dict(boxstyle='round,pad=0.3', facecolor='white', alpha=0.9, edgecolor='green'))
+        
+        # Plot delivery routes with blue color to show roads taken
+        route_colors = ['blue', 'navy', 'darkblue', 'steelblue', 'royalblue', 'cornflowerblue']
+        for i, assignment in enumerate(self.assignments):
+            route_x = [point[0] for point in assignment.route]
+            route_y = [point[1] for point in assignment.route]
+            
+            # Use blue color for routes to show roads taken
+            route_color = route_colors[i % len(route_colors)]
+            
+            # Plot route line with thick blue line
+            ax.plot(route_x, route_y, color=route_color, linewidth=4, alpha=0.9, 
+                   label=f"Route {assignment.order_id}" if i < 6 else "", zorder=3)
+            
+            # Add arrows to show direction
+            for j in range(len(route_x) - 1):
+                dx = route_x[j+1] - route_x[j]
+                dy = route_y[j+1] - route_y[j]
+                ax.arrow(route_x[j], route_y[j], dx*0.2, dy*0.2, 
+                        head_width=100, head_length=100, fc=route_color, ec=route_color, alpha=0.9)
+        
+        # Highlight selected partners (those assigned to orders)
         selected_partners = [assignment.partner_id for assignment in self.assignments]
         selected_partner_coords = []
         for partner in self.partners:
@@ -306,52 +403,17 @@ class FinalDeliverySystem:
         if selected_partner_coords:
             sel_x = [coord[0] for coord in selected_partner_coords]
             sel_y = [coord[1] for coord in selected_partner_coords]
-            ax.scatter(sel_x, sel_y, c='green', s=150, marker='o', 
-                      label='Selected Partners', edgecolors='darkgreen', linewidth=2, zorder=4)
-        
-        # Plot orders
-        order_x = [order['location'][0] for order in self.orders]
-        order_y = [order['location'][1] for order in self.orders]
-        ax.scatter(order_x, order_y, c='orange', s=120, marker='^', 
-                  label='Orders', edgecolors='darkorange', linewidth=2, zorder=4)
-        
-        # Add order labels
-        for order in self.orders:
-            ax.annotate(order['id'], (order['location'][0], order['location'][1]), 
-                       xytext=(5, 5), textcoords='offset points', fontsize=9, 
-                       bbox=dict(boxstyle='round,pad=0.2', facecolor='yellow', alpha=0.8))
-        
-        # Plot delivery routes
-        colors = plt.cm.Set3(np.linspace(0, 1, len(self.assignments)))
-        for i, assignment in enumerate(self.assignments):
-            route_x = [point[0] for point in assignment.route]
-            route_y = [point[1] for point in assignment.route]
-            
-            # Plot route line
-            ax.plot(route_x, route_y, color=colors[i], linewidth=3, alpha=0.8, 
-                   label=f"Route {assignment.order_id}" if i < 5 else "")
-            
-            # Add arrows to show direction
-            for j in range(len(route_x) - 1):
-                dx = route_x[j+1] - route_x[j]
-                dy = route_y[j+1] - route_y[j]
-                ax.arrow(route_x[j], route_y[j], dx*0.3, dy*0.3, 
-                        head_width=50, head_length=50, fc=colors[i], ec=colors[i], alpha=0.8)
-        
-        # Add partner-store connections (show which partners belong to which stores)
-        for store in self.stores:
-            store_partners = [p for p in self.partners if p['store_id'] == store['id']]
-            for partner in store_partners:
-                ax.plot([store['location'][0], partner['location'][0]], 
-                       [store['location'][1], partner['location'][1]], 
-                       'b--', alpha=0.3, linewidth=1)
+            ax.scatter(sel_x, sel_y, c='orange', s=80, marker='o', 
+                      label=f'Selected Partners ({len(selected_partner_coords)})', 
+                      edgecolors='red', linewidth=2, zorder=7)
         
         # Customize the plot
-        ax.set_title('🚚 Final Delivery System - New Brunswick\n' + 
-                    'Stores, Partners, Orders & Routes', fontsize=16, fontweight='bold', pad=20)
-        ax.set_xlabel('X Coordinate (meters)', fontsize=12)
-        ax.set_ylabel('Y Coordinate (meters)', fontsize=12)
-        ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', fontsize=10)
+        ax.set_title('🚚 New Brunswick Delivery System - All 46 Stores\n' + 
+                    'Red Dots: Stores | Yellow Dots: Partners | Green Triangles: Orders | Blue Lines: Routes', 
+                    fontsize=18, fontweight='bold', pad=20)
+        ax.set_xlabel('X Coordinate (meters)', fontsize=14)
+        ax.set_ylabel('Y Coordinate (meters)', fontsize=14)
+        ax.legend(bbox_to_anchor=(1.02, 1), loc='upper left', fontsize=12)
         ax.grid(True, alpha=0.3)
         
         # Set equal aspect ratio
@@ -361,6 +423,7 @@ class FinalDeliverySystem:
         plt.tight_layout()
         plt.savefig(output_file, dpi=300, bbox_inches='tight')
         print(f"   ✅ Map saved as {output_file}")
+        print(f"   📍 Shows all {len(self.stores)} stores, {len(self.partners)} partners, {len(self.orders)} orders")
         
         return fig, ax
     
@@ -532,31 +595,30 @@ if __name__ == "__main__":
             routes_gdf.to_file("routes_only.gpkg", driver='GPKG')
     
     def run_complete_system(self):
-        """Run the complete delivery system"""
-        print("🚀 FINAL DELIVERY SYSTEM - NEW BRUNSWICK")
-        print("=" * 60)
+        """Run the complete delivery system with all 46 stores"""
+        print("🚀 FINAL DELIVERY SYSTEM - NEW BRUNSWICK (ALL 46 STORES)")
+        print("=" * 70)
         
-        # Step 1: Add stores (using sample locations)
-        sample_stores = [
-            (2540000, 7385000),  # Fredericton area
-            (2550000, 7370000),  # Moncton area  
-            (2530000, 7360000),  # Saint John area
-            (2560000, 7390000),  # Bathurst area
-        ]
-        store_names = ["Fredericton_Store", "Moncton_Store", "SaintJohn_Store", "Bathurst_Store"]
+        # Step 1: Load all 46 real verified stores
+        if not self.load_real_stores("nb_verified_stores.gpkg"):
+            print("❌ Failed to load stores, using fallback...")
+            # Fallback to sample stores if loading fails
+            sample_stores = [
+                (2540000, 7385000), (2550000, 7370000), (2530000, 7360000), (2560000, 7390000)
+            ]
+            store_names = ["Fredericton_Store", "Moncton_Store", "SaintJohn_Store", "Bathurst_Store"]
+            self.add_stores(sample_stores, store_names)
         
-        self.add_stores(sample_stores, store_names)
+        # Step 2: Add delivery partners (distributed across all stores)
+        self.add_delivery_partners(total_partners=100)  # ~2-3 per store for 46 stores
         
-        # Step 2: Add delivery partners (2-3 per store)
-        self.add_delivery_partners(partners_per_store=3)
+        # Step 3: Generate random orders across New Brunswick
+        self.generate_orders(num_orders=6)
         
-        # Step 3: Generate orders
-        self.generate_orders(num_orders=8)
-        
-        # Step 4: Process orders
+        # Step 4: Process orders (Order → Closest Store → Closest Partner → Customer)
         self.process_orders()
         
-        # Step 5: Create comprehensive map
+        # Step 5: Create comprehensive map with all elements
         self.create_comprehensive_map("final_delivery_map.png")
         
         # Step 6: Generate results report
@@ -567,7 +629,7 @@ if __name__ == "__main__":
         
         print("\n✅ FINAL DELIVERY SYSTEM COMPLETED!")
         print("📁 Output files created:")
-        print("   🗺️  final_delivery_map.png - Comprehensive map visualization")
+        print("   🗺️  final_delivery_map.png - Complete map with all 46 stores")
         print("   📊 results.py - Results report and analysis")
         print("   💾 final_delivery_results.gpkg - GIS data export")
         
