@@ -1,0 +1,1372 @@
+[
+  {
+    "business_status": "OPERATIONAL",
+    "geometry": {
+      "location": {
+        "lat": 45.35581759999999,
+        "lng": -68.5245309
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.35747797989272,
+          "lng": -68.52335572010728
+        },
+        "southwest": {
+          "lat": 45.35477832010728,
+          "lng": -68.52605537989271
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+    "icon_background_color": "#4B96F3",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+    "name": "Walmart",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 3000,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/100447921140366092032\">Doug Dickinson</a>"
+        ],
+        "photo_reference": "AciIO2f12-F6qR2sv7cJbOP6RZoToZFWCXs871cFnIcYjjKVQQGEa1upmDqGzwkvO08X2RajXIte1CLg1er34zpnMfm_EwhRpjTTs4PwdVqDCAuDwWMxUk4ltokzmwck86mDLE-jQi1vBjcxWUlOm19IV5wI4lBALiQKNT-RN5jMVyfTmFVl1jsX0WvcqiN8EmXEzhOE1tNOnFkuIQr3LY5HHG2nNtmj4LtA_AD7Rer9ZaJwMOUKhi0cCjcPX8CYrYQheGIyLOYCGbapa8VBm5sh8SClTk15GzHGIT4B-AK1dNqf7w7O3egygxg74gZMxKZpQNG5QY8kmxA5RodEnrChQltocuyTZ6uhL5QBvNw6Wh524bHyXhAT3EnMDNBaZ3_rDkVggwT4ttflLXmZ9T0RRjRwAC7WGGtiix2f3Ugu4Hi4ybz3gwxjo-mPme4BOfMEQ0Hd6B88rfRl0GCu7EdG1Amo6fUBfrlJkBA2e9O5-ST2stYjxlsTZjLtRr_ONdUvvqgSkWEFVF1BOP7SqEEKz4uujUevBScgI39ZEv3kAXnH8hmxWWjzUkskwKiyfda6wqL7F5QDULxW6Q",
+        "width": 4000
+      }
+    ],
+    "place_id": "ChIJZfKKq6P1r0wRq3j3tCUhoGM",
+    "plus_code": {
+      "compound_code": "9F4G+85 Lincoln, Maine",
+      "global_code": "87QH9F4G+85"
+    },
+    "price_level": 1,
+    "rating": 3.9,
+    "reference": "ChIJZfKKq6P1r0wRq3j3tCUhoGM",
+    "scope": "GOOGLE",
+    "types": [
+      "department_store",
+      "hardware_store",
+      "electronics_store",
+      "grocery_or_supermarket",
+      "furniture_store",
+      "home_goods_store",
+      "clothing_store",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "user_ratings_total": 1200,
+    "vicinity": "250 W Broadway, Lincoln"
+  },
+  {
+    "business_status": "OPERATIONAL",
+    "geometry": {
+      "location": {
+        "lat": 45.1749072,
+        "lng": -67.2789184
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.17622077989272,
+          "lng": -67.27724652010727
+        },
+        "southwest": {
+          "lat": 45.17352112010728,
+          "lng": -67.2799461798927
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+    "icon_background_color": "#4B96F3",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+    "name": "Walmart Supercenter",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 3024,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/103001111736722974759\">karthikeyan duraisamy</a>"
+        ],
+        "photo_reference": "AciIO2cyctzmeqGwp4Q3F1JKpF1bs1YbJUhCJT6vxA1Agm0WdzxLtqfwOeUT7tD_eIZQXFUGkOZfcCasxI2n3-vOmUX79BTuTRIZwmzVQ0-_KnPDGNZFjocgYayNEuZzAy6p6G69Sx_yrFGwHTTju6Nret2YG-bNsHosA4eivOB9wdio-TFKY4MCxPsYWJtjOuSBg93PQWTRA-EF5BRkbxXyHUP9Kt7n4wynldK98m7Q_cVvRbHMYP-aaUuBgJ4ZqRtvK_pLAUa2bKWe2LVviRoEeFbULmkOzEAAU3ccVS3tGAVhZbPyO9u211EQEVdEuR5PtXcOsgW6ebTOmqNtjt3W4OjyOP3_nn5JnXVCOXTUO-9ycCq7xdPhV-MAv4QCpHaL9s8VUdFsirtcXLqvko5y4wbJXTNlCsJLdGBdsvgithWXgexWPT_X1gk3qLOvMsL5nrYZ3DI626eLyh8APP0sgid-PCNhqvy7KcLa0WCzfnrXSSZWfJfYc9lR2Vb_o6DxwcRmBIRrcBWR_2slWJfpGGyzbrepWpH1UGcY8KHekzlj5a3Bjn1M5sdXxL2KApTN90MiYOabYP2E4Q",
+        "width": 4032
+      }
+    ],
+    "place_id": "ChIJ3eWKAyr_pUwRRTHcivN4IbQ",
+    "plus_code": {
+      "compound_code": "5PFC+XC Calais, Maine",
+      "global_code": "87QJ5PFC+XC"
+    },
+    "price_level": 1,
+    "rating": 4.2,
+    "reference": "ChIJ3eWKAyr_pUwRRTHcivN4IbQ",
+    "scope": "GOOGLE",
+    "types": [
+      "department_store",
+      "hardware_store",
+      "grocery_or_supermarket",
+      "electronics_store",
+      "furniture_store",
+      "bakery",
+      "home_goods_store",
+      "food",
+      "point_of_interest",
+      "clothing_store",
+      "store",
+      "establishment"
+    ],
+    "user_ratings_total": 951,
+    "vicinity": "379 South St, Calais"
+  },
+  {
+    "business_status": "OPERATIONAL",
+    "geometry": {
+      "location": {
+        "lat": 45.3080827,
+        "lng": -66.0192103
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.30928472989272,
+          "lng": -66.01821182010728
+        },
+        "southwest": {
+          "lat": 45.30658507010728,
+          "lng": -66.02091147989273
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+    "icon_background_color": "#4B96F3",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+    "name": "Walmart Supercentre",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 3840,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/106349974192297782964\">Brian Carey</a>"
+        ],
+        "photo_reference": "AciIO2eElAEBl4ffDGojIJUdHsFX-ypDXRcch7THLLe_PkXf8q7PQKd4Tky5k_-bZKG8v9mT6tkFrIlQmtVUjQAM-MJVTvcQG2wOZnZF7pFcVUL6jrJCWzGaP5njYI3GjC-0OZLM6fbbcJefRBkhhAWA4QXVjxQa6QOrXXeBep75Kr7DySw2Ki6L225jxE2dLAPTkBhlD_v4jHVj5QPXKHrt8UVhDweYndeo5OFy0Spms3qNZklPoOx_SliEgTpDUdhp8rNrhnJwYWtfGkA4uJoRU5R4HTuohoRyXvSkVD1ztdNwOTy3w4dXpd7qeor4nc_RDbIqztxPGrpAB6JNLpO9vSqIPZcRvwoxJZsnfX3m7EXiuHb-imtTq0DdgP9T-q2mvWPzhYKBf3BXm2EgAXcLBWjtZwhp68RRvvEgz2KVFdXXKAzZiwQouhoPMGWTSQLLYUy-9hNAEeE-3t2Zz1gVeAMzvPxXKiVjBGVybWyQJ91ZWdn6I1M1Wmk_W8qLTU5lVy0CS1WQWMcYFtoI8aJI-q8C2jET3f8lJ315DE6Dw-eyBBUnSaA1tpzhkxRCFQn_Fe0Rrnzs",
+        "width": 5760
+      }
+    ],
+    "place_id": "ChIJw6RjMn2zp0wRmXpoIsnN8QU",
+    "plus_code": {
+      "compound_code": "8X5J+68 Saint John, New Brunswick",
+      "global_code": "87QM8X5J+68"
+    },
+    "price_level": 1,
+    "rating": 3.9,
+    "reference": "ChIJw6RjMn2zp0wRmXpoIsnN8QU",
+    "scope": "GOOGLE",
+    "types": [
+      "department_store",
+      "supermarket",
+      "electronics_store",
+      "furniture_store",
+      "home_goods_store",
+      "clothing_store",
+      "grocery_or_supermarket",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "user_ratings_total": 2259,
+    "vicinity": "450 Westmorland Rd, Saint John"
+  },
+  {
+    "business_status": "OPERATIONAL",
+    "geometry": {
+      "location": {
+        "lat": 45.2534815,
+        "lng": -66.0923755
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.25491547989272,
+          "lng": -66.09141962010727
+        },
+        "southwest": {
+          "lat": 45.25221582010728,
+          "lng": -66.09411927989272
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+    "icon_background_color": "#4B96F3",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+    "name": "Walmart",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 2268,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/105107291375858026166\">Stephen Peter</a>"
+        ],
+        "photo_reference": "AciIO2cveWD1CO2JUYqLmfrTP37CM87gnUsQRUFfE5f4SNp1CzGrAZJuPlWlxYps23KjoOeuJ7xvWAf8yngzx-fwaz6QA4PyRHGuot6gAs3UOKj-cATL8eOCdcb4PEhn8vHOi1uzUp4-KYyHFUYa74iHllYAcHlq-ujSDQMqawCIRyVAXWIYmk1a4_LnvfOQUigdnrijxddvWH3WGuB9YlmCxnpVQlXDFTPnnXx6vj0RtCDJ0Wfi1xt6cXhFm627tcXjt5vJeebY3Oxp5zm9r-VAYC9UkIO6Rd1Wgi3ox0ZwJtEyP9XRtS6-AZo8xN2t-iR4xuiEK6SmU2m7VA0fQnwKx7X__Ofq-O1Sh1UM9tYsNOly9DCC1N9jJIUHX4Zqr68oBLoCP4Cxp6FKpBf_Jdp-QQRb6sRS1EBD6cTJ0SHXncMuLQ0EpL0KcZuYuirY9SXYPBj7-O0_pDPF3uMfYTLGuEycWYrepilygBWeH1a9TSF4Uft_8IsTNxif3_XSlZBdVQnsXWiZOg3-1oAluTLf2Qzh0UsivcWs10psIcDBWHMDGVOzljz0BtICZbIoFJw4wGMsIUSA",
+        "width": 4032
+      }
+    ],
+    "place_id": "ChIJg-Y_oSAfVUARX2P8m08veoo",
+    "plus_code": {
+      "compound_code": "7W35+92 Saint John, New Brunswick",
+      "global_code": "87QM7W35+92"
+    },
+    "price_level": 1,
+    "rating": 3.9,
+    "reference": "ChIJg-Y_oSAfVUARX2P8m08veoo",
+    "scope": "GOOGLE",
+    "types": [
+      "department_store",
+      "supermarket",
+      "electronics_store",
+      "furniture_store",
+      "home_goods_store",
+      "clothing_store",
+      "grocery_or_supermarket",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "user_ratings_total": 335,
+    "vicinity": "621 Fairville Blvd, Saint John"
+  },
+  {
+    "business_status": "OPERATIONAL",
+    "geometry": {
+      "location": {
+        "lat": 44.967508,
+        "lng": -64.92134159999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 44.96877002989272,
+          "lng": -64.92008492010727
+        },
+        "southwest": {
+          "lat": 44.96607037010727,
+          "lng": -64.92278457989272
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+    "icon_background_color": "#4B96F3",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+    "name": "Walmart Supercentre",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 4096,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/112316843386767103635\">Glen Mendonca</a>"
+        ],
+        "photo_reference": "AciIO2dG0F0Cn63y6iRgLCFeunwHtXGYDQknd78T9zJhNI9P02UDYbNIpTD3T_HenBJTseKKPfnyMTSA4HFrYtJCvvsrjSC-q_4C-bxzfNcnaXe48wtOtAFP0OKZn4fOLhptYZtAYkc7F3_uvoABCFJJqiqmzj8L5aNJvdkBSaCu-haZJvDSRaJXJWwMF-_woTlfIPuYYbLiwZnZKFR4MRq4zAtw10rnMyHzdXNEpVXSeT4rUciXa8Y_SBXfAYPmX0X7dIW2kq-Sl5cNatkte61yK4DI3HvcGrJY-X1-I7rpeMBojvqtYtjYtbMwKeiJozawxQsAxcog4-_Wwy_bHUYrBalQTi37gGrhe2UFfTTWRYsJXdsggOAXDfqTKMD8gx6MPw53QpiznQmYzxyZVYqiaxZYOxh1QjmZ84ffuK-u5DHyRqFPIaALH6wqUEw_IDpVrvVXVhC8h-bFIyp0h3TM4UxYkqMUN41kTofAsj0ltpxQ2KUpNyOThDLACRnhrgcEMOj7SNViTm8QMf2Ho3HQNKFB3hrrFBeqG2xVMAr1DOSqWPFFwVdH53osX-rE5T1fLw9K5OrH",
+        "width": 3072
+      }
+    ],
+    "place_id": "ChIJiwF5jP3uZ0sR_nb4xd-2JJQ",
+    "plus_code": {
+      "compound_code": "X39H+2F Kingston, Nova Scotia",
+      "global_code": "87PQX39H+2F"
+    },
+    "price_level": 1,
+    "rating": 3.8,
+    "reference": "ChIJiwF5jP3uZ0sR_nb4xd-2JJQ",
+    "scope": "GOOGLE",
+    "types": [
+      "department_store",
+      "supermarket",
+      "electronics_store",
+      "furniture_store",
+      "home_goods_store",
+      "clothing_store",
+      "grocery_or_supermarket",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "user_ratings_total": 576,
+    "vicinity": "1065 Central Ave, Kingston"
+  },
+  {
+    "business_status": "OPERATIONAL",
+    "geometry": {
+      "location": {
+        "lat": 45.069001,
+        "lng": -64.45303129999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.07016692989273,
+          "lng": -64.45151437010728
+        },
+        "southwest": {
+          "lat": 45.06746727010728,
+          "lng": -64.45421402989271
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+    "icon_background_color": "#4B96F3",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+    "name": "Walmart Supercentre",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 2160,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/105025683934658516571\">Greg D</a>"
+        ],
+        "photo_reference": "AciIO2dgoJi4hJrSUTqvTG04t4GHSdcFDSOGNtAL0yOk--0tmrV3Mlg1yXJdIZrLQYn7stRGkSKpT5Nl_23P-jxc9SsdyKpAesdxcuAXf2hmugdcZRO9_uSD7uwK90e8XdNn5zLiNu6GGwpiLqkRrzoVnLZj3Hw_XBgDVseziVWUzheTFf_-6lSDpZZMhf_EB_dgnOC6ioE8nUbtWNJ0LxAJxiGdTgpnKHOtHMT0Scr3ugUEzvwUkhZvVLRDtssoCmG3BrLkvhQf5ruuPKdGqmmR4JwLIiDgsLbR8WeD6QOVtaDqSNNmOgjw0urKw5yQHD6lLOTKCkds2B-XcfNtyt8oICrJTdWGJVGGIdW12QSmyYG6VPEcXl-fQ0edI4g4HRFEGZOJlqzGy7_tVuiMMJLJf7pfbakPvdkrXQIF3A9u7zBgEaGjV10EJKUXA048UNZoJ8MpoqMneJkxHLlEdhMo2g0N0NG6uxPhv-TV4C5pYegqymghgr8MvjDH5WBo8Eb9tuVl2WXo3vrHfAImRImCdJZZdz_GKJMcAS3A5uK8bNb5lsnQSaNgBMX_NK2JxSF8lFEfnCAw",
+        "width": 2880
+      }
+    ],
+    "place_id": "ChIJn36St6hWWEsRRguTlnjECXY",
+    "plus_code": {
+      "compound_code": "3G9W+JQ New Minas, Nova Scotia",
+      "global_code": "87QQ3G9W+JQ"
+    },
+    "price_level": 1,
+    "rating": 4,
+    "reference": "ChIJn36St6hWWEsRRguTlnjECXY",
+    "scope": "GOOGLE",
+    "types": [
+      "department_store",
+      "electronics_store",
+      "supermarket",
+      "grocery_or_supermarket",
+      "furniture_store",
+      "home_goods_store",
+      "clothing_store",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "user_ratings_total": 2150,
+    "vicinity": "9097 Commercial St, New Minas"
+  },
+  {
+    "business_status": "OPERATIONAL",
+    "geometry": {
+      "location": {
+        "lat": 45.9341879,
+        "lng": -66.6642634
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.93544317989272,
+          "lng": -66.66260377010727
+        },
+        "southwest": {
+          "lat": 45.93274352010727,
+          "lng": -66.66530342989272
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+    "icon_background_color": "#4B96F3",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+    "name": "Walmart Supercentre",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 4032,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/117207724645320734649\">Cassandra Lindsay</a>"
+        ],
+        "photo_reference": "AciIO2c5VyJPGGoiNnctzNh816N-OWOcXNKECwWAixnlKfyO9DFdggV_EHPMD4HEoSloPAKhXvvKETj_wHX1bQnalM3YzCMFgfN5q5SLhye4X6Mq9kenBLukthFuPb3OpbFckjR4I8GjxBhjDyxkIJefkG9vJ42jHy12pR7qFxrkh7xYteDSOCiLcQCusg-XIFswR3Z_gX4vFWRsRJ55xXXfZFqrEY_9UHTlJwYmScc3U408LvyBcVIBw5GuHYovRghpmRpXian1RBpRntUfaxxi7--hpYHmO8tEgXp-ZWh0hLtEmogTv_8DcrwmtefT2WVtPpEfQG4D-WRHIkqOrc5ipD3LMvbjQIiBxR6KDUaGuW4jnVkF4SJQnyLhESvYkWA14sW-hqznNcKydEWbbe1irv6llV8Y7NjifMWZlMpXMdOEA9QNdY2w1ggDB11x933G3Rf9fjUooys_nPVfM8Vj5JV6IJp8IkFt2ApXyfOZ2WNRF9CQs7aVcvK5HENJeL2jYwXppRlyvrflamC_FISh7wsh1vnk5e9CezG5HxA2WI9aOZgOOjrj4OVL-IP8IFISeZREQyb67LcjxQ",
+        "width": 3024
+      }
+    ],
+    "place_id": "ChIJtzMluMoSK4gRUjJ6kFCrC7c",
+    "plus_code": {
+      "compound_code": "W8MP+M7 Fredericton, New Brunswick",
+      "global_code": "87QMW8MP+M7"
+    },
+    "price_level": 1,
+    "rating": 3.8,
+    "reference": "ChIJtzMluMoSK4gRUjJ6kFCrC7c",
+    "scope": "GOOGLE",
+    "types": [
+      "department_store",
+      "electronics_store",
+      "supermarket",
+      "grocery_or_supermarket",
+      "furniture_store",
+      "home_goods_store",
+      "clothing_store",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "user_ratings_total": 1212,
+    "vicinity": "1399 Regent St, Fredericton"
+  },
+  {
+    "business_status": "OPERATIONAL",
+    "geometry": {
+      "location": {
+        "lat": 45.725971,
+        "lng": -65.5321773
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.72752732989272,
+          "lng": -65.53101197010727
+        },
+        "southwest": {
+          "lat": 45.72482767010727,
+          "lng": -65.53371162989271
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+    "icon_background_color": "#4B96F3",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+    "name": "Walmart",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 1536,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/117534506850508434501\">Sandeep Singh Goraya</a>"
+        ],
+        "photo_reference": "AciIO2fZslFf3kq6YTSQ7fGzBZ-oYE6N12NR2p06ERQCYHLTwwYUPYBnT67qb10aEbLzC9SVpEsVqc7zvZLytPuFHfcpAKqOcAk75ZwnhKswcAX5HDWndHOwPvuNgMQeNsr308UNG0hA9yH-W257sQx3X-_D8Yw1pY-me95slGBYtyEVWF9ZXPRwjTWG6KIENMbKb4okwhNtAlmFZ-8zK8oSP4X3dwqXeiRj0_1rXBysSoV3ntHmSVh3B9Bc1XrmWcNeWPqBaSpO_kjlyqUSjxAKixW9IE8owehZHGYhswjmEpN7s5WX2WP5L7kibVnAgRATZ3xA7d2jK1kvYsnXuuy4InqD1Lmfp0r6ddPoakpuUUVdEJB4qPhFyTb-mMm47c4HPTAt9VOf87elFH5EREHZGqOGTMvbO9k4tWI0tVMAftloEzBzbFuBlgEU9PK3RBs_cgY9Y91EPpGbw8IOaos0MhT3ubvk3qZ3q790dUrbN9JIWOZVK-bz5H15-6UX8jvieUKnOjjXMZ9RA2rXBUlLcAdXdxaFIIbGS6rlfu9o7mDpqd5DSKOCh_qHnaiZa9WfC-gc25Zi",
+        "width": 2048
+      }
+    ],
+    "place_id": "ChIJPZ-4_eeGKk0RFMIccK_l6kg",
+    "plus_code": {
+      "compound_code": "PFG9+94 Sussex, New Brunswick",
+      "global_code": "87QPPFG9+94"
+    },
+    "price_level": 1,
+    "rating": 4,
+    "reference": "ChIJPZ-4_eeGKk0RFMIccK_l6kg",
+    "scope": "GOOGLE",
+    "types": [
+      "department_store",
+      "supermarket",
+      "grocery_or_supermarket",
+      "electronics_store",
+      "furniture_store",
+      "home_goods_store",
+      "food",
+      "point_of_interest",
+      "clothing_store",
+      "store",
+      "establishment"
+    ],
+    "user_ratings_total": 809,
+    "vicinity": "80 Main St, Sussex"
+  },
+  {
+    "business_status": "OPERATIONAL",
+    "geometry": {
+      "location": {
+        "lat": 45.81653559999999,
+        "lng": -64.1988976
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.81764172989272,
+          "lng": -64.19781432010727
+        },
+        "southwest": {
+          "lat": 45.81494207010727,
+          "lng": -64.2005139798927
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+    "icon_background_color": "#4B96F3",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+    "name": "Walmart Supercentre",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 1080,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/115952463648966310703\">Artur N</a>"
+        ],
+        "photo_reference": "AciIO2ecFqTUOpvmP5CcCRKWqADAXml-vRIIlczpyqHZfm3_NMsDHWvfOhXZcy17M5PKyMelIWArhOLVgQZ98yERazX6ErkImYtUYyCb9qEJvIHlpgZ2w11XneITBK33EibB4CNoFcOcF1MUqS7wEZNIQ4i6Fp4AiCBWXlt7Ku7Gxt9URtJRrWIXjC26gnyc0iWbGr2pEjSy4BAbQgXtNL-LKZko6qSysdqF7onzAJHgv6TAO8iH1wvOBqznLPitfS-oWmd5HNFf8TidL0KkhDd5O_BJeZX_rE4lqhF1O-67RCW3-P8fr3F5Or8CUyo2QhkxtGRZDoycbc8Umm4mSoxrUkXVHc02ZtGFpV6bnMP_64q3KTYsWLTUK6bZ594rLA4Sgv25KCOxzZmw5-yKNy-qMGGkoy-tsNl8AdP80j1WHZR9RsVVJUoWf1S8CBEsED1R9ljgLRXFefjTnmmOsdveOaA_kOEeQghx3NlnL9IG039KZ09B4SqI0S3MfpSPE9NPIkEXM4xHRzCIJtS4pNS4ihpHFCHkQbvydYa_jaQL_n8ErTDqQ0wYMCoaAEhnwmV9MnRBd6xx",
+        "width": 1920
+      }
+    ],
+    "place_id": "ChIJAAAAADwsK4gRmwZMkyp3M5o",
+    "plus_code": {
+      "compound_code": "RR82+JC Amherst, Nova Scotia",
+      "global_code": "87QQRR82+JC"
+    },
+    "price_level": 1,
+    "rating": 3.9,
+    "reference": "ChIJAAAAADwsK4gRmwZMkyp3M5o",
+    "scope": "GOOGLE",
+    "types": [
+      "department_store",
+      "supermarket",
+      "grocery_or_supermarket",
+      "electronics_store",
+      "furniture_store",
+      "home_goods_store",
+      "food",
+      "point_of_interest",
+      "clothing_store",
+      "store",
+      "establishment"
+    ],
+    "user_ratings_total": 2113,
+    "vicinity": "46 Robert Angus Dr, Amherst"
+  },
+  {
+    "business_status": "OPERATIONAL",
+    "geometry": {
+      "location": {
+        "lat": 46.1432075,
+        "lng": -67.842293
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.14408459999999,
+          "lng": -67.8411346
+        },
+        "southwest": {
+          "lat": 46.1405762,
+          "lng": -67.84427260000001
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+    "icon_background_color": "#4B96F3",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+    "name": "Walmart",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 3024,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/102471075781775267740\">Sherri Barham</a>"
+        ],
+        "photo_reference": "AciIO2f12QcsLQ_ktpXyBZGcqQs8g5ldNHAqTR6wtF_GGmFsM3wD4cNBvju-WOMJC6hxqiYX8OBGY8qS594vSYR08pfz1XHhePfWO-JMiuvnQtpTnh_uwMNmVt_RJLVVtDg9igdH4i9bOLUMDRSTW1PJOyUGHQ-Y_BCc_Zax_C-bUCfjwEccTV5V5dZGqLuD8FHxRigRh09zCYmUyO9kdjcxoWwLZLTD5hGKDoLizb6pqNra99NkrnyPOywhpeimrKl5X1InEMGeCD0baMa_6KZ_Z_zJYQSL4rXL7wl8jF_RPYQSzs6eSe0XuFYJlQYgxrbJxoiHVCarJ6iWSmcc6vzRONxmwp20xyQg7sbJ-YKoN7ILv2D483bPtomSLk6UWQMrR4Bb1I09EVqgBm-rw6TUXMTuySQDMbcL9a62KrtfgUQyaPbEkxlMWa2ecgdhv23aU2xmnw8WUkoWqSJFMZXiI3hjxxs79n2g7rTMI5zDfV7n5b6iBKTEUYCdTdAoZHO4GhDhgToYxv3ua2W1e2GNVIdHqU_cU3b7TolYj-3ZzeIi5jG4YjRWuKhI8npRcOYVJ6kn2OS5ToHE7Q",
+        "width": 4032
+      }
+    ],
+    "place_id": "ChIJJzx9oJPBpEwRcAuPwSWYvn8",
+    "plus_code": {
+      "compound_code": "45V5+73 Houlton, Maine, USA",
+      "global_code": "87RJ45V5+73"
+    },
+    "price_level": 1,
+    "rating": 4.1,
+    "reference": "ChIJJzx9oJPBpEwRcAuPwSWYvn8",
+    "scope": "GOOGLE",
+    "types": [
+      "department_store",
+      "hardware_store",
+      "electronics_store",
+      "grocery_or_supermarket",
+      "furniture_store",
+      "home_goods_store",
+      "clothing_store",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "user_ratings_total": 1187,
+    "vicinity": "17 Ludlow Rd, Houlton"
+  },
+  {
+    "business_status": "OPERATIONAL",
+    "geometry": {
+      "location": {
+        "lat": 46.1750824,
+        "lng": -67.6041304
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.17625677989272,
+          "lng": -67.60338477010728
+        },
+        "southwest": {
+          "lat": 46.17355712010728,
+          "lng": -67.60608442989273
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+    "icon_background_color": "#4B96F3",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+    "name": "Walmart",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 3024,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/107991937910037505106\">Dan Pfirman</a>"
+        ],
+        "photo_reference": "AciIO2cmHq9hXsWyz_PCmy5d6dW14rq27xXha6tc8vqGue7Bs3FOCfFq0R6q89MatiNksG-_LwyqIehQZTWTVji_FNx45Em9HNp91yYxSwftwkN12WIAJGI-v62YKX_C337uqZeE9ey87P3Ek3aQKjkp80aI8IFeHzSbcHvj5BpX4TPbmMOl2NnJfdIwD9tZp8FnUjENyifoyqSPh_svAxbVKOaXKIN12J5AsRDrPXma2Y85MyTW6SMFqSzwUCbTa8wsc1AhOzZVbtI7yjT4itkviD-j0mE1HySIcxiXcib80-rhf1sJqzNMkx9z-UXTInN8sz1KsoJMvKl-J9L9r4q_4aOYR7wzofFljET7lrqOPWUoBT3m4Ka2m0xLIX6BGIwLAL_TSeJWcyTIViixk3wTrItpY5q9E64hD7-tUbyI0h5M8a7GUQBVF1Wj5aGOjWYQhnbJYDeRiyYSCAgMogHxh3TG22StP_NV_OiwF6PnIIZLkYzdsl25DxJlFCFZOMFyl6Sf3cDkqj0WdTjCMH0cqfe5yoDtssygN5XiJ9w6XARRw7-_L8fWF8XOkZY3puAXYlFveLhE",
+        "width": 4032
+      }
+    ],
+    "place_id": "ChIJAAAAAHyRuEwR_77SBPKO4wE",
+    "plus_code": {
+      "compound_code": "59GW+28 Woodstock, New Brunswick",
+      "global_code": "87RJ59GW+28"
+    },
+    "price_level": 1,
+    "rating": 4,
+    "reference": "ChIJAAAAAHyRuEwR_77SBPKO4wE",
+    "scope": "GOOGLE",
+    "types": [
+      "department_store",
+      "electronics_store",
+      "supermarket",
+      "grocery_or_supermarket",
+      "furniture_store",
+      "home_goods_store",
+      "clothing_store",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "user_ratings_total": 1462,
+    "vicinity": "430 Connell St, Woodstock"
+  },
+  {
+    "business_status": "OPERATIONAL",
+    "geometry": {
+      "location": {
+        "lat": 45.9889448,
+        "lng": -66.626317
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.99001077989272,
+          "lng": -66.62503372010728
+        },
+        "southwest": {
+          "lat": 45.98731112010728,
+          "lng": -66.62773337989272
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+    "icon_background_color": "#4B96F3",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+    "name": "Walmart Supercentre",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 1080,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/105854219731307501113\">Mallory Bulmer</a>"
+        ],
+        "photo_reference": "AciIO2cmZGVZ1A9iXo_40uuct8Y5cIm_cPfjwCq7T_01iIt8S3hvajKyqD0rm5NZzDrFwZaDL5JmdZfdeKWCeS71WdgPiJcGIiiyIS1NdFazvuhPdq86TjMdx-AY6f3iFqay9T6jdIEXtw-CjQ8eXYsgqZHvfTmU0hd08SnzkdLXo7HZyy7BTN45LqZ28MUK-dK4KDxyoL5XC_LtLv3KocA4AfH7N20kfpymTP7ymD-kScAkCHRP7RI8LQ8MQ38wuc_aA9eeRULx9flOCfPQGsuaFaWFk7jYrlQw-v40eqrQ5sTjMCXnPRALq3mGfv1Tit5GNUkgUhdScXHf3s4OKM_5Ge7y5SJWvfeffUNGLzjsmkEl5XIgUKIm-szvidPwxsnDJ42ik7URzVwz8bBMGzYj8KjFQ023Rs7Co_HRU7QezVJo_kXQb9LwS1TbYUWpowe9aXWe96jNiqYcCZaCBkyW4Sq3E_R7s3V1vQUPzQderLTLBWHxbpph6ugJvM56odRpkysdbcAjcL7KUAGtV8YOWkY21icBjdRjZlIinKOHWJ5VDgigE17sbYRlEbMvu94MiKCMkdkkYa2Upg",
+        "width": 1920
+      }
+    ],
+    "place_id": "ChIJua3jyeYYpEwR0JV5-7zsGOs",
+    "plus_code": {
+      "compound_code": "X9QF+HF Fredericton, New Brunswick",
+      "global_code": "87QMX9QF+HF"
+    },
+    "price_level": 1,
+    "rating": 3.9,
+    "reference": "ChIJua3jyeYYpEwR0JV5-7zsGOs",
+    "scope": "GOOGLE",
+    "types": [
+      "department_store",
+      "supermarket",
+      "grocery_or_supermarket",
+      "electronics_store",
+      "furniture_store",
+      "home_goods_store",
+      "food",
+      "point_of_interest",
+      "clothing_store",
+      "store",
+      "establishment"
+    ],
+    "user_ratings_total": 1371,
+    "vicinity": "125 Two Nations Crossing, Fredericton"
+  },
+  {
+    "business_status": "OPERATIONAL",
+    "geometry": {
+      "location": {
+        "lat": 46.1148778,
+        "lng": -64.8297632
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.11627282989272,
+          "lng": -64.82798267010727
+        },
+        "southwest": {
+          "lat": 46.11357317010728,
+          "lng": -64.83068232989271
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+    "icon_background_color": "#4B96F3",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+    "name": "Walmart Supercentre",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 1080,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/111113676979522505231\">Chris</a>"
+        ],
+        "photo_reference": "AciIO2e2lWWfKCviTGju6LqaJsDzI1oaG1SE3vU5q5MTsHKg09siN89SO5qwFCnY8fKZciLE6dqmSoyQvy4tNocLsG0_OpFEWgiRaxGjUyeUbJbC2Qqca2aLjBLSv3YLE4h4wxDWfnKKHOO_6K5Bqk0SHcIxiHyWQi35e6XQt1Z71m-yok9XgG65wcPz1WN1rWmZ2clLV-P8vXc8z0WdKNknG7F6XuEeOzs6WoI2ycMCQp0CZ7Hk5rscKw3E6TZgYvA0Ubw7rThZzGaAOhOm-OGNDujIOd_Z4_VaCcb68QICth9rPCCESg6tCfYwNIRUw0sVwE88--3A3MI5GALYwHhdCHY4KNwnpiis1vAxt-dO8VabtjSKsyMBDmIDp9BjALwTQEaMGO-JjCvkboU_xPdU3RUiLl3OeGeWt33X36_4yp7FNaNqDopNJlma-jFQjWC27ZyhQv-GACwkE2TURNrqS6j4GF4_rIG0UEGHREDP9zG2XhRnh3zKJumMyg6jlFeTjYfea9G-SPxI6F5OK18hzpkx_CeuxGQ8Y7ufLISbjRxBrk17y6Wm4OYI8zIJHHPSQyC-qw",
+        "width": 1920
+      }
+    ],
+    "place_id": "ChIJY9bFKq24oEwRq4qc3_MX24A",
+    "plus_code": {
+      "compound_code": "457C+X3 Moncton, New Brunswick",
+      "global_code": "87RQ457C+X3"
+    },
+    "price_level": 1,
+    "rating": 4,
+    "reference": "ChIJY9bFKq24oEwRq4qc3_MX24A",
+    "scope": "GOOGLE",
+    "types": [
+      "department_store",
+      "electronics_store",
+      "supermarket",
+      "grocery_or_supermarket",
+      "furniture_store",
+      "home_goods_store",
+      "clothing_store",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "user_ratings_total": 2676,
+    "vicinity": "25 Plaza Blvd, Moncton"
+  },
+  {
+    "business_status": "OPERATIONAL",
+    "geometry": {
+      "location": {
+        "lat": 46.0970382,
+        "lng": -64.7608403
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.09806447989273,
+          "lng": -64.75970672010727
+        },
+        "southwest": {
+          "lat": 46.09536482010728,
+          "lng": -64.76240637989272
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+    "icon_background_color": "#4B96F3",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+    "name": "Walmart Supercentre",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 3024,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/102251706085878833123\">Adam Deutsch</a>"
+        ],
+        "photo_reference": "AciIO2dFiHpg7A0UH0KtQ_Cp1xZE9stRL8HmZt_5RbZsU7X884z0rmtZ-bamEviSdZaCv7QQivdNsQfZFvVjTtXThWq7nneVlM9-faDRBEZg_pmW45AR2sZg2YpmBLpAs-lX77pxraioEkg5VO-3SVJPoFUppyeXn9hai4h_8JQXbHOgdNub1CWe74T9qqHa36Hq9LZWrfxGXKhdFVceQKuCBgDACjAUbNcZLtN78eu0XJTYf_Mi9K7kiwWgnJmfvgAlD1-KxT3TKRqO-aIOQ64R9WM12AtooIo_CNXoCZ7LLEwobxWUA1tNfd32UpBKV2UMdjEz0WR44HNio4kjPDLZ4sFayvYxey6znp4C8EQ3E1x-n2txWx2l77zvHcnnufqYs12CHYB8PITKTBFhU1pcBgIBvOGVTt5Zxjpj-63S7fUVmknZgfB1ywkVPuzbLn2RyzvHjzaGWww9oWQ9qldY7On5y-1ebePxAH69PWyefmn63-0kMawy28mJQkWNpa7U4GedHvZW-3tev_-U-nckUvKbz3xEJovJIwfLBbxHRi9sl1YaXxTnSKLTFKxF8nl697jk7Xn3",
+        "width": 4032
+      }
+    ],
+    "place_id": "ChIJs8dR10q5oEwRTbyOMeJx7k0",
+    "plus_code": {
+      "compound_code": "36WQ+RM Dieppe, New Brunswick",
+      "global_code": "87RQ36WQ+RM"
+    },
+    "price_level": 1,
+    "rating": 3.9,
+    "reference": "ChIJs8dR10q5oEwRTbyOMeJx7k0",
+    "scope": "GOOGLE",
+    "types": [
+      "department_store",
+      "electronics_store",
+      "supermarket",
+      "grocery_or_supermarket",
+      "furniture_store",
+      "home_goods_store",
+      "clothing_store",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "user_ratings_total": 2003,
+    "vicinity": "477 Paul St, Dieppe"
+  },
+  {
+    "business_status": "OPERATIONAL",
+    "geometry": {
+      "location": {
+        "lat": 46.4179326,
+        "lng": -63.7780756
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.41928757989272,
+          "lng": -63.77677812010727
+        },
+        "southwest": {
+          "lat": 46.41658792010728,
+          "lng": -63.77947777989272
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+    "icon_background_color": "#4B96F3",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+    "name": "Walmart Supercentre",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 2160,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/118404691288073891661\">Yehya Risha</a>"
+        ],
+        "photo_reference": "AciIO2eoDzpkorfFOZ2mXsZGeO09Ifmou2n3PIvqJYE0bPf71Ly00Qa01HwC_648c1hyraEOL3Ep7G_tyEbeSJ7aDxdL2jVN3-9o4gUY4U8WyW2-Wj55awzLZS7kHqCeUo3nKENDys4ndvCXq0F0jOrofAeh14pfw9GAzq5saMqg_CmMZuaS7MTQSPzh-1Fnno3NGcTpiTzKHtDJC_rKHrn7E06NJHNHC6_brEAG1wEoWVTOGwwKnjYW9sd-mxBDOgnhKOcYo7GO8BbQYAvgdGKl-rP0mwvUopCI-JZKM5CQrOM2Zh3c8yvrmxMDutdxO8H9odzFjtiEmCzL_JlOnQJIkB17bfg85Mq5J61qwM8ctaKuONRToSJKYklQV0aGM3-NIxN4khgw-8HB2JjmW_3qvVweVkHy77AkFQjlPolPVhfajhZBvghRKl9Z0ul8QS1KG_zJZv4490hJ-qDxddxEYYKdxs0SkT9DziwlOCv9tPIwucKmZU-wzV8jltUSZBiak0uu1M_THTg5MfcXCgL4FBd-_noSXmBxcrkbF5fJSTUMDmfwtcWiTz3b07CwK5O-4bqGgS2l",
+        "width": 2160
+      }
+    ],
+    "place_id": "ChIJv1BLytzaKk0RXPg4SAjyO6M",
+    "plus_code": {
+      "compound_code": "C69C+5Q Summerside, Prince Edward Island",
+      "global_code": "87RRC69C+5Q"
+    },
+    "price_level": 1,
+    "rating": 3.8,
+    "reference": "ChIJv1BLytzaKk0RXPg4SAjyO6M",
+    "scope": "GOOGLE",
+    "types": [
+      "department_store",
+      "supermarket",
+      "furniture_store",
+      "home_goods_store",
+      "grocery_or_supermarket",
+      "electronics_store",
+      "clothing_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "user_ratings_total": 1067,
+    "vicinity": "511 Granville St, Summerside"
+  },
+  {
+    "business_status": "OPERATIONAL",
+    "geometry": {
+      "location": {
+        "lat": 46.69738659999999,
+        "lng": -68.0144755
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.69847882989272,
+          "lng": -68.01136914999998
+        },
+        "southwest": {
+          "lat": 46.69577917010728,
+          "lng": -68.01551095
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+    "icon_background_color": "#4B96F3",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+    "name": "Walmart Supercenter",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 2448,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/107628871335461468996\">Tim Golden</a>"
+        ],
+        "photo_reference": "AciIO2fd4LXwIKAiaJhljvm-_I_YPumEguIoX7RFN0F6BrbKLrtKpN3xVYYS5g2wBjK7yYvwxP869RqH0YvCGDVscazMEAYmMdPjvuUE_2MMXtvuDK1IprWzGHgBqkWPvUY5xGLuoCxSFVxqvBkQ5nYNQUKWtTXZQ1NZmugkdP-RanwqsESAVt73OgkyexmqZcz12bt78rcMizsbfHyJjUP12EKTtpXcm78XWX858FkOGj6DawlWSuOTiTe7nEaTN_ieyUw-y-wCtWfvSXS0sM2_ljRHA9dhnLYRANsmM5SqJ9TFQ2TK12Ic82QXhmH9P_zGcGb73Ex4gxOR3RdpenxbfyGaNulmZ7RN9gMTP5aufSJgfJV1lld-XrOBIrtmLKcm1XiDeIX8YsdaKENWavbNXr0B1FeyiqY4ROAypAnXpqrd98tXrjcjRipQFMafop5Ujar7WaVWEMTSpVyWVfu3Z8yFgiicFw7C4PZXLQiLobm8Bznv-Y6HuU6ca8NbBo9iOH7iKRERcHPFc3VHNFdhDEJitAelwC4U1Zab0vYwgZLJSCMfPeLnnGPN1SJquHw5OPy_274d",
+        "width": 3264
+      }
+    ],
+    "place_id": "ChIJIb9o50-uvEwRWbCEvzcR4zc",
+    "plus_code": {
+      "compound_code": "MXWP+X6 Presque Isle, Maine",
+      "global_code": "87RHMXWP+X6"
+    },
+    "price_level": 1,
+    "rating": 4.1,
+    "reference": "ChIJIb9o50-uvEwRWbCEvzcR4zc",
+    "scope": "GOOGLE",
+    "types": [
+      "department_store",
+      "hardware_store",
+      "electronics_store",
+      "bakery",
+      "furniture_store",
+      "home_goods_store",
+      "clothing_store",
+      "grocery_or_supermarket",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "user_ratings_total": 1880,
+    "vicinity": "781 Main St, Presque Isle"
+  },
+  {
+    "business_status": "OPERATIONAL",
+    "geometry": {
+      "location": {
+        "lat": 47.3953153,
+        "lng": -68.34141509999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.39657237989272,
+          "lng": -68.34032437010727
+        },
+        "southwest": {
+          "lat": 47.39387272010728,
+          "lng": -68.3430240298927
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+    "icon_background_color": "#4B96F3",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+    "name": "Walmart Supercentre",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 2988,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/110093268084659653953\">jin hee lee</a>"
+        ],
+        "photo_reference": "AciIO2f8FTUSYCC8klYNV-0zIuyrZsZgerZYTulkLJ7lAdIYsIUJRZTVDKmJD65bPCv_X4JYlRbLSG6Va_YnsD9zM3T-KvPmnKAcgWQX4A6bk2YPWjS5VFzgVL95MYzI2brDAdepP-Dq4HgKxvfiufKssTH6QE3liQUYSRnrSDKcESlPTRXbfVW8oe-AcYwWV0yA8mhOR50YE2kBc0GDyyU6OdlcfzAlVeFmjlHRqwHYDzWm9I4lDMOBOqYKFl1NUkP1b_ln5HZtZVlrRJwjD9QZok1QeqTgSqzcsG0Oi_MqBMQPPnPdxQQASmOssNvOxAlwyUbwNXHYGkat2sb72r94Q2tAY2g3pwOYh9WzxffLwmXyCrF_80o-wczzUu1DuifVJEkVrIbxE00apKnZ2mxBnsfbEIPDkzrRGd0ADrcIosrKCpwJg_7ZPxeOYs72jm3SrHXVk8hkmzD39N82p_V3_qpUcduGMAH-bK3dwJo7Bx5ykObDzUq_edpzXyQpIQRVBQ1gY6v6YOAP5xSpRr8zzJucxqcM3Z2j4-x4sg-ufOPibYWmu7-gcoC3PyfW_iT_sK_pAoOchTzHBA",
+        "width": 5312
+      }
+    ],
+    "place_id": "ChIJhfXyFhCpvUwRWI-rlzmxEuI",
+    "plus_code": {
+      "compound_code": "9MW5+4C Edmundston, New Brunswick",
+      "global_code": "87VH9MW5+4C"
+    },
+    "price_level": 1,
+    "rating": 4,
+    "reference": "ChIJhfXyFhCpvUwRWI-rlzmxEuI",
+    "scope": "GOOGLE",
+    "types": [
+      "department_store",
+      "supermarket",
+      "electronics_store",
+      "furniture_store",
+      "home_goods_store",
+      "clothing_store",
+      "grocery_or_supermarket",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "user_ratings_total": 994,
+    "vicinity": "805 Rue Victoria, Edmundston"
+  },
+  {
+    "business_status": "OPERATIONAL",
+    "geometry": {
+      "location": {
+        "lat": 47.060188,
+        "lng": -67.7525887
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.06088907989272,
+          "lng": -67.75191112010727
+        },
+        "southwest": {
+          "lat": 47.05818942010728,
+          "lng": -67.75461077989272
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+    "icon_background_color": "#4B96F3",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+    "name": "Walmart",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 4032,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/117981681308003547981\">Yasser Almshhoud</a>"
+        ],
+        "photo_reference": "AciIO2eV0vRVRzbLOxFTNglbP3Kaec8j2Tvq1rvunEIFb4iyvHjR6Zi7AuscBWPGd_jgcReF1ZojJFqG6upSzYvEnsHKgY71t1px84feKAtNH4tnCIGBbHqxZBRI2YWpT43NFAA6EUo78e4D48MiIfJWIHk1f0otPPi3Cy5pC-JgZ24MXmtCnIdErblzkDlzQYxwx4iJka7UenuwewxKmb3pj_KAhwy2fYlsl0DjGLo039VZ3IR42D0gOAOdQKWkaP5aUwMxQGfTco4IVqi797hZd3Qunjve5LfnEEULR4V1qfxT0OyupbNwsIBn5340dADnpumHFFE580VB5tLUJKc1yTVz-g9xe_tOL1ak3Exvn_eBnS6FwPwmES6I4EPEf9Kc_U4M3i18zwyogwa9X783PMd6AJWHIvpkSU_1-2p5tIvntiWC0evsTBXrwARP7vZNhaq3FP6dIAPrMVHlxJqUNhZkEMJb6u3DaUuX7x5nW9uhsgj2A-_WGvXS8PX0xpdhlfB6vG7mnPDA3ysy7qVyRucc2Mi_7jzBnbOJkidORfTuEsqye-3-wdbOYlc6SI8NNOKYtOb8",
+        "width": 3024
+      }
+    ],
+    "place_id": "ChIJbXU5Hw5FXEsRbyqQpslze2k",
+    "plus_code": {
+      "compound_code": "366W+3X Grand Falls, New Brunswick",
+      "global_code": "87VJ366W+3X"
+    },
+    "price_level": 1,
+    "rating": 3.9,
+    "reference": "ChIJbXU5Hw5FXEsRbyqQpslze2k",
+    "scope": "GOOGLE",
+    "types": [
+      "department_store",
+      "supermarket",
+      "electronics_store",
+      "furniture_store",
+      "home_goods_store",
+      "clothing_store",
+      "grocery_or_supermarket",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "user_ratings_total": 443,
+    "vicinity": "494 Chem. Madawaska, Grand-Sault"
+  },
+  {
+    "business_status": "OPERATIONAL",
+    "geometry": {
+      "location": {
+        "lat": 47.0385949,
+        "lng": -65.4923553
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.03978967989272,
+          "lng": -65.49064937010728
+        },
+        "southwest": {
+          "lat": 47.03709002010728,
+          "lng": -65.49334902989271
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+    "icon_background_color": "#4B96F3",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+    "name": "Walmart Supercentre",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 1080,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/105027242220282868690\">Jaime Grasby</a>"
+        ],
+        "photo_reference": "AciIO2f6KvCMi9A7g-1z_F9HznR7COv-3IPO_fWiZG3ewrVtvxkgEkClJnoNK53vTFrz92_jBvh98JB6mhdCLIY2D_O6v276JogYVhxI_C-oeNgR-EN9c7bemK4uUX-ljb-SQE3OqinmyNp4arVUcPrf-ZIA3vEqyXUiHR3eX4ErRiagjW3sxU3tAOat7IP5PRPlNhHDi19FKjtQHeCrNVVor_ra12nDfkGjfzF_4j_KSd250_XkuqwGyRlYDbum3T45KkKw9cn4A-mo_2xFXs2k-Tv1K_5N_7HwZ-0c71Rcqj2HhoazIwVIReRSJqOzW73cTXG6NPe-N5k5KAsHqR9lSup-hstHhDXCtX9Ek0FHWC40aYw0qo6Kq9w1-WqiVjoCony_MsfSYRKsz5BEmUNbsd2nCT0eWANPIOB499w7li6vq9ezBmXNQd66YV_zMFEHeM3IHz6K4M8C-bmDKHlFEi-f7z96uVS-pjOGnZW9eBlxRl0TZ8uGfoFN1DO7y8XmEJhCx0CaAupxUs__nHQpSfm1qrCrdnk6npsS0tpsBHIyuP_WE-eo2wWztefuYcGhs_65bvuQ",
+        "width": 1920
+      }
+    ],
+    "place_id": "ChIJj0PQnnoIvlIRp7pEYsSLi_s",
+    "plus_code": {
+      "compound_code": "2GQ5+C3 Miramichi, New Brunswick",
+      "global_code": "87VP2GQ5+C3"
+    },
+    "price_level": 1,
+    "rating": 3.9,
+    "reference": "ChIJj0PQnnoIvlIRp7pEYsSLi_s",
+    "scope": "GOOGLE",
+    "types": [
+      "department_store",
+      "supermarket",
+      "electronics_store",
+      "furniture_store",
+      "home_goods_store",
+      "clothing_store",
+      "grocery_or_supermarket",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "user_ratings_total": 694,
+    "vicinity": "200 Douglastown Blvd, Miramichi"
+  },
+  {
+    "business_status": "OPERATIONAL",
+    "geometry": {
+      "location": {
+        "lat": 47.03283589999999,
+        "lng": -65.48947509999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.03400937989272,
+          "lng": -65.48803337010726
+        },
+        "southwest": {
+          "lat": 47.03130972010728,
+          "lng": -65.49073302989271
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+    "icon_background_color": "#4B96F3",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+    "name": "Canadian Tire",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 2432,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/115632352392384593537\">Brian McGee</a>"
+        ],
+        "photo_reference": "AciIO2cA2FJCDy05rv_cE8fvliau7nO_xayHfv-GXVL7WX9z8tJTUb-YMLvucPDwQIeSKX2rNOlE13rjxjFu_GjBBqlBxvEwFgQOAeq436FMsSDcvADWywnV_mIK9hCcCE0YS41fUib3yYZtkvPovMKhuLsde0cGx5Sz1kMedbaXPMk7hUBfeCSJJyChuYbyRq7Vvk4Iy9OQj94LgRY4O_9HnUaAq7va__X7U8O1HhMuET6AYVSjsTnqPOto9bK6oKFal9YAmvIszg9LdJ7oLthSLhMdHKtNMkKu9jZePEvMs8Zm02yNxhJut86gNdDhgCxFNyvHM6gn4FQdswlc3Qh2CjvWrgGQklOFHck06w7wYoy4hI92ysNXl6HuvN1dVIlNJSssJYyCg3cyYAa_cQ9zQoz_ePmz7H63Wl2rllUEnqv83IIT8fOk7ZtiTAmqC102rpdLIaa_8l-roE31TZN6LR3onw2W2Wr1PYMXqA-H3VWxyQGtvru6bBViwFElC6Bt6-Dn7H1wIDS3FzNb1JDQNVsrOEGPFrNjvyYApIh5dY0JxbKElc4zm3r1asXoz5jAL50sNXNLI-UFuA",
+        "width": 4320
+      }
+    ],
+    "place_id": "ChIJtbkoqRD1oUwRFbtKwKcJr0k",
+    "plus_code": {
+      "compound_code": "2GM6+46 Miramichi, New Brunswick",
+      "global_code": "87VP2GM6+46"
+    },
+    "rating": 4,
+    "reference": "ChIJtbkoqRD1oUwRFbtKwKcJr0k",
+    "scope": "GOOGLE",
+    "types": [
+      "department_store",
+      "home_goods_store",
+      "car_repair",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "user_ratings_total": 515,
+    "vicinity": "2491 King George Highway, Bridgeview Dr, Miramichi"
+  },
+  {
+    "business_status": "OPERATIONAL",
+    "geometry": {
+      "location": {
+        "lat": 47.99239439999999,
+        "lng": -66.7043793
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.99386602989273,
+          "lng": -66.70261167010727
+        },
+        "southwest": {
+          "lat": 47.99116637010729,
+          "lng": -66.70531132989272
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+    "icon_background_color": "#4B96F3",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+    "name": "Walmart Supercentre",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 1440,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/112443976609770027285\">Andrew Lavigne</a>"
+        ],
+        "photo_reference": "AciIO2dIr6vLa-2mBntyaWmRRD4sceDFabm6hgDW38B7rV60WJVUg6pxtWPBjgkqT5Esog75DqgG0LT_VhVCFtQIY_A2D6wvcf8rNKcauyZIJlcnioG5vsE-LeQnN2-s6tdSQCIugb04TZ6VnuV_avxK0zz_5f_4-V-hg8c9kxxSc3Hl9nZM8Eh3CrIEPU0sz_Z5TgxAyoEznHakONX3ZumoboZcBuC8a7Rokc0kmoP0ajwY_yvdZeJrfYxKdVMeki_EZeB1sCcDlvEB2YOODkIgaFt0R2H9ITkPV-_nW1_iEdmoYzpYksU_2jrMnZhXaPspAoZwZJdrWjyjFczFKycsseQQNjcT5_AbO7wC1JKCdjKnsUy4kR-3A7wyrLa1anAV_EGXSJwD0AI1rsnLKwP8EUyj9VtOwaHQB4N-wrIavqcTi9sCw7HlG4qRFVz8SMKV5gk_XNfduCJcuDcGfgnWKN2soxCWzbS5KkmlOqn0nMqiwOTugrYoQw7dNQn0ZOQDV4YHfHezEUqVkCFpnrEl6PWUz0N7zrTD3fdKPUqdRM8TH2zo2D2iSbFKR6a7ROUKMb0V-3dD",
+        "width": 2560
+      }
+    ],
+    "place_id": "ChIJWRmHspc2klMR7YY14-asSIA",
+    "plus_code": {
+      "compound_code": "X7RW+X6 Atholville, New Brunswick",
+      "global_code": "87VMX7RW+X6"
+    },
+    "price_level": 1,
+    "rating": 3.7,
+    "reference": "ChIJWRmHspc2klMR7YY14-asSIA",
+    "scope": "GOOGLE",
+    "types": [
+      "department_store",
+      "supermarket",
+      "electronics_store",
+      "furniture_store",
+      "home_goods_store",
+      "clothing_store",
+      "grocery_or_supermarket",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "user_ratings_total": 1539,
+    "vicinity": "4 Jagoe St, Atholville"
+  },
+  {
+    "business_status": "OPERATIONAL",
+    "geometry": {
+      "location": {
+        "lat": 47.62754169999999,
+        "lng": -65.6847799
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.62894802989272,
+          "lng": -65.68381252010727
+        },
+        "southwest": {
+          "lat": 47.62624837010728,
+          "lng": -65.68651217989272
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+    "icon_background_color": "#4B96F3",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+    "name": "Walmart Supercentre",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 3024,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/112932245102374889039\">Eric Bernard</a>"
+        ],
+        "photo_reference": "AciIO2e67qmkTdLMYGpklZQUQnGBPqGx8u0ySRR1snskqLmUIM3s2wnf-EJYkuyctFA790KYQZfJCiPrRbzRprqx9ItB3Sma5dhuRnzObRa8XFdEU-VGKvHzymT_RhD_7HpvYekNSI2nM4uy3fTISGdoYMfVeNeKNEK6upnPAjtR7r1FgbIqHVfQgKuLgGYu5RUd0vfoP3EQvVHLtEd2uawZBLgKmpZqemjOGOo2z8xJA44O98ki5jOhxYxlEtfFjIiGhYaDxlm8oe1apvvsfD7VXRqpwWJ0ip5KLVNAt3KLsPleBYNVEg35mnpTGP2ZYxoYsmeoeAXQb0pfZtS0Xyjh1_uwTY4vUrRZ4DMgYjafWZco6XQHap5zZ994pGGlsfU-gksq0Si0oI9zXEkYe8MJPdoScBi1FPEhScQ7WyQ2HmWgd0EMTFeOGoZri_FXva5drczr966ZGzPhk_Ucbimc50kTmubV-D0zB4gNJ7AFWbwgtp5MlPhOEjL5r2ZREzI6ECLRyBw4KC_G478GGwUODjiGFqmynbRf6Gr4wPE31UrqClye-3SwoHZ8Pv6okh0XcXZ17DM1",
+        "width": 4032
+      }
+    ],
+    "place_id": "ChIJl7NN_GCRmEwRkIIi8QWS79g",
+    "plus_code": {
+      "compound_code": "J8H8+23 Bathurst, New Brunswick",
+      "global_code": "87VPJ8H8+23"
+    },
+    "price_level": 1,
+    "rating": 3.8,
+    "reference": "ChIJl7NN_GCRmEwRkIIi8QWS79g",
+    "scope": "GOOGLE",
+    "types": [
+      "department_store",
+      "supermarket",
+      "furniture_store",
+      "home_goods_store",
+      "grocery_or_supermarket",
+      "electronics_store",
+      "clothing_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "user_ratings_total": 2029,
+    "vicinity": "900 St Anne St, Bathurst"
+  },
+  {
+    "business_status": "OPERATIONAL",
+    "geometry": {
+      "location": {
+        "lat": 47.6304154,
+        "lng": -65.6651717
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.63174112989272,
+          "lng": -65.66387317010727
+        },
+        "southwest": {
+          "lat": 47.62904147010728,
+          "lng": -65.66657282989271
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+    "icon_background_color": "#4B96F3",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+    "name": "Canadian Tire",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 3024,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/116274518273673507766\">Skysim</a>"
+        ],
+        "photo_reference": "AciIO2ep1nJ6vfehYV_F91U5mu2LBH-85E13HLkFVXUQiHZ4IoYA9QeMUzM_NM0SeBskDJpLmgJFINDJLGpeJ8haO4E8cCECMDSTj_tOKXn0Pnv1UOeMKV3aHbtxEPvao7U51GUIj6bnYWbBmVT6K_M09TfV2WqwwQ1zYyY5OA6hHn5LuR4_fslCl2BLsOkeG4Uf3OZgNQiFuJzNLjzxSXFW1SznnAu3d2ZVBsEIubguiIXTADtHxIzyB_VVN0JRbIeJ2EyvfOR3u1xECc4EahELUsWGYJ1OuSMrgcCMskscpFHiCXEffvH-9JIp-fTmL7Tv4oXBP-469NgJyeAmkEYRhhr_mjo-5UU_wiUF5vYzDJFHmLyLtB3WOG-NQuemV1aJa3d3CYsekdTF2pBd5-el9z0y_ZMTZUuu5mFhauCu54q7AAZOlS3R4Aie_CJXDHZii_XwZsm-wLnHJKaoOUupeEoFWnnSti08c23yW7R3_39fynqHX4n7Qlc92GjydKrIEbWjknrcaPDH5e4jUaiW-flNRC934VNFfd5HSqpRGSuVEq_UN3ZbVGXIFL2ndJmMaOhRS36HBKltGQ",
+        "width": 4032
+      }
+    ],
+    "place_id": "ChIJOfpf3uOTmEwR2tfqsjsqU0I",
+    "plus_code": {
+      "compound_code": "J8JM+5W Bathurst, New Brunswick",
+      "global_code": "87VPJ8JM+5W"
+    },
+    "rating": 4.2,
+    "reference": "ChIJOfpf3uOTmEwR2tfqsjsqU0I",
+    "scope": "GOOGLE",
+    "types": [
+      "department_store",
+      "car_repair",
+      "home_goods_store",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "user_ratings_total": 652,
+    "vicinity": "520 St Peter Ave, Bathurst"
+  }
+]

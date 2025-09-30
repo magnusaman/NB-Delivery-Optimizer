@@ -1,0 +1,2390 @@
+[
+  {
+    "formatted_address": "283 W Broadway, Lincoln, ME 04457, USA",
+    "geometry": {
+      "location": {
+        "lat": 45.3558273,
+        "lng": -68.529918
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.3571288802915,
+          "lng": -68.52865496970848
+        },
+        "southwest": {
+          "lat": 45.35443091970851,
+          "lng": -68.53135293029149
+        }
+      }
+    },
+    "name": "Dollar Tree",
+    "place_id": "ChIJA3DdT8r1r0wRUy511kwNNks",
+    "rating": 4.5,
+    "user_ratings_total": 126,
+    "website": "https://locations.dollartree.com/me/lincoln/283-west-broadway?utm_source=google&utm_medium=organic&utm_campaign=maps"
+  },
+  {
+    "formatted_address": "6 Stillwater Ave Ste 1, Orono, ME 04473, USA",
+    "geometry": {
+      "location": {
+        "lat": 44.9060969,
+        "lng": -68.6909704
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 44.9075379302915,
+          "lng": -68.68933796970849
+        },
+        "southwest": {
+          "lat": 44.9048399697085,
+          "lng": -68.6920359302915
+        }
+      }
+    },
+    "name": "Dollar Tree",
+    "place_id": "ChIJNTFSd9C2r0wRP8MvNzkHcQc",
+    "rating": 4.3,
+    "user_ratings_total": 101,
+    "website": "https://locations.dollartree.com/me/orono/6-stillwater-ave-suite-1?utm_source=google&utm_medium=organic&utm_campaign=maps"
+  },
+  {
+    "formatted_address": "12 Bradley Rd, Milford, ME 04461, USA",
+    "geometry": {
+      "location": {
+        "lat": 44.9395493,
+        "lng": -68.6402875
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 44.9408572302915,
+          "lng": -68.6390332197085
+        },
+        "southwest": {
+          "lat": 44.9381592697085,
+          "lng": -68.6417311802915
+        }
+      }
+    },
+    "name": "Dollar General",
+    "place_id": "ChIJTykJC6exr0wRWQjQdwV6gIQ",
+    "rating": 4.1,
+    "user_ratings_total": 204,
+    "website": "https://www.dollargeneral.com/store-directory/me/milford/18869"
+  },
+  {
+    "formatted_address": "494 Stillwater Ave, Old Town, ME 04468, USA",
+    "geometry": {
+      "location": {
+        "lat": 44.9264329,
+        "lng": -68.6655383
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 44.9278839802915,
+          "lng": -68.6642748697085
+        },
+        "southwest": {
+          "lat": 44.92518601970851,
+          "lng": -68.66697283029151
+        }
+      }
+    },
+    "name": "Dollar General",
+    "place_id": "ChIJ766-1DW3r0wRcqLyNSkuLo8",
+    "rating": 4.1,
+    "user_ratings_total": 161,
+    "website": "https://www.dollargeneral.com/store-directory/me/old-town/19144"
+  },
+  {
+    "formatted_address": "10 Hammett Rd, West Enfield, ME 04493, USA",
+    "geometry": {
+      "location": {
+        "lat": 45.2398304,
+        "lng": -68.64115919999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.2411226802915,
+          "lng": -68.63979536970848
+        },
+        "southwest": {
+          "lat": 45.2384247197085,
+          "lng": -68.6424933302915
+        }
+      }
+    },
+    "name": "Dollar General",
+    "place_id": "ChIJ9biJ5PLtr0wRu7ntFQFGfrM",
+    "rating": 3.9,
+    "user_ratings_total": 158,
+    "website": "https://www.dollargeneral.com/store-directory/me/west-enfield/17039"
+  },
+  {
+    "formatted_address": "Charlotte Mall, 210 King St, St Stephen, NB E3L 2E3, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.20426399999999,
+        "lng": -67.274507
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.2055014802915,
+          "lng": -67.2731270697085
+        },
+        "southwest": {
+          "lat": 45.2028035197085,
+          "lng": -67.2758250302915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJ7_oHc0X5pUwRpu04vAD--C0",
+    "rating": 4.2,
+    "user_ratings_total": 217,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/st-stephen-210-king-st?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "210 King St Unit #160, St Stephen, NB E3L 2E3, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.2045453,
+        "lng": -67.275306
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.2059195802915,
+          "lng": -67.2737816697085
+        },
+        "southwest": {
+          "lat": 45.20322161970851,
+          "lng": -67.2764796302915
+        }
+      }
+    },
+    "name": "Charlotte Mall",
+    "place_id": "ChIJw9eNMk_5pUwRdwHzJlg1xE4",
+    "rating": 4.5,
+    "user_ratings_total": 43
+  },
+  {
+    "formatted_address": "153 Main St, Calais, ME 04619, USA",
+    "geometry": {
+      "location": {
+        "lat": 45.188907,
+        "lng": -67.2825603
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.1902146802915,
+          "lng": -67.2812904697085
+        },
+        "southwest": {
+          "lat": 45.1875167197085,
+          "lng": -67.28398843029152
+        }
+      }
+    },
+    "name": "Dollar Tree",
+    "place_id": "ChIJ-Xh9uDH5pUwRzJQH4fu7yxQ",
+    "rating": 4.3,
+    "user_ratings_total": 52,
+    "website": "https://locations.dollartree.com/me/calais/153-s-main-street?utm_source=google&utm_medium=organic&utm_campaign=maps"
+  },
+  {
+    "formatted_address": "57 Houlton Rd, Baileyville, ME 04694, USA",
+    "geometry": {
+      "location": {
+        "lat": 45.1235382,
+        "lng": -67.351012
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.1249771302915,
+          "lng": -67.3495990697085
+        },
+        "southwest": {
+          "lat": 45.1222791697085,
+          "lng": -67.35229703029151
+        }
+      }
+    },
+    "name": "Dollar General",
+    "place_id": "ChIJrfwiMQNYr0wRLQR6lPqWc3A",
+    "rating": 4.1,
+    "user_ratings_total": 39,
+    "website": "https://www.dollargeneral.com/store-directory/me/baileyville/18594"
+  },
+  {
+    "formatted_address": "63 County Rd, Eastport, ME 04631, USA",
+    "geometry": {
+      "location": {
+        "lat": 44.9069441,
+        "lng": -66.9968903
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 44.90819053029149,
+          "lng": -66.99552921970849
+        },
+        "southwest": {
+          "lat": 44.9054925697085,
+          "lng": -66.99822718029151
+        }
+      }
+    },
+    "name": "Family Dollar",
+    "place_id": "ChIJdzpNgbe8qEwRdwemR2Cp-14",
+    "rating": 4.1,
+    "user_ratings_total": 54,
+    "website": "https://locations.familydollar.com/me/eastport/63-county-road?utm_source=google&utm_medium=organic&utm_campaign=maps"
+  },
+  {
+    "formatted_address": "481 U.S. Rte 1, Pembroke, ME 04666, USA",
+    "geometry": {
+      "location": {
+        "lat": 44.9501637,
+        "lng": -67.1771806
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 44.9516393302915,
+          "lng": -67.1762115197085
+        },
+        "southwest": {
+          "lat": 44.9489413697085,
+          "lng": -67.17890948029151
+        }
+      }
+    },
+    "name": "Dollar General",
+    "place_id": "ChIJIS9iBdOxqEwR0P3zgMFQjVU",
+    "rating": 4.1,
+    "user_ratings_total": 87,
+    "website": "https://www.dollargeneral.com/store-directory/me/pembroke/17612"
+  },
+  {
+    "formatted_address": "Landsdowne Place, 87 Lansdowne Ave, Saint John, NB E2K 3A1, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.277478,
+        "lng": -66.078104
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.27882288029149,
+          "lng": -66.07675491970849
+        },
+        "southwest": {
+          "lat": 45.2761249197085,
+          "lng": -66.0794528802915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJo8zraJBQ04kRNUfEr1ULSA0",
+    "rating": 4.2,
+    "user_ratings_total": 338,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/saint-john-87-lansdowne-ave?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "Prince Edward Square, 100 Prince Edward St, Saint John, NB E2L 4M5, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.276829,
+        "lng": -66.05403799999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.2779057302915,
+          "lng": -66.0529529697085
+        },
+        "southwest": {
+          "lat": 45.2752077697085,
+          "lng": -66.0556509302915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJWW1j03uzp0wRrQp5Vy-rMd0",
+    "rating": 4.2,
+    "user_ratings_total": 282,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/saint-john-100-prince-edward-st?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "30 Plaza Ave, Saint John, NB E2M 0C3, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.247692,
+        "lng": -66.101713
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.24907168029151,
+          "lng": -66.1005291697085
+        },
+        "southwest": {
+          "lat": 45.24637371970851,
+          "lng": -66.10322713029151
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJq6qqvuu0p0wR3rQ3dHFxvYg",
+    "rating": 4.2,
+    "user_ratings_total": 389,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/saint-john-30-plaza-ave?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "519 Westmorland Rd, McAllister Dr, Saint John, NB E2J 3W9, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.306843,
+        "lng": -66.01580799999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.30844028029151,
+          "lng": -66.01483491970849
+        },
+        "southwest": {
+          "lat": 45.30574231970851,
+          "lng": -66.0175328802915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJOflf9layp0wRJThj_3tEYSA",
+    "rating": 4.3,
+    "user_ratings_total": 317,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/saint-john-519-westmorland-rd?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "600 Somerset St, Saint John, NB E2K 2Y7, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.288915,
+        "lng": -66.08182599999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.2901977302915,
+          "lng": -66.08052751970848
+        },
+        "southwest": {
+          "lat": 45.2874997697085,
+          "lng": -66.08322548029149
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJp3bG6tCzp0wR3lCox_kNEQE",
+    "rating": 4.3,
+    "user_ratings_total": 195,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/saint-john-600-somerset-st?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "101 McAllister Dr, Saint John, NB E2J 2S6, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.31253,
+        "lng": -66.02036199999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.31375603029149,
+          "lng": -66.01896906970849
+        },
+        "southwest": {
+          "lat": 45.31105806970849,
+          "lng": -66.02166703029151
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJ641_vnqzp0wRMGVPXjMJS8U",
+    "rating": 4.4,
+    "user_ratings_total": 171,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/saint-john-101-mcallister-dr?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "98-120 McDonald St, Loch Lomond Rd, Saint John, NB E2J 1M5, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.288304,
+        "lng": -66.028791
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.2896363302915,
+          "lng": -66.0274796697085
+        },
+        "southwest": {
+          "lat": 45.2869383697085,
+          "lng": -66.0301776302915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJTTTsHG2zp0wRxhCCUqU989c",
+    "rating": 4.3,
+    "user_ratings_total": 113,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/saint-john-98-120-mcdonald-st?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "Parkway Mall, 212 McAllister Dr, Saint John, NB E2J 2S5, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.31007899999999,
+        "lng": -66.018483
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.31163193029149,
+          "lng": -66.0170142697085
+        },
+        "southwest": {
+          "lat": 45.3089339697085,
+          "lng": -66.0197122302915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJdSXMYPCyp0wRET9zedwS7fQ",
+    "rating": 4.2,
+    "user_ratings_total": 386,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/saint-john-212-mcallister-dr?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "175 Hampton Rd, Quispamsis, NB E2E 4Y7, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.404855,
+        "lng": -65.9721584
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.40616333029151,
+          "lng": -65.97078216970849
+        },
+        "southwest": {
+          "lat": 45.40346536970851,
+          "lng": -65.9734801302915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJUexeMyzAzUwRkpJh4rCqm5w",
+    "rating": 4.3,
+    "user_ratings_total": 190,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/quispamsis-175-hampton-rd?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "77 Marr Rd, Rothesay, NB E2E 3J9, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.391732,
+        "lng": -65.969223
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.39296248029149,
+          "lng": -65.96756046970849
+        },
+        "southwest": {
+          "lat": 45.3902645197085,
+          "lng": -65.9702584302915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJmVSkBzMioFMRoj_U-3azk3A",
+    "rating": 4.2,
+    "user_ratings_total": 145,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/rothesay-77-marr-road?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "100 Prince Edward St, Saint John, NB E2L 2R5, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.2760953,
+        "lng": -66.05436879999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.27790848029149,
+          "lng": -66.05320676970848
+        },
+        "southwest": {
+          "lat": 45.27521051970849,
+          "lng": -66.0559047302915
+        }
+      }
+    },
+    "name": "Giant Tiger",
+    "place_id": "ChIJSxDVq3Czp0wRReVlFNKt8sY",
+    "rating": 4.1,
+    "user_ratings_total": 875,
+    "website": "https://stores.gianttiger.com/nb/saintjohn/saint-john-prince-edward-st-00129.html"
+  },
+  {
+    "formatted_address": "39 King St, Saint John, NB E2L 4W3, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.2734181,
+        "lng": -66.0611657
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.2745938802915,
+          "lng": -66.0597567697085
+        },
+        "southwest": {
+          "lat": 45.27189591970851,
+          "lng": -66.0624547302915
+        }
+      }
+    },
+    "name": "Dollar Store Plus(The $1.Store Plus)",
+    "place_id": "ChIJHc3uU3yzp0wRuuljfv67HZI",
+    "rating": 3.9,
+    "user_ratings_total": 76,
+    "website": "https://www.discoversaintjohn.com/fr/lieu/dollar-store-plus"
+  },
+  {
+    "formatted_address": "199 Hampton Rd, Quispamsis, NB E2E 4L9, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.4054813,
+        "lng": -65.969639
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.4068729302915,
+          "lng": -65.96817311970851
+        },
+        "southwest": {
+          "lat": 45.4041749697085,
+          "lng": -65.97087108029152
+        }
+      }
+    },
+    "name": "Great Canadian Dollar Store",
+    "place_id": "ChIJBQs8xAOtp0wRakx4LQ9jqSs",
+    "rating": 4.8,
+    "user_ratings_total": 6,
+    "website": "https://www.dollarstores.com/"
+  },
+  {
+    "formatted_address": "Mart Plaza, 1065 Central Ave K, Greenwood, NS B0P 1N0, Canada",
+    "geometry": {
+      "location": {
+        "lat": 44.967765,
+        "lng": -64.92249699999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 44.9690836802915,
+          "lng": -64.92125206970849
+        },
+        "southwest": {
+          "lat": 44.96638571970851,
+          "lng": -64.92395003029151
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJxV4W_y0wK4gRteDwQqAk5TY",
+    "rating": 4.3,
+    "user_ratings_total": 374,
+    "website": "https://www.dollarama.com/en-CA/locations/ns/greenwood-1065-central-ave?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "31 Commercial St, Middleton, NS B0S 0A5, Canada",
+    "geometry": {
+      "location": {
+        "lat": 44.9431343,
+        "lng": -65.06878650000002
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 44.9445131302915,
+          "lng": -65.06734216970851
+        },
+        "southwest": {
+          "lat": 44.9418151697085,
+          "lng": -65.07004013029152
+        }
+      }
+    },
+    "name": "Dollar Store",
+    "place_id": "ChIJl57I5GYTWEsRscyvz8_QLMY",
+    "rating": 4.3,
+    "user_ratings_total": 19
+  },
+  {
+    "formatted_address": "1-54 Silver Fox Ave, Granite Dr, New Minas, NS B4N 0E4, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.06865,
+        "lng": -64.44063899999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.0701291802915,
+          "lng": -64.4391698197085
+        },
+        "southwest": {
+          "lat": 45.0674312197085,
+          "lng": -64.44186778029152
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJTbAuy55VWEsRgx2ubhCalHQ",
+    "rating": 4.2,
+    "user_ratings_total": 266,
+    "website": "https://www.dollarama.com/en-CA/locations/ns/new-minas-1-54-silver-fox-ave?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "9049 Commercial St New Minas Court, New Minas, NS B4N 5A4, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.06865699999999,
+        "lng": -64.45646599999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.0699451302915,
+          "lng": -64.4551030697085
+        },
+        "southwest": {
+          "lat": 45.0672471697085,
+          "lng": -64.4578010302915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJmbqCqNY_K4gRpqY94eq9tec",
+    "rating": 4.2,
+    "user_ratings_total": 475,
+    "website": "https://www.dollarama.com/en-CA/locations/ns/new-minas-9049-commercial-st?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "50 Empire Lane, Mall, Fort Edward St, Windsor, NS B0N 2T0, Canada",
+    "geometry": {
+      "location": {
+        "lat": 44.993668,
+        "lng": -64.127203
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 44.9949423802915,
+          "lng": -64.1258667197085
+        },
+        "southwest": {
+          "lat": 44.9922444197085,
+          "lng": -64.1285646802915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJ315lCwOmWUsRn5wzY6aqX70",
+    "rating": 4.2,
+    "user_ratings_total": 312,
+    "website": "https://www.dollarama.com/en-CA/locations/ns/windsor-50-empire-lane?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "1445 Belcher St, Port Williams, NS B0P 1T0, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.094382,
+        "lng": -64.40923579999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.0958194302915,
+          "lng": -64.40800216970848
+        },
+        "southwest": {
+          "lat": 45.0931214697085,
+          "lng": -64.41070013029149
+        }
+      }
+    },
+    "name": "Lucky Dollar Printing",
+    "place_id": "ChIJIQIjXKdWWEsRBE2xl1qM4zA",
+    "rating": 5,
+    "user_ratings_total": 2
+  },
+  {
+    "formatted_address": "Shopping Centre, 269 NS-214, Elmsdale, NS B2S 1K1, Canada",
+    "geometry": {
+      "location": {
+        "lat": 44.976502,
+        "lng": -63.506501
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 44.9779183802915,
+          "lng": -63.50507666970849
+        },
+        "southwest": {
+          "lat": 44.9752204197085,
+          "lng": -63.50777463029149
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJD-UAW7B-WUsRNOq1y7hRBrs",
+    "rating": 4.3,
+    "user_ratings_total": 177,
+    "website": "https://www.dollarama.com/en-CA/locations/ns/elmsdale-269-highway-214?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "117 Main St, East Millinocket, ME 04430, USA",
+    "geometry": {
+      "location": {
+        "lat": 45.6275876,
+        "lng": -68.580753
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.62883453029151,
+          "lng": -68.5794596697085
+        },
+        "southwest": {
+          "lat": 45.62613656970851,
+          "lng": -68.58215763029152
+        }
+      }
+    },
+    "name": "Family Dollar",
+    "place_id": "ChIJU0qL4RxMpUwR9wL1mtO-80A",
+    "rating": 4,
+    "user_ratings_total": 64,
+    "website": "https://locations.familydollar.com/me/east-millinocket/117-main-street?utm_source=google&utm_medium=organic&utm_campaign=maps"
+  },
+  {
+    "formatted_address": "720 Central St, Millinocket, ME 04462, USA",
+    "geometry": {
+      "location": {
+        "lat": 45.657,
+        "lng": -68.6917
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.6584059302915,
+          "lng": -68.6903488697085
+        },
+        "southwest": {
+          "lat": 45.6557079697085,
+          "lng": -68.69304683029151
+        }
+      }
+    },
+    "name": "Dollar General",
+    "place_id": "ChIJBYtT0pWzukwR-aOqJK-96sQ",
+    "rating": 3,
+    "user_ratings_total": 6,
+    "website": "https://www.dollargeneral.com/store-directory/me/millinocket/25421"
+  },
+  {
+    "formatted_address": "781 Central St, Millinocket, ME 04462, USA",
+    "geometry": {
+      "location": {
+        "lat": 45.6578626,
+        "lng": -68.690303
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.6590721302915,
+          "lng": -68.6890974697085
+        },
+        "southwest": {
+          "lat": 45.6563741697085,
+          "lng": -68.6917954302915
+        }
+      }
+    },
+    "name": "Family Dollar",
+    "place_id": "ChIJQS89BFmzukwRVrxjtBVgUI8",
+    "rating": 4.4,
+    "user_ratings_total": 50,
+    "website": "https://locations.familydollar.com/me/millinocket/781-central-street?utm_source=google&utm_medium=organic&utm_campaign=maps"
+  },
+  {
+    "formatted_address": "Empire Plaza, 1033 Prospect St, Fredericton, NB E3B 3B9, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.942412,
+        "lng": -66.667538
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.94377903029149,
+          "lng": -66.6664309697085
+        },
+        "southwest": {
+          "lat": 45.9410810697085,
+          "lng": -66.6691289302915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJdxRTkUntLogRbK4dyVKp6Vk",
+    "rating": 4.2,
+    "user_ratings_total": 634,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/fredericton-1033-prospect-st?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "Regent Mall, 1381 Regent St, Fredericton, NB E3C 1A2, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.935417,
+        "lng": -66.664433
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.9375595802915,
+          "lng": -66.66288551970848
+        },
+        "southwest": {
+          "lat": 45.9348616197085,
+          "lng": -66.66558348029149
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJaUyFNukjpEwRWrLKcd0ZN4E",
+    "rating": 4,
+    "user_ratings_total": 163,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/fredericton-1381-regent-st?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "5 Trinity Ave, Fredericton, NB E3C 0B7, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.931074,
+        "lng": -66.661349
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.9323690802915,
+          "lng": -66.66020111970849
+        },
+        "southwest": {
+          "lat": 45.9296711197085,
+          "lng": -66.6628990802915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJR75XTwkdqEwRwhh3qVilvPk",
+    "rating": 4.2,
+    "user_ratings_total": 370,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/fredericton-5-trinity-ave?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "1198 Onondaga St Oromocto Mall, Oromocto, NB E2V 1B8, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.852139,
+        "lng": -66.474214
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.8534166802915,
+          "lng": -66.47284106970848
+        },
+        "southwest": {
+          "lat": 45.8507187197085,
+          "lng": -66.4755390302915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJI0BhQLCepkwRe2Np9e5Mi0k",
+    "rating": 4.2,
+    "user_ratings_total": 270,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/oromocto-1198-onondaga-st?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "286 Main St, Main &, Western St, Sussex, NB E4E 1R6, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.724538,
+        "lng": -65.52243299999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.72585988029149,
+          "lng": -65.52108686970851
+        },
+        "southwest": {
+          "lat": 45.7231619197085,
+          "lng": -65.52378483029152
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJWyZPjGEip0wRJRu-apAMeXw",
+    "rating": 4.2,
+    "user_ratings_total": 322,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/sussex-286-main-st?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "Square, 147 S Albion St, Amherst, NS B4H 2X2, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.814376,
+        "lng": -64.205382
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.8157823802915,
+          "lng": -64.2037852197085
+        },
+        "southwest": {
+          "lat": 45.8130844197085,
+          "lng": -64.20648318029151
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJXSfcmra4oEwRglyQsRMusrM",
+    "rating": 4.2,
+    "user_ratings_total": 332,
+    "website": "https://www.dollarama.com/en-CA/locations/ns/amherst-147-albion-st-s?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "156 S Patten Rd, Patten, ME 04765, USA",
+    "geometry": {
+      "location": {
+        "lat": 45.9846656,
+        "lng": -68.4494385
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.9860200302915,
+          "lng": -68.4482279697085
+        },
+        "southwest": {
+          "lat": 45.9833220697085,
+          "lng": -68.4509259302915
+        }
+      }
+    },
+    "name": "Dollar General",
+    "place_id": "ChIJAdRLGFTVukwRKB7wwZAUkJs",
+    "rating": 4,
+    "user_ratings_total": 31,
+    "website": "https://www.dollargeneral.com/store-directory/me/patten/19416"
+  },
+  {
+    "formatted_address": "337 Connell St, Woodstock, NB E7M 1L3, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.1658127,
+        "lng": -67.5970005
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.16723468029149,
+          "lng": -67.59553276970848
+        },
+        "southwest": {
+          "lat": 46.16453671970849,
+          "lng": -67.59823073029149
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJRWDHkOnZlUwRqD3ydUoy0CQ",
+    "rating": 4.3,
+    "user_ratings_total": 346,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/woodstock-337-connell-st?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "310 North St, Houlton, ME 04730, USA",
+    "geometry": {
+      "location": {
+        "lat": 46.1466544,
+        "lng": -67.8413547
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.1481214302915,
+          "lng": -67.84000326970849
+        },
+        "southwest": {
+          "lat": 46.1454234697085,
+          "lng": -67.84270123029151
+        }
+      }
+    },
+    "name": "Family Dollar",
+    "place_id": "ChIJq0EXLZTBpEwRZsBRdcK2LzE",
+    "rating": 4.2,
+    "user_ratings_total": 57,
+    "website": "https://locations.familydollar.com/me/houlton/310-north-st?utm_source=google&utm_medium=organic&utm_campaign=maps"
+  },
+  {
+    "formatted_address": "137 North St, Houlton, ME 04730, USA",
+    "geometry": {
+      "location": {
+        "lat": 46.1374911,
+        "lng": -67.8387074
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.13918873029151,
+          "lng": -67.8375602697085
+        },
+        "southwest": {
+          "lat": 46.13649076970851,
+          "lng": -67.84025823029151
+        }
+      }
+    },
+    "name": "Dollar Tree",
+    "place_id": "ChIJHy0zp_LBpEwR8PV-eFrroJk",
+    "rating": 4.5,
+    "user_ratings_total": 109,
+    "website": "https://locations.dollartree.com/me/houlton/137-north-street?utm_source=google&utm_medium=organic&utm_campaign=maps"
+  },
+  {
+    "formatted_address": "8850 Main St, Florenceville-Bristol, NB E7L 2A1, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.4553394,
+        "lng": -67.6033268
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.4566583302915,
+          "lng": -67.60204701970851
+        },
+        "southwest": {
+          "lat": 46.4539603697085,
+          "lng": -67.60474498029151
+        }
+      }
+    },
+    "name": "Great Canadian Dollar Store",
+    "place_id": "ChIJ47kYQVmgpEwRXP0QJtJBPAE",
+    "rating": 4.3,
+    "user_ratings_total": 147,
+    "website": "https://www.dollarstores.com/"
+  },
+  {
+    "formatted_address": "Cross Smart Centres, 125 Two Nations Croisement, Fredericton, NB E3A 0T3, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.988222,
+        "lng": -66.629223
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.9895925302915,
+          "lng": -66.6279959197085
+        },
+        "southwest": {
+          "lat": 45.9868945697085,
+          "lng": -66.6306938802915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJb_RXSuEYpEwR800hv9hRJ7A",
+    "rating": 4.2,
+    "user_ratings_total": 434,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/fredericton-125-two-nations-cross?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "Nashwaaksis Shopping Centre • Plaza REIT Fredericton, 102 Main St, Fredericton, NB E3A 9N6, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.978442,
+        "lng": -66.658402
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.9799530802915,
+          "lng": -66.65715011970849
+        },
+        "southwest": {
+          "lat": 45.9772551197085,
+          "lng": -66.6598480802915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJv8Rw7LfQ1IkR2riGPKuNqQE",
+    "rating": 4.2,
+    "user_ratings_total": 285,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/fredericton-102-main-st?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "King Place Mall, 440 King St, Fredericton, NB E3B 0V3, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.961288,
+        "lng": -66.643286
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.9628203302915,
+          "lng": -66.64186401970849
+        },
+        "southwest": {
+          "lat": 45.9601223697085,
+          "lng": -66.6445619802915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJ5U185aEYpEwRKA-LdHsRSIQ",
+    "rating": 4.3,
+    "user_ratings_total": 253,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/fredericton-440-king-st?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "Village Centre, 528 Rue Smythe, Fredericton, NB E3B 3E6, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.956611,
+        "lng": -66.65685800000001
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.95803313029149,
+          "lng": -66.65558236970848
+        },
+        "southwest": {
+          "lat": 45.95533516970849,
+          "lng": -66.6582803302915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJHe7RGz4XyUwRnqZDfiyv6pc",
+    "rating": 4.3,
+    "user_ratings_total": 349,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/fredericton-528-smythe-st?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "598 Union St, Fredericton, NB E3A 3N2, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.9677116,
+        "lng": -66.6308925
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.9691108802915,
+          "lng": -66.62942731970851
+        },
+        "southwest": {
+          "lat": 45.9664129197085,
+          "lng": -66.63212528029152
+        }
+      }
+    },
+    "name": "Great Canadian Dollar Store",
+    "place_id": "ChIJU_52dbwYpEwR6IklCUUurYA",
+    "rating": 4.3,
+    "user_ratings_total": 106,
+    "website": "https://www.dollarstores.com/"
+  },
+  {
+    "formatted_address": "Mapleton Plaza, 80 Mapleton Rd, Moncton, NB E1C 7W8, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.108463,
+        "lng": -64.824478
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.10976058029149,
+          "lng": -64.82293841970849
+        },
+        "southwest": {
+          "lat": 46.1070626197085,
+          "lng": -64.8256363802915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJ-4HlECuYuEwR2LBMpFooFBk",
+    "rating": 4.3,
+    "user_ratings_total": 780,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/moncton-80-mapleton-rd?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "54 Vaughan Harvey Blvd, Moncton, NB E1C 0N3, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.084098,
+        "lng": -64.789332
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.0854892802915,
+          "lng": -64.7873733697085
+        },
+        "southwest": {
+          "lat": 46.0827913197085,
+          "lng": -64.79007133029151
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJV9vQGxW5oEwRN6WbB8qGyhg",
+    "rating": 4.4,
+    "user_ratings_total": 324,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/moncton-54-vaughan-harvey-blvd?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "Champlain Plaza, 40 Champlain St, Dieppe, NB E1A 1N3, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.09272,
+        "lng": -64.757527
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.0941866302915,
+          "lng": -64.7559659197085
+        },
+        "southwest": {
+          "lat": 46.0914886697085,
+          "lng": -64.75866388029151
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJwzGfqBe5oEwRV0tqn4MfUJ4",
+    "rating": 4.5,
+    "user_ratings_total": 268,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/dieppe-40-champlain-st?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "Northwest Centre, 1380 Mountain Rd, Moncton, NB E1C 2T8, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.108973,
+        "lng": -64.831439
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.1104305302915,
+          "lng": -64.8299253197085
+        },
+        "southwest": {
+          "lat": 46.1077325697085,
+          "lng": -64.83262328029151
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJay_4Yz65oEwRFzReeN-9anA",
+    "rating": 3.9,
+    "user_ratings_total": 29,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/moncton-1380-mountain-rd?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "Superstore Mall, 105 Main St, Moncton, NB E1C 1N6, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.09416900000001,
+        "lng": -64.765811
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.0954581802915,
+          "lng": -64.76457231970849
+        },
+        "southwest": {
+          "lat": 46.0927602197085,
+          "lng": -64.76727028029151
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJh7xIoEm5oEwRMQqK0SsGy6E",
+    "rating": 4.3,
+    "user_ratings_total": 856,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/moncton-105-main-st?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "Sobeys Elmwood, 72 Filles de Jesus Ave, Moncton, NB E1A 9G6, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.121995,
+        "lng": -64.769387
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.12320913029151,
+          "lng": -64.7674084697085
+        },
+        "southwest": {
+          "lat": 46.12051116970851,
+          "lng": -64.7701064302915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJAyNOYOC-oEwRqKPaDpd3F9c",
+    "rating": 4.4,
+    "user_ratings_total": 471,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/moncton-72-filles-de-jesus-ave?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "Wheeler Park Power Centre, 121 Trinity Dr, Moncton, NB E1G 2J7, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.116841,
+        "lng": -64.83407
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.1181339302915,
+          "lng": -64.83254616970848
+        },
+        "southwest": {
+          "lat": 46.1154359697085,
+          "lng": -64.8352441302915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJHaSWHlO_oEwRT6it32wEBbk",
+    "rating": 4.2,
+    "user_ratings_total": 428,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/moncton-121-trinity-dr?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "424 Coverdale Rd Coverdale Plaza, Riverview, NB E1B 3J9, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.0644206,
+        "lng": -64.7999936
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.0658865302915,
+          "lng": -64.79867691970848
+        },
+        "southwest": {
+          "lat": 46.0631885697085,
+          "lng": -64.8013748802915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJaU1dwaC5oEwRwWAnJ6KhDXQ",
+    "rating": 4.3,
+    "user_ratings_total": 504,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/riverview-424-coverdale-rd?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "Village on Dieppe, 5070 Principale-Est Ave, Dieppe, NB E1A 9P7, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.0981317,
+        "lng": -64.6990674
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.09944003029149,
+          "lng": -64.6977543697085
+        },
+        "southwest": {
+          "lat": 46.09674206970849,
+          "lng": -64.70045233029151
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJyUvzM228oEwR2lTf5qrAMQU",
+    "rating": 4.4,
+    "user_ratings_total": 363,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/dieppe-5070-av-principale-est?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "1160 Findlay Blvd, Riverview, NB E1B 0J6, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.049124,
+        "lng": -64.7955668
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.0509900302915,
+          "lng": -64.7948881697085
+        },
+        "southwest": {
+          "lat": 46.0482920697085,
+          "lng": -64.7975861302915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJ1zFSxGq5oEwRAj9F0PDBO1c",
+    "rating": 3.3,
+    "user_ratings_total": 16,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/riverview-1160-findlay-blvd?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "11 Victoria St, Shediac, NB E4P 8T6, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.218988,
+        "lng": -64.542008
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.2204298302915,
+          "lng": -64.5406824697085
+        },
+        "southwest": {
+          "lat": 46.2177318697085,
+          "lng": -64.54338043029152
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJE7WNp3QFyUwRsp13Lqf7P9o",
+    "rating": 4.2,
+    "user_ratings_total": 465,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/shediac-11-victoria-st?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "300 Elmwood Dr #8, Moncton, NB E1A 6V2, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.112303,
+        "lng": -64.775072
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.1137777302915,
+          "lng": -64.7734084197085
+        },
+        "southwest": {
+          "lat": 46.1110797697085,
+          "lng": -64.77610638029151
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJT_r0LAC_oEwREdQ2ske88u4",
+    "rating": 4.1,
+    "user_ratings_total": 253,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/moncton-8-300-elmwood-dr?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "193 Irving Blvd Lebourg, Suite 2, Bouctouche, NB E4S 3K4, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.464673,
+        "lng": -64.735761
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.46578628029149,
+          "lng": -64.73431921970851
+        },
+        "southwest": {
+          "lat": 46.46308831970849,
+          "lng": -64.73701718029152
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJxadidqH3oEwRGsRtulYD7PI",
+    "rating": 4.2,
+    "user_ratings_total": 36,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/bouctouche-193-irving-blvd?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "Champlain Place, 477 Paul St, Dieppe, NB E1A 4X5, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.0954323,
+        "lng": -64.7591364
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.0968456302915,
+          "lng": -64.75771361970851
+        },
+        "southwest": {
+          "lat": 46.0941476697085,
+          "lng": -64.76041158029152
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJp7rZGPa5oEwRB_MrDmN1BOU",
+    "rating": 3.2,
+    "user_ratings_total": 13,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/dieppe-477-paul-st?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "454 Granville St, Summerside, PE C1N 4K7, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.410663,
+        "lng": -63.783577
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.4120141302915,
+          "lng": -63.78218706970848
+        },
+        "southwest": {
+          "lat": 46.4093161697085,
+          "lng": -63.78488503029149
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJNZJZluUhK4gRWkRLdBA0Ieg",
+    "rating": 4.2,
+    "user_ratings_total": 494,
+    "website": "https://www.dollarama.com/en-CA/locations/pe/summerside-454-granville-st?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "8989 Cavendish Rd, Cavendish, PE C0A 1N0, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.4849207,
+        "lng": -63.40414430000001
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.4863324302915,
+          "lng": -63.4028571697085
+        },
+        "southwest": {
+          "lat": 46.48363446970851,
+          "lng": -63.4055551302915
+        }
+      }
+    },
+    "name": "Cavendish Dollar Store",
+    "place_id": "ChIJ0fvYRL6_X0sRpQ40jqa7c_Y",
+    "rating": 4.3,
+    "user_ratings_total": 78
+  },
+  {
+    "formatted_address": "475 Granville St, Summerside, PE C1N 4P7, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.413096,
+        "lng": -63.7805511
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.4144577302915,
+          "lng": -63.7794321697085
+        },
+        "southwest": {
+          "lat": 46.4117597697085,
+          "lng": -63.78213013029151
+        }
+      }
+    },
+    "name": "Great Canadian Dollar Store",
+    "place_id": "ChIJxxKR4DSFX0sRbvt_x00Pq38",
+    "rating": 4.2,
+    "user_ratings_total": 73,
+    "website": "https://www.dollarstores.com/"
+  },
+  {
+    "formatted_address": "Caribou, ME 04736, USA",
+    "geometry": {
+      "location": {
+        "lat": 46.860839,
+        "lng": -68.0148394
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.8622274302915,
+          "lng": -68.0134987697085
+        },
+        "southwest": {
+          "lat": 46.8595294697085,
+          "lng": -68.01619673029151
+        }
+      }
+    },
+    "name": "Except More Dollar Store",
+    "place_id": "ChIJV-bcDli4vEwRKmGmnhJziBA"
+  },
+  {
+    "formatted_address": "30-42 Skyway Dr, Caribou, ME 04736, USA",
+    "geometry": {
+      "location": {
+        "lat": 46.8723922,
+        "lng": -68.0044139
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.8739779802915,
+          "lng": -68.0030757697085
+        },
+        "southwest": {
+          "lat": 46.8712800197085,
+          "lng": -68.00577373029151
+        }
+      }
+    },
+    "name": "Family Dollar",
+    "place_id": "ChIJuQlV_2G4vEwR2TBZ_kpBTOc",
+    "rating": 4.4,
+    "user_ratings_total": 28,
+    "website": "https://locations.familydollar.com/me/caribou/3042-skyway-drive?utm_source=google&utm_medium=organic&utm_campaign=maps"
+  },
+  {
+    "formatted_address": "211 Presque Isle Rd, Ashland, ME 04732, USA",
+    "geometry": {
+      "location": {
+        "lat": 46.62649769999999,
+        "lng": -68.3914867
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.6281156802915,
+          "lng": -68.3901386697085
+        },
+        "southwest": {
+          "lat": 46.6254177197085,
+          "lng": -68.39283663029151
+        }
+      }
+    },
+    "name": "Family Dollar",
+    "place_id": "ChIJ82RGuQlgu0wRFE511RRpRSE",
+    "rating": 4.3,
+    "user_ratings_total": 34,
+    "website": "https://locations.familydollar.com/me/ashland/211-presque-isle-road?utm_source=google&utm_medium=organic&utm_campaign=maps"
+  },
+  {
+    "formatted_address": "830 Main St # C -1/2, Presque Isle, ME 04769, USA",
+    "geometry": {
+      "location": {
+        "lat": 46.70027460000001,
+        "lng": -68.007424
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.7013168802915,
+          "lng": -68.00577686970848
+        },
+        "southwest": {
+          "lat": 46.6986189197085,
+          "lng": -68.0084748302915
+        }
+      }
+    },
+    "name": "Dollar Tree",
+    "place_id": "ChIJs0yBIk-uvEwR_N-JRB28I28",
+    "rating": 4.5,
+    "user_ratings_total": 78,
+    "website": "https://locations.dollartree.com/me/presque-isle/830-main-street-c-12?utm_source=google&utm_medium=organic&utm_campaign=maps"
+  },
+  {
+    "formatted_address": "124 Bennett Dr, Caribou, ME 04736, USA",
+    "geometry": {
+      "location": {
+        "lat": 46.8699144,
+        "lng": -68.0046046
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.8711820302915,
+          "lng": -68.00311491970848
+        },
+        "southwest": {
+          "lat": 46.8684840697085,
+          "lng": -68.0058128802915
+        }
+      }
+    },
+    "name": "Dollar Tree",
+    "place_id": "ChIJjdPK8mC4vEwRgN25coZdrTc",
+    "rating": 4.5,
+    "user_ratings_total": 118,
+    "website": "https://locations.dollartree.com/me/caribou/124-bennett-drive?utm_source=google&utm_medium=organic&utm_campaign=maps"
+  },
+  {
+    "formatted_address": "88 Sweden St, Caribou, ME 04736, USA",
+    "geometry": {
+      "location": {
+        "lat": 46.85968399999999,
+        "lng": -68.01617639999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.86104718029149,
+          "lng": -68.01485001970849
+        },
+        "southwest": {
+          "lat": 46.85834921970849,
+          "lng": -68.01754798029151
+        }
+      }
+    },
+    "name": "Dollar General",
+    "place_id": "ChIJ2VXU_Fe4vEwRykYFORCTHXQ",
+    "rating": 3.8,
+    "user_ratings_total": 237,
+    "website": "https://www.dollargeneral.com/store-directory/me/caribou/19140"
+  },
+  {
+    "formatted_address": "6 Gardner Creek Rd, Washburn, ME 04786, USA",
+    "geometry": {
+      "location": {
+        "lat": 46.781332,
+        "lng": -68.15628219999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.78275978029149,
+          "lng": -68.1548362697085
+        },
+        "southwest": {
+          "lat": 46.78006181970849,
+          "lng": -68.15753423029152
+        }
+      }
+    },
+    "name": "Dollar General",
+    "place_id": "ChIJNRuV9eK9vEwRL298S2QdLM4",
+    "rating": 4.3,
+    "user_ratings_total": 81,
+    "website": "https://www.dollargeneral.com/store-directory/me/washburn/19525"
+  },
+  {
+    "formatted_address": "355 Main St, Fort Fairfield, ME 04742, USA",
+    "geometry": {
+      "location": {
+        "lat": 46.7721856,
+        "lng": -67.8347422
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.7734502802915,
+          "lng": -67.8334260697085
+        },
+        "southwest": {
+          "lat": 46.7707523197085,
+          "lng": -67.83612403029151
+        }
+      }
+    },
+    "name": "Dollar General",
+    "place_id": "ChIJ42gtfACzvEwRykBn5bxfoFE",
+    "rating": 5,
+    "user_ratings_total": 4,
+    "website": "https://www.dollargeneral.com/store-directory/me/fort-fairfield/30730"
+  },
+  {
+    "formatted_address": "87 Access Hwy, Limestone, ME 04750, USA",
+    "geometry": {
+      "location": {
+        "lat": 46.9150345,
+        "lng": -67.8337195
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.9161531302915,
+          "lng": -67.8323757697085
+        },
+        "southwest": {
+          "lat": 46.9134551697085,
+          "lng": -67.83507373029151
+        }
+      }
+    },
+    "name": "Dollar General",
+    "place_id": "ChIJIWNRLLzJvEwRYZ_3iNYwdns",
+    "rating": 4.4,
+    "user_ratings_total": 77,
+    "website": "https://www.dollargeneral.com/store-directory/me/limestone/19524"
+  },
+  {
+    "formatted_address": "92 Presque Isle Rd, Mars Hill, ME 04758, USA",
+    "geometry": {
+      "location": {
+        "lat": 46.5233707,
+        "lng": -67.8772539
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.5249213802915,
+          "lng": -67.87565451970849
+        },
+        "southwest": {
+          "lat": 46.5222234197085,
+          "lng": -67.8783524802915
+        }
+      }
+    },
+    "name": "Family Dollar",
+    "place_id": "ChIJ4w17pRCqpEwRpq6rTcSXxTs",
+    "rating": 4.3,
+    "user_ratings_total": 69,
+    "website": "https://locations.familydollar.com/me/mars-hill/92-presque-isle-rd?utm_source=google&utm_medium=organic&utm_campaign=maps"
+  },
+  {
+    "formatted_address": "355 Main St, Fort Fairfield, ME 04742, USA",
+    "geometry": {
+      "location": {
+        "lat": 46.7721268,
+        "lng": -67.8345482
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.77343973029149,
+          "lng": -67.8331175197085
+        },
+        "southwest": {
+          "lat": 46.77074176970849,
+          "lng": -67.8358154802915
+        }
+      }
+    },
+    "name": "Dollar",
+    "place_id": "ChIJg-IOTgCzvEwRm2u3xBVnksw"
+  },
+  {
+    "formatted_address": "Business Complex, 408 King George Hwy, Miramichi, NB E1V 1L4, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.9923338,
+        "lng": -65.57117219999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.9933474802915,
+          "lng": -65.5704201197085
+        },
+        "southwest": {
+          "lat": 46.9906495197085,
+          "lng": -65.57311808029152
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJlV2JDXggokwRI1_-36jGyM0",
+    "rating": 4.3,
+    "user_ratings_total": 99,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/miramichi-408-king-george-hwy?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "25 Cartier Blvd, Richibucto, NB E4W 4G7, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.672345,
+        "lng": -64.87174689999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.6737331802915,
+          "lng": -64.8703798197085
+        },
+        "southwest": {
+          "lat": 46.6710352197085,
+          "lng": -64.87307778029151
+        }
+      }
+    },
+    "name": "Centre Du Dollar Center Inc",
+    "place_id": "ChIJVVVVGRStoUwRdRnWMN1RbqI",
+    "rating": 4,
+    "user_ratings_total": 6
+  },
+  {
+    "formatted_address": "114 Rue Main, Rexton, NB E4W 2X7, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.6476552,
+        "lng": -64.8765283
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.64902283029149,
+          "lng": -64.87511666970849
+        },
+        "southwest": {
+          "lat": 46.6463248697085,
+          "lng": -64.87781463029151
+        }
+      }
+    },
+    "name": "The Great Canadian Dollar Store",
+    "place_id": "ChIJD_rl2NqsoUwR9SAU4U5Xib8",
+    "rating": 4.6,
+    "user_ratings_total": 185,
+    "website": "https://www.dollarstores.com/stores/rexton/"
+  },
+  {
+    "formatted_address": "1746 Water St, Miramichi, NB E1N 2T2, Canada",
+    "geometry": {
+      "location": {
+        "lat": 47.02979980000001,
+        "lng": -65.4698707
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.03125823029151,
+          "lng": -65.46867106970849
+        },
+        "southwest": {
+          "lat": 47.02856026970851,
+          "lng": -65.47136903029151
+        }
+      }
+    },
+    "name": "Great Canadian Dollar Store",
+    "place_id": "ChIJZ-Gr5OL0oUwRNZ6gzFRGniU",
+    "rating": 4.4,
+    "user_ratings_total": 93,
+    "website": "https://www.dollarstores.com/stores/miramichi/"
+  },
+  {
+    "formatted_address": "2238 Ohalloran Rd, Bloomfield, PE C0B 1E0, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.7626588,
+        "lng": -64.1810228
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.76404358029149,
+          "lng": -64.17982841970849
+        },
+        "southwest": {
+          "lat": 46.7613456197085,
+          "lng": -64.18252638029149
+        }
+      }
+    },
+    "name": "Great Canadian Dollar Store",
+    "place_id": "ChIJhTuRR38VoEwRVNiT9zXRKEE",
+    "rating": 4.4,
+    "user_ratings_total": 46,
+    "website": "https://www.dollarstores.com/"
+  },
+  {
+    "formatted_address": "Victoria Street Plaza, 787 Rue Victoria, Edmundston, NB E3V 3S9, Canada",
+    "geometry": {
+      "location": {
+        "lat": 47.393669,
+        "lng": -68.344015
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.3951982802915,
+          "lng": -68.34260046970849
+        },
+        "southwest": {
+          "lat": 47.3925003197085,
+          "lng": -68.34529843029149
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJ_SK2G-xwcVMRsr7TNOntQpI",
+    "rating": 4.4,
+    "user_ratings_total": 216,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/edmundston-787-victoria-st?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "15 Mowin St, Madawaska Maliseet First Nation, Power Centre, Grey Rock Rd, NB E7C 0C2, Canada",
+    "geometry": {
+      "location": {
+        "lat": 47.3751177,
+        "lng": -68.3055316
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.3761893302915,
+          "lng": -68.3036780697085
+        },
+        "southwest": {
+          "lat": 47.3734913697085,
+          "lng": -68.3063760302915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJOfS5ld6pvUwRpkwVu-B5aLY",
+    "rating": 4.3,
+    "user_ratings_total": 15,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/madawaska-maliseet-first-nation-15-mowin-st?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "380 Main St, Madawaska, ME 04756, USA",
+    "geometry": {
+      "location": {
+        "lat": 47.3561069,
+        "lng": -68.32367300000001
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.3571231802915,
+          "lng": -68.3224641697085
+        },
+        "southwest": {
+          "lat": 47.3544252197085,
+          "lng": -68.3251621302915
+        }
+      }
+    },
+    "name": "Family Dollar",
+    "place_id": "ChIJR4NFShmqvUwRM_fBys0xHv4",
+    "rating": 4.1,
+    "user_ratings_total": 54,
+    "website": "https://locations.familydollar.com/me/madawaska/380-main-street?utm_source=google&utm_medium=organic&utm_campaign=maps"
+  },
+  {
+    "formatted_address": "215 W Main St, Fort Kent, ME 04743, USA",
+    "geometry": {
+      "location": {
+        "lat": 47.2500534,
+        "lng": -68.599577
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.2512067802915,
+          "lng": -68.59785271970848
+        },
+        "southwest": {
+          "lat": 47.2485088197085,
+          "lng": -68.60055068029149
+        }
+      }
+    },
+    "name": "Family Dollar",
+    "place_id": "ChIJey8Fp-9RvEwR0TigDbUsBGY",
+    "rating": 4,
+    "user_ratings_total": 60,
+    "website": "https://locations.familydollar.com/me/fort-kent/215-w-main-street?utm_source=google&utm_medium=organic&utm_campaign=maps"
+  },
+  {
+    "formatted_address": "10 Rue Mowin St, Edmundston, NB E7C 0C2, Canada",
+    "geometry": {
+      "location": {
+        "lat": 47.374874,
+        "lng": -68.30494569999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.37608338029149,
+          "lng": -68.3032411697085
+        },
+        "southwest": {
+          "lat": 47.3733854197085,
+          "lng": -68.3059391302915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJzQhxcNmpvUwRLXQj2GK2sqI",
+    "rating": 4.6,
+    "user_ratings_total": 50,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/edmundston-10-rue-mowin-st?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "Shopping Centre, 180 Chem. Madawaska, Grand Falls, NB E3Y 0C6, Canada",
+    "geometry": {
+      "location": {
+        "lat": 47.0547615,
+        "lng": -67.74331149999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.0561014802915,
+          "lng": -67.74209636970848
+        },
+        "southwest": {
+          "lat": 47.0534035197085,
+          "lng": -67.7447943302915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJgy6_fwLRvEwRggPX7Jkqev0",
+    "rating": 4.4,
+    "user_ratings_total": 97,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/grand-falls-180-ch-madawaska?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "73 Main St Ste 102, Van Buren, ME 04785, USA",
+    "geometry": {
+      "location": {
+        "lat": 47.1564588,
+        "lng": -67.9353246
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.1579666302915,
+          "lng": -67.9336775197085
+        },
+        "southwest": {
+          "lat": 47.1552686697085,
+          "lng": -67.9363754802915
+        }
+      }
+    },
+    "name": "Family Dollar",
+    "place_id": "ChIJVT79SjTevEwRhhrQKJXt8d0",
+    "rating": 4.3,
+    "user_ratings_total": 36,
+    "website": "https://locations.familydollar.com/me/van-buren/73-main-st-ste-102?utm_source=google&utm_medium=organic&utm_campaign=maps"
+  },
+  {
+    "formatted_address": "21 Main St, Van Buren, ME 04785, USA",
+    "geometry": {
+      "location": {
+        "lat": 47.1530074,
+        "lng": -67.930292
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.1544212302915,
+          "lng": -67.9288382197085
+        },
+        "southwest": {
+          "lat": 47.1517232697085,
+          "lng": -67.9315361802915
+        }
+      }
+    },
+    "name": "Dollar General",
+    "place_id": "ChIJP1x-DJDfvEwRIXoPKHhOZvc",
+    "rating": 4.3,
+    "user_ratings_total": 65,
+    "website": "https://www.dollargeneral.com/store-directory/me/van-buren/21104"
+  },
+  {
+    "formatted_address": "Power Centre, 100 Douglastown Blvd, Miramichi, NB E1V 0A3, Canada",
+    "geometry": {
+      "location": {
+        "lat": 47.03551900000001,
+        "lng": -65.48935399999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.0368799302915,
+          "lng": -65.48815986970848
+        },
+        "southwest": {
+          "lat": 47.03418196970851,
+          "lng": -65.4908578302915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJ7VqwTRD1oUwRrdqbHXzglNQ",
+    "rating": 4.3,
+    "user_ratings_total": 368,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/miramichi-100-douglastown-blvd?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "Centre Le Rond Point, 3409 Rue Principale, Tracadie-Sheila, NB E1X 1C7, Canada",
+    "geometry": {
+      "location": {
+        "lat": 47.521172,
+        "lng": -64.911751
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.5220730302915,
+          "lng": -64.9098945197085
+        },
+        "southwest": {
+          "lat": 47.5193750697085,
+          "lng": -64.91259248029151
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJgVy5AcRJn0wR5dXTpfdWbkU",
+    "rating": 4,
+    "user_ratings_total": 173,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/tracadie-sheila-3409-rue-principale?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "3510 Rue Principale, Tracadie-Sheila, NB E1X 0H1, Canada",
+    "geometry": {
+      "location": {
+        "lat": 47.51683509999999,
+        "lng": -64.91095849999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.5181872302915,
+          "lng": -64.90961101970848
+        },
+        "southwest": {
+          "lat": 47.5154892697085,
+          "lng": -64.9123089802915
+        }
+      }
+    },
+    "name": "Great Canadian Dollars Store --- ( Le Monde Du Dollar )",
+    "place_id": "ChIJg3YpncdJn0wRueMVMpg_ccE",
+    "rating": 4.5,
+    "user_ratings_total": 81,
+    "website": "https://www.dollarstores.com/"
+  },
+  {
+    "formatted_address": "456 Rue Principale, Neguac, NB E9G 1N1, Canada",
+    "geometry": {
+      "location": {
+        "lat": 47.2391812,
+        "lng": -65.09532039999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.2407107802915,
+          "lng": -65.09412126970848
+        },
+        "southwest": {
+          "lat": 47.2380128197085,
+          "lng": -65.0968192302915
+        }
+      }
+    },
+    "name": "Great Canadian Dollar Store",
+    "place_id": "ChIJrTGpR1D9oUwRPROB3MmtGlM",
+    "rating": 4.4,
+    "user_ratings_total": 87,
+    "website": "https://www.dollarstores.com/"
+  },
+  {
+    "formatted_address": "527 Rue de l'Église, Tracadie-Sheila, NB E1X 1B1, Canada",
+    "geometry": {
+      "location": {
+        "lat": 47.5133359,
+        "lng": -64.9166774
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.51470613029149,
+          "lng": -64.91525106970849
+        },
+        "southwest": {
+          "lat": 47.5120081697085,
+          "lng": -64.91794903029151
+        }
+      }
+    },
+    "name": "Au Rayon D'Espoir",
+    "place_id": "ChIJN4C2zb5Jn0wRIFOSa6chavE",
+    "rating": 4.7,
+    "user_ratings_total": 27
+  },
+  {
+    "formatted_address": "Sugarloaf Mall, 312 Val-d'Amour Rd, Atholville, NB E3N 4E2, Canada",
+    "geometry": {
+      "location": {
+        "lat": 47.9934963,
+        "lng": -66.6997813
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.9950440302915,
+          "lng": -66.69852931970848
+        },
+        "southwest": {
+          "lat": 47.9923460697085,
+          "lng": -66.7012272802915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJddjcKPvM1IkR7eM-ZkS0Mgk",
+    "rating": 4,
+    "user_ratings_total": 174,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/atholville-312-old-val-damour-rd?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "Centre, 157 Water St, Campbellton, NB E3N 3L4, Canada",
+    "geometry": {
+      "location": {
+        "lat": 48.00758500000001,
+        "lng": -66.676251
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 48.0088196302915,
+          "lng": -66.67431581970848
+        },
+        "southwest": {
+          "lat": 48.0061216697085,
+          "lng": -66.67701378029149
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJR5uf8yMhmEwRYL_Mv-8BWo0",
+    "rating": 4.1,
+    "user_ratings_total": 121,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/campbellton-157-water-st?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "898 Rue Principale, Beresford, NB E8K 2G8, Canada",
+    "geometry": {
+      "location": {
+        "lat": 47.69847,
+        "lng": -65.70581
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.69989873029151,
+          "lng": -65.7045348197085
+        },
+        "southwest": {
+          "lat": 47.69720076970851,
+          "lng": -65.7072327802915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJbapO7SGTmEwR27-2dqaEGJ0",
+    "rating": 4.2,
+    "user_ratings_total": 35,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/beresford-898-rue-principale?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  },
+  {
+    "formatted_address": "Place Bathurst Mall, 1300 St Peter Ave, Bathurst, NB E2A 3A6, Canada",
+    "geometry": {
+      "location": {
+        "lat": 47.64015999999999,
+        "lng": -65.677964
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.6413026302915,
+          "lng": -65.67709726970848
+        },
+        "southwest": {
+          "lat": 47.6386046697085,
+          "lng": -65.6797952302915
+        }
+      }
+    },
+    "name": "Dollarama",
+    "place_id": "ChIJfUi-WZKRmEwRGGzUZJlOoDg",
+    "rating": 4.3,
+    "user_ratings_total": 363,
+    "website": "https://www.dollarama.com/en-CA/locations/nb/bathurst-1300-st-peter-ave?utm_source=G&utm_medium=LPM&utm_campaign=Dollarama"
+  }
+]

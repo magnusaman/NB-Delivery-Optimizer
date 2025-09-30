@@ -1,0 +1,1 @@
+GA baseline placeholder - implement permutations per store cluster with crossover/mutation

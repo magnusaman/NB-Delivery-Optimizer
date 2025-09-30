@@ -1,0 +1,650 @@
+[
+  {
+    "formatted_address": "250 W Broadway, Lincoln, ME 04457, USA",
+    "geometry": {
+      "location": {
+        "lat": 45.35581759999999,
+        "lng": -68.5245309
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.35747713029149,
+          "lng": -68.5233565697085
+        },
+        "southwest": {
+          "lat": 45.35477916970849,
+          "lng": -68.5260545302915
+        }
+      }
+    },
+    "name": "Walmart",
+    "place_id": "ChIJZfKKq6P1r0wRq3j3tCUhoGM",
+    "rating": 3.9,
+    "user_ratings_total": 1200,
+    "website": "https://www.walmart.com/store/1919-lincoln-me?veh=seo_loc"
+  },
+  {
+    "formatted_address": "379 South St, Calais, ME 04619, USA",
+    "geometry": {
+      "location": {
+        "lat": 45.1749072,
+        "lng": -67.2789184
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.1762199302915,
+          "lng": -67.27724736970849
+        },
+        "southwest": {
+          "lat": 45.1735219697085,
+          "lng": -67.27994533029151
+        }
+      }
+    },
+    "name": "Walmart Supercenter",
+    "place_id": "ChIJ3eWKAyr_pUwRRTHcivN4IbQ",
+    "rating": 4.2,
+    "user_ratings_total": 951,
+    "website": "https://www.walmart.com/store/2178-calais-me/?veh=seo_loc"
+  },
+  {
+    "formatted_address": "450 Westmorland Rd, Saint John, NB E2J 4Z2, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.3080827,
+        "lng": -66.0192103
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.3092838802915,
+          "lng": -66.01821266970849
+        },
+        "southwest": {
+          "lat": 45.3065859197085,
+          "lng": -66.0209106302915
+        }
+      }
+    },
+    "name": "Walmart Supercentre",
+    "place_id": "ChIJw6RjMn2zp0wRmXpoIsnN8QU",
+    "rating": 3.9,
+    "user_ratings_total": 2259,
+    "website": "https://www.walmart.ca/en/stores-near-me/saint-john-east-supercentre-3091?utm_source=local&utm_medium=listings&utm_campaign=sc&cmpid=gmb"
+  },
+  {
+    "formatted_address": "621 Fairville Blvd, Saint John, NB E2M 3W3, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.2534815,
+        "lng": -66.0923755
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.25491463029149,
+          "lng": -66.0914204697085
+        },
+        "southwest": {
+          "lat": 45.2522166697085,
+          "lng": -66.0941184302915
+        }
+      }
+    },
+    "name": "Walmart",
+    "place_id": "ChIJg-Y_oSAfVUARX2P8m08veoo",
+    "rating": 3.9,
+    "user_ratings_total": 335,
+    "website": "https://www.walmart.ca/en/stores-near-me/saint-john-west-store-1175?utm_source=gmb_listing&utm_medium=organic&utm_campaign=sc&cmpid=gmb"
+  },
+  {
+    "formatted_address": "1065 Central Ave, Kingston, NS B0P 1R0, Canada",
+    "geometry": {
+      "location": {
+        "lat": 44.967508,
+        "lng": -64.92134159999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 44.9687691802915,
+          "lng": -64.9200857697085
+        },
+        "southwest": {
+          "lat": 44.9660712197085,
+          "lng": -64.92278373029151
+        }
+      }
+    },
+    "name": "Walmart Supercentre",
+    "place_id": "ChIJiwF5jP3uZ0sR_nb4xd-2JJQ",
+    "rating": 3.8,
+    "user_ratings_total": 576,
+    "website": "https://www.walmart.ca/en/stores-near-me/greenwood-store-1177?utm_source=local&utm_medium=listings&utm_campaign=sc&cmpid=gmb"
+  },
+  {
+    "formatted_address": "9097 Commercial St, New Minas, NS B4N 3E6, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.069001,
+        "lng": -64.45303129999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.0701660802915,
+          "lng": -64.4515152197085
+        },
+        "southwest": {
+          "lat": 45.0674681197085,
+          "lng": -64.45421318029152
+        }
+      }
+    },
+    "name": "Walmart Supercentre",
+    "place_id": "ChIJn36St6hWWEsRRguTlnjECXY",
+    "rating": 4,
+    "user_ratings_total": 2150,
+    "website": "https://www.walmart.ca/en/stores-near-me/new-minas-supercentre-3738?utm_source=local&utm_medium=listings&utm_campaign=sc&cmpid=gmb"
+  },
+  {
+    "formatted_address": "1399 Regent St, Fredericton, NB E3C 0B8, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.9341879,
+        "lng": -66.6642634
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.9354423302915,
+          "lng": -66.66260461970849
+        },
+        "southwest": {
+          "lat": 45.9327443697085,
+          "lng": -66.6653025802915
+        }
+      }
+    },
+    "name": "Walmart Supercentre",
+    "place_id": "ChIJtzMluMoSK4gRUjJ6kFCrC7c",
+    "rating": 3.8,
+    "user_ratings_total": 1212,
+    "website": "https://www.walmart.ca/en/stores-near-me/fredericton-southside-supercentre-3032?utm_source=local&utm_medium=listings&utm_campaign=sc&cmpid=gmb"
+  },
+  {
+    "formatted_address": "1110 Smythe St, Fredericton, NB E3B 3H6, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.9441943,
+        "lng": -66.6665166
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.9456139302915,
+          "lng": -66.66531516970848
+        },
+        "southwest": {
+          "lat": 45.9429159697085,
+          "lng": -66.6680131302915
+        }
+      }
+    },
+    "name": "Canadian Tire",
+    "place_id": "ChIJh_Vil2kipEwRMpTk88MXUg8",
+    "rating": 3.8,
+    "user_ratings_total": 1440,
+    "website": "https://www.canadiantire.ca/en/store-details/nb/fredericton-nb-35.html?utm_source=google&utm_medium=lss&utm_content=35"
+  },
+  {
+    "formatted_address": "1300 Onondaga St, Oromocto, NB E2V 2P4, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.8528831,
+        "lng": -66.4698167
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.8541922302915,
+          "lng": -66.46839411970848
+        },
+        "southwest": {
+          "lat": 45.8514942697085,
+          "lng": -66.4710920802915
+        }
+      }
+    },
+    "name": "Giant Tiger",
+    "place_id": "ChIJsaY0A7GepkwR9Pno0SWytnY",
+    "rating": 4.3,
+    "user_ratings_total": 517,
+    "website": "https://stores.gianttiger.com/nb/oromocto/oromocto-onondaga-st-00127.html"
+  },
+  {
+    "formatted_address": "345 Miramichi Rd, Oromocto, NB E2V 2E1, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.8328146,
+        "lng": -66.4845698
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.83427493029151,
+          "lng": -66.48338656970849
+        },
+        "southwest": {
+          "lat": 45.83157696970851,
+          "lng": -66.4860845302915
+        }
+      }
+    },
+    "name": "Canadian Tire",
+    "place_id": "ChIJWTue3wWcpkwRFHcxiVhCWnY",
+    "rating": 4.1,
+    "user_ratings_total": 731,
+    "website": "https://www.canadiantire.ca/en/store-details/nb/oromocto-nb-309.html?utm_source=google&utm_medium=lss&utm_content=309"
+  },
+  {
+    "formatted_address": "80 Main St, Sussex, NB E4E 1Y6, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.725971,
+        "lng": -65.5321773
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.72752648029149,
+          "lng": -65.5310128197085
+        },
+        "southwest": {
+          "lat": 45.7248285197085,
+          "lng": -65.5337107802915
+        }
+      }
+    },
+    "name": "Walmart",
+    "place_id": "ChIJPZ-4_eeGKk0RFMIccK_l6kg",
+    "rating": 4,
+    "user_ratings_total": 809,
+    "website": "https://www.walmart.ca/en/stores-near-me/sussex-store-1052?utm_source=local&utm_medium=listings&utm_campaign=sc&cmpid=gmb"
+  },
+  {
+    "formatted_address": "46 Robert Angus Dr, Amherst, NS B4H 4R7, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.81653559999999,
+        "lng": -64.1988976
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.81764088029149,
+          "lng": -64.19781516970849
+        },
+        "southwest": {
+          "lat": 45.8149429197085,
+          "lng": -64.20051313029151
+        }
+      }
+    },
+    "name": "Walmart Supercentre",
+    "place_id": "ChIJAAAAADwsK4gRmwZMkyp3M5o",
+    "rating": 3.9,
+    "user_ratings_total": 2113,
+    "website": "https://www.walmart.ca/en/stores-near-me/amherst-store-5789?utm_source=local&utm_medium=listings&utm_campaign=sc&cmpid=gmb"
+  },
+  {
+    "formatted_address": "17 Ludlow Rd, Houlton, ME 04730, USA",
+    "geometry": {
+      "location": {
+        "lat": 46.1432075,
+        "lng": -67.842293
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.14367938029149,
+          "lng": -67.84135461970848
+        },
+        "southwest": {
+          "lat": 46.1409814197085,
+          "lng": -67.8440525802915
+        }
+      }
+    },
+    "name": "Walmart",
+    "place_id": "ChIJJzx9oJPBpEwRcAuPwSWYvn8",
+    "rating": 4.1,
+    "user_ratings_total": 1187,
+    "website": "https://www.walmart.com/store/1974-houlton-me?veh=seo_loc"
+  },
+  {
+    "formatted_address": "430 Connell St, Woodstock, NB E7M 5R5, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.1750824,
+        "lng": -67.6041304
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.1762559302915,
+          "lng": -67.60338561970849
+        },
+        "southwest": {
+          "lat": 46.1735579697085,
+          "lng": -67.6060835802915
+        }
+      }
+    },
+    "name": "Walmart",
+    "place_id": "ChIJAAAAAHyRuEwR_77SBPKO4wE",
+    "rating": 4,
+    "user_ratings_total": 1462,
+    "website": "https://www.walmart.ca/en/stores-near-me/woodstock-store-1043?utm_source=gmb_listing&utm_medium=organic&utm_campaign=sc&cmpid=gmb"
+  },
+  {
+    "formatted_address": "8764 Main St, Florenceville-Bristol, NB E7L 3G5, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.4429813,
+        "lng": -67.6186042
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.44434878029149,
+          "lng": -67.61734246970849
+        },
+        "southwest": {
+          "lat": 46.4416508197085,
+          "lng": -67.6200404302915
+        }
+      }
+    },
+    "name": "Red Apple Stores",
+    "place_id": "ChIJTVL_jaqhpEwRgLI0-g4P8Yo",
+    "rating": 4.2,
+    "user_ratings_total": 128,
+    "website": "https://www.redapplestores.com/"
+  },
+  {
+    "formatted_address": "125 Two Nations Crossing, Fredericton, NB E3A 0G9, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.9889448,
+        "lng": -66.626317
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.9900099302915,
+          "lng": -66.62503456970849
+        },
+        "southwest": {
+          "lat": 45.9873119697085,
+          "lng": -66.62773253029151
+        }
+      }
+    },
+    "name": "Walmart Supercentre",
+    "place_id": "ChIJua3jyeYYpEwR0JV5-7zsGOs",
+    "rating": 3.9,
+    "user_ratings_total": 1371,
+    "website": "https://www.walmart.ca/en/stores-near-me/fredericton-north-supercentre-1067?utm_source=local&utm_medium=listings&utm_campaign=sc&cmpid=gmb"
+  },
+  {
+    "formatted_address": "25 Plaza Blvd, Moncton, NB E1C 0E8, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.1148778,
+        "lng": -64.8297633
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.11627198029149,
+          "lng": -64.82798356970851
+        },
+        "southwest": {
+          "lat": 46.11357401970849,
+          "lng": -64.83068153029151
+        }
+      }
+    },
+    "name": "Walmart Supercentre",
+    "place_id": "ChIJY9bFKq24oEwRq4qc3_MX24A",
+    "rating": 4,
+    "user_ratings_total": 2676,
+    "website": "https://www.walmart.ca/en/stores-near-me/moncton-west-supercentre-3659?utm_source=local&utm_medium=listings&utm_campaign=sc&cmpid=gmb"
+  },
+  {
+    "formatted_address": "477 Paul St, Dieppe, NB E1A 4X5, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.0970382,
+        "lng": -64.7608403
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.0980636302915,
+          "lng": -64.7597075697085
+        },
+        "southwest": {
+          "lat": 46.09536566970851,
+          "lng": -64.76240553029152
+        }
+      }
+    },
+    "name": "Walmart Supercentre",
+    "place_id": "ChIJs8dR10q5oEwRTbyOMeJx7k0",
+    "rating": 3.9,
+    "user_ratings_total": 2003,
+    "website": "https://www.walmart.ca/en/stores-near-me/champlain-mall-supercentre-3056?utm_source=local&utm_medium=listings&utm_campaign=sc&cmpid=gmb"
+  },
+  {
+    "formatted_address": "Northwest Centre, 1380 Mountain Rd Unit 1, Moncton, NB E1C 2T8, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.1101045,
+        "lng": -64.8335431
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.11170508029149,
+          "lng": -64.8322464197085
+        },
+        "southwest": {
+          "lat": 46.10900711970849,
+          "lng": -64.8349443802915
+        }
+      }
+    },
+    "name": "Canadian Tire",
+    "place_id": "ChIJiWg42u32iFQRfQ2YtaGJFc4",
+    "rating": 4,
+    "user_ratings_total": 1772,
+    "website": "https://www.canadiantire.ca/en/store-details/nb/moncton-mountain-rd-nb-249.html?utm_source=google&utm_medium=lss&utm_content=249"
+  },
+  {
+    "formatted_address": "511 Granville St, Summerside, PE C1N 5J4, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.4179335,
+        "lng": -63.77805979999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.4192867302915,
+          "lng": -63.77677896970849
+        },
+        "southwest": {
+          "lat": 46.41658876970851,
+          "lng": -63.7794769302915
+        }
+      }
+    },
+    "name": "Walmart Supercentre",
+    "place_id": "ChIJv1BLytzaKk0RXPg4SAjyO6M",
+    "rating": 3.8,
+    "user_ratings_total": 1067,
+    "website": "https://www.walmart.ca/en/stores-near-me/summerside-store-3644?utm_source=local&utm_medium=listings&utm_campaign=sc&cmpid=gmb"
+  },
+  {
+    "formatted_address": "781 Main St, Presque Isle, ME 04769, USA",
+    "geometry": {
+      "location": {
+        "lat": 46.69738659999999,
+        "lng": -68.0144755
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.6984779802915,
+          "lng": -68.0120910697085
+        },
+        "southwest": {
+          "lat": 46.6957800197085,
+          "lng": -68.01478903029151
+        }
+      }
+    },
+    "name": "Walmart Supercenter",
+    "place_id": "ChIJIb9o50-uvEwRWbCEvzcR4zc",
+    "rating": 4.1,
+    "user_ratings_total": 1880,
+    "website": "https://www.walmart.com/store/1924-presque-isle-me/?veh=seo_loc"
+  },
+  {
+    "formatted_address": "805 Rue Victoria, Edmundston, NB E3V 3S7, Canada",
+    "geometry": {
+      "location": {
+        "lat": 47.3953153,
+        "lng": -68.34141509999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.3965715302915,
+          "lng": -68.34032521970849
+        },
+        "southwest": {
+          "lat": 47.3938735697085,
+          "lng": -68.3430231802915
+        }
+      }
+    },
+    "name": "Walmart Supercentre",
+    "place_id": "ChIJhfXyFhCpvUwRWI-rlzmxEuI",
+    "rating": 4,
+    "user_ratings_total": 994,
+    "website": "https://www.walmart.ca/en/stores-near-me/edmundston-store-1033?utm_source=local&utm_medium=listings&utm_campaign=sc&cmpid=gmb"
+  },
+  {
+    "formatted_address": "494 Chem. Madawaska, Grand-Sault, NB E3Y 1A3, Canada",
+    "geometry": {
+      "location": {
+        "lat": 47.060188,
+        "lng": -67.7525887
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.0608882302915,
+          "lng": -67.7519119697085
+        },
+        "southwest": {
+          "lat": 47.0581902697085,
+          "lng": -67.75460993029151
+        }
+      }
+    },
+    "name": "Walmart",
+    "place_id": "ChIJbXU5Hw5FXEsRbyqQpslze2k",
+    "rating": 3.9,
+    "user_ratings_total": 443,
+    "website": "https://www.walmart.ca/en/stores-near-me/grand-falls-store-1013?utm_source=gmb_listing&utm_medium=organic&utm_campaign=sc&cmpid=gmb"
+  },
+  {
+    "formatted_address": "200 Douglastown Blvd, Miramichi, NB E1V 7T9, Canada",
+    "geometry": {
+      "location": {
+        "lat": 47.0385949,
+        "lng": -65.4923553
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.0397888302915,
+          "lng": -65.49065021970848
+        },
+        "southwest": {
+          "lat": 47.0370908697085,
+          "lng": -65.4933481802915
+        }
+      }
+    },
+    "name": "Walmart Supercentre",
+    "place_id": "ChIJj0PQnnoIvlIRp7pEYsSLi_s",
+    "rating": 3.9,
+    "user_ratings_total": 694,
+    "website": "https://www.walmart.ca/en/stores-near-me/miramichi-store-5833?utm_source=local&utm_medium=listings&utm_campaign=sc&cmpid=gmb"
+  },
+  {
+    "formatted_address": "2491 King George Highway, Bridgeview Dr, Miramichi, NB E1V 6W3, Canada",
+    "geometry": {
+      "location": {
+        "lat": 47.03283589999999,
+        "lng": -65.48947509999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.03400853029149,
+          "lng": -65.4880342197085
+        },
+        "southwest": {
+          "lat": 47.03131056970849,
+          "lng": -65.4907321802915
+        }
+      }
+    },
+    "name": "Canadian Tire",
+    "place_id": "ChIJtbkoqRD1oUwRFbtKwKcJr0k",
+    "rating": 4,
+    "user_ratings_total": 515,
+    "website": "https://www.canadiantire.ca/en/store-details/nb/miramichi-nb-136.html?utm_source=google&utm_medium=lss&utm_content=136"
+  },
+  {
+    "formatted_address": "4 Jagoe St, Atholville, NB E3N 5C3, Canada",
+    "geometry": {
+      "location": {
+        "lat": 47.99239439999999,
+        "lng": -66.7043794
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.9938651802915,
+          "lng": -66.70261256970849
+        },
+        "southwest": {
+          "lat": 47.9911672197085,
+          "lng": -66.7053105302915
+        }
+      }
+    },
+    "name": "Walmart Supercentre",
+    "place_id": "ChIJWRmHspc2klMR7YY14-asSIA",
+    "rating": 3.7,
+    "user_ratings_total": 1539,
+    "website": "https://www.walmart.ca/en/stores-near-me/atholville-store-3737?utm_source=local&utm_medium=listings&utm_campaign=sc&cmpid=gmb"
+  },
+  {
+    "formatted_address": "900 St Anne St, Bathurst, NB E2A 6X2, Canada",
+    "geometry": {
+      "location": {
+        "lat": 47.62754169999999,
+        "lng": -65.6847799
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.6289471802915,
+          "lng": -65.6838133697085
+        },
+        "southwest": {
+          "lat": 47.62624921970851,
+          "lng": -65.68651133029151
+        }
+      }
+    },
+    "name": "Walmart Supercentre",
+    "place_id": "ChIJl7NN_GCRmEwRkIIi8QWS79g",
+    "rating": 3.8,
+    "user_ratings_total": 2029,
+    "website": "https://www.walmart.ca/en/stores-near-me/bathurst-supercentre-3003?utm_source=local&utm_medium=listings&utm_campaign=sc&cmpid=gmb"
+  }
+]

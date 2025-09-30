@@ -1,0 +1,842 @@
+[
+  {
+    "formatted_address": "149 Lansdowne Ave, Saint John, NB E2K 2Z9, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.279695,
+        "lng": -66.07864099999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.2808203302915,
+          "lng": -66.07709561970849
+        },
+        "southwest": {
+          "lat": 45.2781223697085,
+          "lng": -66.0797935802915
+        }
+      }
+    },
+    "name": "Sobeys Lansdowne",
+    "place_id": "ChIJp7-_w12zp0wRkDpE35S1nv4",
+    "rating": 4.2,
+    "user_ratings_total": 774,
+    "website": "https://www.sobeys.com/stores/sobeys-lansdowne/?f=789&utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "1 Plaza Ave, Saint John, NB E2M 0C2, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.248991,
+        "lng": -66.102414
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.25029598029149,
+          "lng": -66.1007588197085
+        },
+        "southwest": {
+          "lat": 45.2475980197085,
+          "lng": -66.10345678029151
+        }
+      }
+    },
+    "name": "Sobeys Saint John West",
+    "place_id": "ChIJm5LukOm0p0wRhD3Yuw8f8Ec",
+    "rating": 4.3,
+    "user_ratings_total": 877,
+    "website": "https://www.sobeys.com/stores/sobeys-saint-john-west/?f=789&utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "40 E Point Way, Saint John, NB E2J 0H5, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.3035536,
+        "lng": -66.0303429
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.3051821802915,
+          "lng": -66.0289059197085
+        },
+        "southwest": {
+          "lat": 45.3024842197085,
+          "lng": -66.03160388029151
+        }
+      }
+    },
+    "name": "Sobeys East Point",
+    "place_id": "ChIJE9tPH_6yp0wRR5jh5Ah-Zck",
+    "rating": 4.3,
+    "user_ratings_total": 849,
+    "website": "https://www.sobeys.com/stores/sobeys-east-point/?f=773&utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "140A Hampton Rd, Rothesay, NB E2E 2R1, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.401234,
+        "lng": -65.97573
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.4025602802915,
+          "lng": -65.97435176970849
+        },
+        "southwest": {
+          "lat": 45.3998623197085,
+          "lng": -65.9770497302915
+        }
+      }
+    },
+    "name": "Sobeys Rothesay",
+    "place_id": "ChIJlRdIt6Ssp0wRG3eUqb_6Gx0",
+    "rating": 4.3,
+    "user_ratings_total": 543,
+    "website": "https://www.sobeys.com/stores/sobeys-rothesay/?f=789&utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "3701 Westfield Rd, Saint John, NB E5K 4V3, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.298902,
+        "lng": -66.19659399999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.3001486302915,
+          "lng": -66.19504666970849
+        },
+        "southwest": {
+          "lat": 45.2974506697085,
+          "lng": -66.19774463029151
+        }
+      }
+    },
+    "name": "Foodland - Grand Bay",
+    "place_id": "ChIJsThXOe1LpkwR1POYAMsSWVE",
+    "rating": 4.2,
+    "user_ratings_total": 142,
+    "website": "https://foodland.ca/stores/foodland-grand-bay/?utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "720 Central Ave, Kingston, NS B0P 1R0, Canada",
+    "geometry": {
+      "location": {
+        "lat": 44.967544,
+        "lng": -64.938549
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 44.96891813029151,
+          "lng": -64.93716476970849
+        },
+        "southwest": {
+          "lat": 44.96622016970851,
+          "lng": -64.9398627302915
+        }
+      }
+    },
+    "name": "Sobeys Greenwood",
+    "place_id": "ChIJP6Uo5oxqWEsRvEGawMNUwnA",
+    "rating": 4.3,
+    "user_ratings_total": 526,
+    "website": "https://www.sobeys.com/stores/sobeys-greenwood/?f=789&utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "170 Commercial St, Middleton, NS B0S 1P0, Canada",
+    "geometry": {
+      "location": {
+        "lat": 44.947923,
+        "lng": -65.07089599999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 44.9491914302915,
+          "lng": -65.06980946970849
+        },
+        "southwest": {
+          "lat": 44.9464934697085,
+          "lng": -65.0725074302915
+        }
+      }
+    },
+    "name": "Foodland - Middleton",
+    "place_id": "ChIJv0IzlWcTWEsRm1KwhV46SRI",
+    "rating": 4.2,
+    "user_ratings_total": 230,
+    "website": "https://foodland.ca/stores/foodland-middleton/?utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "9256 Commercial St, New Minas, NS B4N 4A9, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.066241,
+        "lng": -64.444566
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.06768118029149,
+          "lng": -64.44323286970848
+        },
+        "southwest": {
+          "lat": 45.0649832197085,
+          "lng": -64.4459308302915
+        }
+      }
+    },
+    "name": "Sobeys New Minas",
+    "place_id": "ChIJOatSkadWWEsRAVJ27daP4Vo",
+    "rating": 4.3,
+    "user_ratings_total": 629,
+    "website": "https://www.sobeys.com/stores/sobeys-new-minas/?f=789&utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "50 Empire Ln, Windsor, NS B0N 2T0, Canada",
+    "geometry": {
+      "location": {
+        "lat": 44.993111,
+        "lng": -64.128765
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 44.99438258029149,
+          "lng": -64.1273176697085
+        },
+        "southwest": {
+          "lat": 44.99168461970849,
+          "lng": -64.13001563029151
+        }
+      }
+    },
+    "name": "Sobeys Windsor",
+    "place_id": "ChIJmeb9_aqoWUsRn9LYk08AYdI",
+    "rating": 4.1,
+    "user_ratings_total": 473,
+    "website": "https://www.sobeys.com/stores/sobeys-windsor/?f=789&utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "311 Cornwallis St, Kentville, NS B4N 2G4, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.08616,
+        "lng": -64.494649
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.08741123029149,
+          "lng": -64.49349476970849
+        },
+        "southwest": {
+          "lat": 45.08471326970849,
+          "lng": -64.4961927302915
+        }
+      }
+    },
+    "name": "Foodland - Kenvtille",
+    "place_id": "ChIJE_nS0iNXWEsRnyEu05sFyGA",
+    "rating": 4.2,
+    "user_ratings_total": 330,
+    "website": "https://foodland.ca/stores/foodland-kentville/?utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "269 NS-214, Elmsdale, NS B2S 1K1, Canada",
+    "geometry": {
+      "location": {
+        "lat": 44.976623,
+        "lng": -63.505503
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 44.9780366302915,
+          "lng": -63.50434281970849
+        },
+        "southwest": {
+          "lat": 44.9753386697085,
+          "lng": -63.5070407802915
+        }
+      }
+    },
+    "name": "Sobeys Elmsdale",
+    "place_id": "ChIJL4LQarB-WUsRNTcNyChLsWE",
+    "rating": 4.3,
+    "user_ratings_total": 412,
+    "website": "https://www.sobeys.com/stores/sobeys-elmsdale-elmsdale-shopping-centre/?f=789&utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "30 Gibson Rd #2, Stewiacke, NS B0N 2J0, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.1376395,
+        "lng": -63.35880640000001
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.1392215802915,
+          "lng": -63.35800941970849
+        },
+        "southwest": {
+          "lat": 45.1365236197085,
+          "lng": -63.36070738029151
+        }
+      }
+    },
+    "name": "Foodland - Stewiacke",
+    "place_id": "ChIJQWmu8y1hWUsRGzENvBNMqI4",
+    "rating": 4.1,
+    "user_ratings_total": 246,
+    "website": "https://foodland.ca/stores/foodland-stewiake/?utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "375 Miramichi Rd, Oromocto, NB E2V 1S1, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.832126,
+        "lng": -66.486486
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.8336575302915,
+          "lng": -66.4852597197085
+        },
+        "southwest": {
+          "lat": 45.8309595697085,
+          "lng": -66.4879576802915
+        }
+      }
+    },
+    "name": "Sobeys Miramichi Road",
+    "place_id": "ChIJ_fTmXg-cpkwRNO3NQlzvVuU",
+    "rating": 4.2,
+    "user_ratings_total": 760,
+    "website": "https://www.sobeys.com/stores/sobeys-oromocto/?f=789&utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "1180 Prospect St, Fredericton, NB E3B 5C7, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.938516,
+        "lng": -66.66214099999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.9400286802915,
+          "lng": -66.6606289197085
+        },
+        "southwest": {
+          "lat": 45.9373307197085,
+          "lng": -66.6633268802915
+        }
+      }
+    },
+    "name": "Sobeys Uptown Centre",
+    "place_id": "ChIJoRZ5iT8ipEwRH6cwiiXhVxQ",
+    "rating": 4.2,
+    "user_ratings_total": 844,
+    "website": "https://www.sobeys.com/store-locator/?utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "138 Main St #5, Sussex, NB E4E 3E1, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.727533,
+        "lng": -65.530189
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.7287719302915,
+          "lng": -65.5289129697085
+        },
+        "southwest": {
+          "lat": 45.7260739697085,
+          "lng": -65.5316109302915
+        }
+      }
+    },
+    "name": "Sobeys Sussex",
+    "place_id": "ChIJt2csLmQip0wRePBCixv-t_w",
+    "rating": 4.3,
+    "user_ratings_total": 294,
+    "website": "https://www.sobeys.com/stores/sobeys-sussex/?f=789&utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "142 S Albion St, Amherst, NS B4H 4H4, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.812949,
+        "lng": -64.20078099999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.8142282302915,
+          "lng": -64.19952261970849
+        },
+        "southwest": {
+          "lat": 45.8115302697085,
+          "lng": -64.20222058029151
+        }
+      }
+    },
+    "name": "Sobeys Amherst",
+    "place_id": "ChIJT-UcC2dJX0sRTPKObK2N-ho",
+    "rating": 4.2,
+    "user_ratings_total": 292,
+    "website": "https://www.sobeys.com/stores/sobeys-amherst-amherst-centre-mall/?f=789&utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "11 Wright St, Sackville, NB E4L 4C1, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.908793,
+        "lng": -64.375387
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.90996423029149,
+          "lng": -64.3741786197085
+        },
+        "southwest": {
+          "lat": 45.90726626970849,
+          "lng": -64.37687658029151
+        }
+      }
+    },
+    "name": "Foodland - Sackville",
+    "place_id": "ChIJ4-4KO7lQX0sRxF73TiWvMtY",
+    "rating": 4.2,
+    "user_ratings_total": 161,
+    "website": "https://foodland.ca/stores/foodland-sackville/?utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "370 Connell St, Woodstock, NB E7M 5G9, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.17010699999999,
+        "lng": -67.597323
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.1714638302915,
+          "lng": -67.59629811970849
+        },
+        "southwest": {
+          "lat": 46.1687658697085,
+          "lng": -67.5989960802915
+        }
+      }
+    },
+    "name": "Sobeys Woodstock",
+    "place_id": "ChIJa2cIvzHtpEwRYrgVrAtO0eg",
+    "rating": 4.3,
+    "user_ratings_total": 485,
+    "website": "https://www.sobeys.com/stores/sobeys-woodstock-nb/?f=789&utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "407 Regent St, Fredericton, NB E3B 3X6, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.954565,
+        "lng": -66.645198
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.95591318029149,
+          "lng": -66.6438497197085
+        },
+        "southwest": {
+          "lat": 45.9532152197085,
+          "lng": -66.6465476802915
+        }
+      }
+    },
+    "name": "Sobeys Regent St",
+    "place_id": "ChIJZ6CKqQsipEwRjdW_DK26J-Q",
+    "rating": 4.3,
+    "user_ratings_total": 961,
+    "website": "https://www.sobeys.com/stores/sobeys-regent-street/?f=789&utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "463 Brookside Dr, Fredericton, NB E3A 8V4, Canada",
+    "geometry": {
+      "location": {
+        "lat": 45.993063,
+        "lng": -66.651268
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 45.99441343029151,
+          "lng": -66.6498849197085
+        },
+        "southwest": {
+          "lat": 45.99171546970851,
+          "lng": -66.6525828802915
+        }
+      }
+    },
+    "name": "Sobeys Brookside Mall",
+    "place_id": "ChIJyWsgWVYYpEwRJi1o3WwVrvY",
+    "rating": 4.2,
+    "user_ratings_total": 575,
+    "website": "https://www.sobeys.com/stores/sobeys-brookside-mall/?f=789&utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "55 Vaughan Harvey Blvd, Moncton, NB E1C 0N3, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.084484,
+        "lng": -64.78785599999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.0857248802915,
+          "lng": -64.78671541970849
+        },
+        "southwest": {
+          "lat": 46.0830269197085,
+          "lng": -64.78941338029149
+        }
+      }
+    },
+    "name": "Sobeys Vaughan Harvey",
+    "place_id": "ChIJOw4u1xe5oEwRqnugc9AB9NA",
+    "rating": 4.3,
+    "user_ratings_total": 1468,
+    "website": "https://www.sobeys.com/stores/sobeys-vaughan-harvey-blvd/?f=789&utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "1380 Mountain Rd, Moncton, NB E1C 2T6, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.109851,
+        "lng": -64.832844
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.1112765302915,
+          "lng": -64.83152111970848
+        },
+        "southwest": {
+          "lat": 46.1085785697085,
+          "lng": -64.83421908029149
+        }
+      }
+    },
+    "name": "Sobeys Mountain Road",
+    "place_id": "ChIJvdbWBa64oEwRHS5MFYzknBg",
+    "rating": 4.3,
+    "user_ratings_total": 1060,
+    "website": "https://www.sobeys.com/stores/sobeys-mountain-road/?f=789&utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "77 Filles de Jesus Ave, Moncton, NB E1A 9G6, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.12272100000001,
+        "lng": -64.768175
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.12389858029151,
+          "lng": -64.7670021697085
+        },
+        "southwest": {
+          "lat": 46.12120061970851,
+          "lng": -64.76970013029151
+        }
+      }
+    },
+    "name": "Sobeys Elmwood Dr",
+    "place_id": "ChIJjwckaTK_oEwRMH8PpuuGmhM",
+    "rating": 4.4,
+    "user_ratings_total": 727,
+    "website": "https://www.sobeys.com/stores/sobeys-elmwood-drive/?f=789&utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "1160 Findlay Blvd, Riverview, NB E1B 0J6, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.049524,
+        "lng": -64.794951
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.0509225802915,
+          "lng": -64.7935960697085
+        },
+        "southwest": {
+          "lat": 46.04822461970851,
+          "lng": -64.7962940302915
+        }
+      }
+    },
+    "name": "Sobeys Riverview",
+    "place_id": "ChIJ_RTPs6O5oEwR6aw9xrnaN_0",
+    "rating": 4.4,
+    "user_ratings_total": 774,
+    "website": "https://www.sobeys.com/stores/sobeys-riverview/?f=789&utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "183 Main St, Shediac, NB E4P 2A5, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.21796699999999,
+        "lng": -64.561077
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.2193326802915,
+          "lng": -64.55974451970849
+        },
+        "southwest": {
+          "lat": 46.2166347197085,
+          "lng": -64.5624424802915
+        }
+      }
+    },
+    "name": "Sobeys Shediac",
+    "place_id": "ChIJx9vQfF-zp0wR74K05VUiikU",
+    "rating": 4.3,
+    "user_ratings_total": 768,
+    "website": "https://www.sobeys.com/stores/sobeys-shediac/?f=789&utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "477 Paul St, Dieppe, NB E1A 4X5, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.095456,
+        "lng": -64.762867
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.09661068029149,
+          "lng": -64.7614041697085
+        },
+        "southwest": {
+          "lat": 46.0939127197085,
+          "lng": -64.76410213029152
+        }
+      }
+    },
+    "name": "Sobeys Champlain",
+    "place_id": "ChIJqdv9KbW-oEwRCcl1gq5UC44",
+    "rating": 4.3,
+    "user_ratings_total": 768,
+    "website": "https://www.sobeys.com/stores/sobeys-champlain-mall/?f=789&utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "501 Rue Regis, Moncton, NB E1A 1Y2, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.098381,
+        "lng": -64.75831699999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.0995981802915,
+          "lng": -64.75687036970848
+        },
+        "southwest": {
+          "lat": 46.0969002197085,
+          "lng": -64.7595683302915
+        }
+      }
+    },
+    "name": "Sobeys Dieppe",
+    "place_id": "ChIJgVJL0rS-oEwRwsU46UGqxSY",
+    "rating": 4.3,
+    "user_ratings_total": 636,
+    "website": "https://www.sobeys.com/stores/sobeys-regis-street/?f=789&utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "89 Trinity Dr, Moncton, NB E1G 2J7, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.1185452,
+        "lng": -64.8325383
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.11956583029151,
+          "lng": -64.83114211970849
+        },
+        "southwest": {
+          "lat": 46.11686786970851,
+          "lng": -64.8338400802915
+        }
+      }
+    },
+    "name": "Atlantic Superstore Trinity Drive",
+    "place_id": "ChIJv_F9I1O_oEwRjXF-sksXlPc",
+    "rating": 4.3,
+    "user_ratings_total": 1896,
+    "website": "https://www.atlanticsuperstore.ca/store-locator/details/0326?utm_source=G&utm_medium=LPM&utm_campaign=Loblaws"
+  },
+  {
+    "formatted_address": "475 Granville St, Summerside, PE C1N 4P7, Canada",
+    "geometry": {
+      "location": {
+        "lat": 46.4110636,
+        "lng": -63.7810995
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 46.4124377802915,
+          "lng": -63.7799141697085
+        },
+        "southwest": {
+          "lat": 46.4097398197085,
+          "lng": -63.78261213029151
+        }
+      }
+    },
+    "name": "Sobeys Granville Street",
+    "place_id": "ChIJhfD55yubX0sRq_a-F4zFr3I",
+    "rating": 4.2,
+    "user_ratings_total": 490,
+    "website": "https://www.sobeys.com/stores/sobeys-summerside/?f=789&utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "2485 King George Hwy, Miramichi, NB E1V 6W3, Canada",
+    "geometry": {
+      "location": {
+        "lat": 47.031622,
+        "lng": -65.490929
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.0328011302915,
+          "lng": -65.4892932197085
+        },
+        "southwest": {
+          "lat": 47.0301031697085,
+          "lng": -65.4919911802915
+        }
+      }
+    },
+    "name": "Sobeys Miramichi",
+    "place_id": "ChIJpbACVjj1oUwRIDlDwp4dqlY",
+    "rating": 4.5,
+    "user_ratings_total": 385,
+    "website": "https://www.sobeys.com/stores/sobeys-douglastown/?f=789&utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "273 Pleasant St, Miramichi, NB E1V 1Y7, Canada",
+    "geometry": {
+      "location": {
+        "lat": 47.000941,
+        "lng": -65.566653
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.00226893029149,
+          "lng": -65.5652310697085
+        },
+        "southwest": {
+          "lat": 46.9995709697085,
+          "lng": -65.56792903029151
+        }
+      }
+    },
+    "name": "Sobeys Newcastle",
+    "place_id": "ChIJTdbtPnUgokwR-nb1q1edt9s",
+    "rating": 4.3,
+    "user_ratings_total": 243,
+    "website": "https://www.sobeys.com/stores/sobeys-newcastle/?f=789&utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "580 Rue Victoria, Edmundston, NB E3V 3N1, Canada",
+    "geometry": {
+      "location": {
+        "lat": 47.382338,
+        "lng": -68.337964
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.3835607302915,
+          "lng": -68.3363373697085
+        },
+        "southwest": {
+          "lat": 47.3808627697085,
+          "lng": -68.33903533029151
+        }
+      }
+    },
+    "name": "IGA Extra Supermarché Donat Thériault Ltée",
+    "place_id": "ChIJrQ2nZHWpvUwRzVhblEyOnfI",
+    "rating": 4.5,
+    "user_ratings_total": 438,
+    "website": "https://www.iga.net/en/find_a_store/store/8586?utm_source=google&utm_medium=organic_search&utm_campaign=googlebusinessprofile"
+  },
+  {
+    "formatted_address": "535 E.H. Daigle Blvd, Grand Falls, NB E3Z 2R7, Canada",
+    "geometry": {
+      "location": {
+        "lat": 47.046359,
+        "lng": -67.75090399999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.04780503029149,
+          "lng": -67.74934776970849
+        },
+        "southwest": {
+          "lat": 47.04510706970849,
+          "lng": -67.7520457302915
+        }
+      }
+    },
+    "name": "Foodland - Grand Falls",
+    "place_id": "ChIJWatfxfvQvEwRGXj0AK8_JEc",
+    "rating": 4.3,
+    "user_ratings_total": 132,
+    "website": "https://foodland.ca/stores/foodland-grand-falls/?utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  },
+  {
+    "formatted_address": "140 Roseberry St, Campbellton, NB E3N 2G8, Canada",
+    "geometry": {
+      "location": {
+        "lat": 48.003465,
+        "lng": -66.68117699999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 48.0045413302915,
+          "lng": -66.68000546970849
+        },
+        "southwest": {
+          "lat": 48.0018433697085,
+          "lng": -66.68270343029151
+        }
+      }
+    },
+    "name": "IGA Extra Campbellton",
+    "place_id": "ChIJX8WK8dggmEwRyPr6sBuF53c",
+    "rating": 4.3,
+    "user_ratings_total": 490,
+    "website": "https://www.iga.net/fr/recherche_de_magasin/magasin/8359?utm_source=google&utm_medium=organic_search&utm_campaign=googlebusinessprofile"
+  },
+  {
+    "formatted_address": "1125 St Peter Ave, Bathurst, NB E2A 3A1, Canada",
+    "geometry": {
+      "location": {
+        "lat": 47.63554999999999,
+        "lng": -65.67691599999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 47.6370262302915,
+          "lng": -65.6754064197085
+        },
+        "southwest": {
+          "lat": 47.6343282697085,
+          "lng": -65.6781043802915
+        }
+      }
+    },
+    "name": "Sobeys Bathurst",
+    "place_id": "ChIJjzqke9yTmEwRwohMevwn2KY",
+    "rating": 4.3,
+    "user_ratings_total": 634,
+    "website": "https://www.sobeys.com/stores/sobeys-st-peter-s-ave/?f=789&utm_source=G&utm_medium=lpm&utm_campaign=Sobeys"
+  }
+]

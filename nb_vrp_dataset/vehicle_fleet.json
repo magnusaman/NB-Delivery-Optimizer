@@ -1,0 +1,32 @@
+[
+  {
+    "vehicle_type": "truck",
+    "count": 10,
+    "capacity": 50,
+    "battery_capacity": 100.0,
+    "energy_efficiency": 2.0,
+    "charging_rate": 50.0,
+    "operating_cost": 1.5,
+    "max_range": 200.0
+  },
+  {
+    "vehicle_type": "e-bike",
+    "count": 25,
+    "capacity": 5,
+    "battery_capacity": 2.0,
+    "energy_efficiency": 0.1,
+    "charging_rate": 2.0,
+    "operating_cost": 0.2,
+    "max_range": 20.0
+  },
+  {
+    "vehicle_type": "drone",
+    "count": 5,
+    "capacity": 2,
+    "battery_capacity": 0.5,
+    "energy_efficiency": 0.05,
+    "charging_rate": 1.0,
+    "operating_cost": 0.5,
+    "max_range": 10.0
+  }
+]

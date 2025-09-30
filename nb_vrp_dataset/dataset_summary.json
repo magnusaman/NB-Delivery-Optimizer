@@ -1,0 +1,32 @@
+{
+  "dataset_info": {
+    "name": "New Brunswick VRP Dataset",
+    "version": "1.0",
+    "created": "2025-09-22T19:33:10.122956",
+    "description": "Comprehensive VRP dataset with roads, stores, demand traces, and charging infrastructure"
+  },
+  "statistics": {
+    "road_segments": 4900,
+    "stores": 77,
+    "demand_traces": 12936,
+    "charging_stations": 15,
+    "vehicle_types": 3,
+    "graph_nodes": 2500,
+    "graph_edges": 4900
+  },
+  "store_distribution": {
+    "Walmart": 19,
+    "Dollarama": 29,
+    "Sobeys": 29
+  },
+  "road_type_distribution": {
+    "arterial": 980,
+    "local": 3920
+  },
+  "demand_statistics": {
+    "total_orders": 90886,
+    "avg_orders_per_hour": 7.025819418676561,
+    "avg_order_value": 75.46881721665896,
+    "total_order_value": 6859058.921553266
+  }
+}

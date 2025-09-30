@@ -1,6 +1,6 @@
-# New Brunswick Delivery Route Optimization System
+# New Brunswick Delivery Routing (Google Maps Simplified)
 
-A comprehensive delivery route optimization system for New Brunswick, Canada, similar to Blinkit, Uber Eats, and DoorDash. This system uses real store locations, delivery partners, and customer orders to create optimized delivery routes.
+This simplified system leverages Google Maps Platform (Places, Distance Matrix, Directions) to fetch real store and EV charging locations across New Brunswick and compute distances and routes without maintaining a local road network.
 
 ## 🎯 Project Overview
 
@@ -12,86 +12,54 @@ This system implements a **Multi-Depot Vehicle Routing Problem (MDVRP)** solutio
 4. **Optimizes delivery routes** using advanced algorithms
 5. **Exports results** to QGIS-ready format for visualization
 
-## 🏗️ System Architecture
+## 🏗️ System Overview
 
-### Phase 1: Data Foundation
-- **Input**: Real store locations + Road network
-- **Process**: Verification, geocoding, coordinate transformation
-- **Output**: 46 verified stores + 60,738 road segments
-
-### Phase 2: Network Construction
-- **Input**: Road segments (MultiLineString geometries)
-- **Process**: NetworkX graph construction with distance weights
-- **Output**: 658,004 nodes, 662,819 edges (massive connected road network)
-
-### Phase 3: Optimization Engine
-- **Input**: Store locations + synthetic orders + distance matrix
-- **Process**: OR-Tools constraint solver + Genetic Algorithm
-- **Output**: Optimized delivery routes
-
-### Phase 4: Visualization & Export
-- **Input**: Optimized route sequences
-- **Process**: Polyline reconstruction + GPKG export
-- **Output**: QGIS-ready files for analysis
+- **Data Source**: Google Maps Places API (Walmart, Dollarama, Sobeys, EV charging)
+- **Routing**: Distance Matrix API for times/distances; Directions API for polylines
+- **Focus**: Your business logic (vehicles, partners, orders), not road graphs
 
 ## 📁 Project Structure
 
 ```
-├── fast_delivery_system.py          # Main delivery optimization system
-├── genetic_delivery_optimizer.py    # Alternative genetic algorithm approach
-├── nb_verified_stores.gpkg          # 46 verified store locations
-├── roads_clean.gpkg                 # New Brunswick road network
-├── routes_only.gpkg                 # Optimized delivery routes
-├── New_routes.gpkg                  # Genetic algorithm results
-├── requirements.txt                 # Python dependencies
-└── README.md                        # This file
+├── google_maps_vrp.py              # Google Maps integration utilities
+├── requirements.txt                # Minimal dependencies
+├── .env                            # GOOGLE_MAPS_API_KEY=...
+├── nb_vrp_dataset/                 # Output JSONs (created on bootstrap)
+└── README.md
 ```
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Python 3.8+
-- Required packages (see requirements.txt)
+- Python 3.9+
+- Google Maps Platform key with: Places, Distance Matrix, Directions enabled
 
 ### Installation
 ```bash
-# Clone the repository
-git clone <your-repo-url>
-cd new-brunswick-delivery-optimization
-
-# Install dependencies
 pip install -r requirements.txt
 ```
 
-### Running the System
+### Setup API Key
+Create a `.env` file in the project root:
+```
+GOOGLE_MAPS_API_KEY=YOUR_API_KEY
+```
 
-#### Option 1: Fast Delivery System (Recommended)
+### Usage
 ```bash
-python fast_delivery_system.py
+# 1) Fetch stores and EV charging locations across NB (JSON output)
+python google_maps_vrp.py --bootstrap
+
+# 2) Build a demo distance matrix over fetched stores
+python google_maps_vrp.py --distance-matrix
 ```
 
-#### Option 2: Genetic Algorithm System
-```bash
-python genetic_delivery_optimizer.py
-```
-
-## 📊 Results
-
-### Fast Delivery System Results:
-- **10 demo orders** processed successfully
-- **Realistic delivery times**: 78-170 minutes (1.3-2.8 hours)
-- **Realistic distances**: 39-85 km per route
-- **Priority-based processing**: High priority orders processed first
-- **Total system**: 511.7 km, 17.1 hours, $733 in orders
-
-### Example Routes:
-```
-Route 1: PARTNER_22 → STORE_24 (Dollarama Miramichi) → Customer
-- Distance: 41.0 km, Time: 82.0 min, Value: $148 (high priority)
-
-Route 2: PARTNER_28 → STORE_4 (Walmart Fredericton) → Customer  
-- Distance: 42.5 km, Time: 85.0 min, Value: $180 (high priority)
-```
+## 📊 Outputs
+- `nb_vrp_dataset/stores_walmart.json`
+- `nb_vrp_dataset/stores_dollarama.json`
+- `nb_vrp_dataset/stores_sobeys.json`
+- `nb_vrp_dataset/ev_charging.json`
+- `distance_matrix_demo.json`
 
 ## 🗺️ Visualization
 
@@ -106,24 +74,9 @@ Route 2: PARTNER_28 → STORE_4 (Walmart Fredericton) → Customer
 - **Colored lines** = Optimized delivery routes connecting stores to customers
 - **Road network** = Real New Brunswick roads (background)
 
-## 🔧 Technical Details
-
-### Algorithms Used:
-1. **Dijkstra's Algorithm** - Shortest path computation
-2. **OR-Tools Constraint Solver** - Exact optimization
-3. **Genetic Algorithm** - Heuristic optimization
-4. **Local Search** - Route improvement
-
-### Data Structures:
-1. **NetworkX Graph** - Road network representation
-2. **NumPy Arrays** - Distance matrices
-3. **GeoPandas DataFrames** - Spatial data handling
-4. **Shapely Geometries** - Spatial operations
-
-### Coordinate Systems:
-- **Input**: WGS84 (EPSG:4326) - Latitude/Longitude
-- **Processing**: New Brunswick (EPSG:2953) - Meters
-- **Output**: New Brunswick (EPSG:2953) - Meters
+## 🔧 Notes
+- Respect Google Maps Places query quotas; the bootstrap process uses paging and tiling.
+- Distance Matrix is chunked to comply with 25×25 limits per request.
 
 ## 📈 Performance Metrics
 
@@ -153,14 +106,9 @@ Route 2: PARTNER_28 → STORE_4 (Walmart Fredericton) → Customer
 ## 📋 Requirements
 
 ```
-geopandas>=0.13.0
-shapely>=2.0.0
-networkx>=3.0
-ortools>=9.6.0
-numpy>=1.24.0
-pandas>=2.0.0
-fiona>=1.9.0
-pyproj>=3.5.0
+googlemaps>=4.10.0
+python-dotenv>=1.0.0
+requests>=2.31.0
 ```
 
 ## 🤝 Contributing
