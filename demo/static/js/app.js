@@ -200,10 +200,10 @@ function displayOrderResults(result) {
 }
 
 function visualizeRoute(result) {
-    const { order, assigned_store, assigned_partner } = result;
+    const { order, assigned_store, assigned_partner, routes } = result;
     
-    // Dim all markers
-    markers.stores.forEach(m => m.setOpacity(0.3));
+    // Keep all stores visible (don't dim)
+    // Only dim non-assigned partners
     markers.partners.forEach(m => m.setOpacity(0.3));
     
     // Place customer marker
@@ -243,34 +243,64 @@ function visualizeRoute(result) {
     });
     setTimeout(() => partnerMarker.setAnimation(null), 2000);
     
-    // Draw routes
-    // Partner to Store
-    const line1 = new google.maps.Polyline({
-        path: [
-            { lat: assigned_partner.lat, lng: assigned_partner.lng },
-            { lat: assigned_store.lat, lng: assigned_store.lng }
-        ],
-        geodesic: true,
-        strokeColor: '#34a853',
-        strokeOpacity: 0.8,
-        strokeWeight: 4,
-        map: map
-    });
-    polylines.push(line1);
+    // Draw routes using real road polylines from Google Directions API
+    if (routes.partner_to_store_polyline) {
+        // Partner to Store - decode actual road route
+        const path1 = google.maps.geometry.encoding.decodePath(routes.partner_to_store_polyline);
+        const line1 = new google.maps.Polyline({
+            path: path1,
+            geodesic: false,  // Use actual route, not geodesic
+            strokeColor: '#34a853',
+            strokeOpacity: 0.9,
+            strokeWeight: 5,
+            map: map
+        });
+        polylines.push(line1);
+    } else {
+        // Fallback to straight line if API fails
+        const line1 = new google.maps.Polyline({
+            path: [
+                { lat: assigned_partner.lat, lng: assigned_partner.lng },
+                { lat: assigned_store.lat, lng: assigned_store.lng }
+            ],
+            geodesic: true,
+            strokeColor: '#34a853',
+            strokeOpacity: 0.6,
+            strokeWeight: 3,
+            strokePattern: [10, 5],  // Dashed to show it's estimated
+            map: map
+        });
+        polylines.push(line1);
+    }
     
-    // Store to Customer
-    const line2 = new google.maps.Polyline({
-        path: [
-            { lat: assigned_store.lat, lng: assigned_store.lng },
-            { lat: order.customer_location.lat, lng: order.customer_location.lng }
-        ],
-        geodesic: true,
-        strokeColor: '#667eea',
-        strokeOpacity: 0.8,
-        strokeWeight: 4,
-        map: map
-    });
-    polylines.push(line2);
+    if (routes.store_to_customer_polyline) {
+        // Store to Customer - decode actual road route
+        const path2 = google.maps.geometry.encoding.decodePath(routes.store_to_customer_polyline);
+        const line2 = new google.maps.Polyline({
+            path: path2,
+            geodesic: false,  // Use actual route, not geodesic
+            strokeColor: '#667eea',
+            strokeOpacity: 0.9,
+            strokeWeight: 5,
+            map: map
+        });
+        polylines.push(line2);
+    } else {
+        // Fallback to straight line if API fails
+        const line2 = new google.maps.Polyline({
+            path: [
+                { lat: assigned_store.lat, lng: assigned_store.lng },
+                { lat: order.customer_location.lat, lng: order.customer_location.lng }
+            ],
+            geodesic: true,
+            strokeColor: '#667eea',
+            strokeOpacity: 0.6,
+            strokeWeight: 3,
+            strokePattern: [10, 5],  // Dashed to show it's estimated
+            map: map
+        });
+        polylines.push(line2);
+    }
     
     // Fit bounds to show entire route
     const bounds = new google.maps.LatLngBounds();

@@ -46,21 +46,35 @@ def load_stores():
 
 STORES = load_stores()
 
-# Generate delivery partners around stores
+# Generate delivery partners around major cities
 def generate_partners():
     partners = []
     random.seed(42)
-    for i in range(20):
-        store = random.choice(STORES)
-        # Random offset ±0.02 degrees (~2km)
-        partners.append({
-            'id': f'P{i+1}',
-            'name': f'Partner {i+1}',
-            'lat': store['lat'] + random.uniform(-0.02, 0.02),
-            'lng': store['lng'] + random.uniform(-0.02, 0.02),
-            'status': 'available',
-            'vehicle': random.choice(['EV', 'Van', 'Bike'])
-        })
+    # Major NB cities with multiple partners each
+    cities = [
+        {'name': 'Fredericton', 'lat': 45.9636, 'lng': -66.6431, 'partners': 15},
+        {'name': 'Moncton', 'lat': 46.0878, 'lng': -64.7782, 'partners': 15},
+        {'name': 'Saint John', 'lat': 45.2733, 'lng': -66.0633, 'partners': 15},
+        {'name': 'Bathurst', 'lat': 47.6189, 'lng': -65.6519, 'partners': 8},
+        {'name': 'Miramichi', 'lat': 47.0280, 'lng': -65.5004, 'partners': 8},
+        {'name': 'Edmundston', 'lat': 47.3734, 'lng': -68.3250, 'partners': 6},
+        {'name': 'Campbellton', 'lat': 48.0055, 'lng': -66.6731, 'partners': 5},
+    ]
+    
+    partner_id = 1
+    for city in cities:
+        for i in range(city['partners']):
+            # Distribute partners within ~3km radius of city center
+            partners.append({
+                'id': f'P{partner_id}',
+                'name': f'Partner {partner_id}',
+                'city': city['name'],
+                'lat': city['lat'] + random.uniform(-0.03, 0.03),
+                'lng': city['lng'] + random.uniform(-0.03, 0.03),
+                'status': 'available',
+                'vehicle': random.choice(['EV', 'Van', 'Bike'])
+            })
+            partner_id += 1
     return partners
 
 PARTNERS = generate_partners()
@@ -84,7 +98,7 @@ def index():
 def get_data():
     """Return stores and partners"""
     return jsonify({
-        'stores': STORES[:50],  # Limit for performance
+        'stores': STORES,  # Show all stores
         'partners': PARTNERS
     })
 
@@ -113,46 +127,54 @@ def place_order():
         nearest_store['lat'], nearest_store['lng']
     )
     
-    # Get real distance from Google Distance Matrix API
+    # Get real road distance and route from Google Directions API (not straight line)
     try:
         gmaps = googlemaps.Client(key=GOOGLE_MAPS_API_KEY)
         
-        # Partner to store
-        result1 = gmaps.distance_matrix(
-            [(nearest_partner['lat'], nearest_partner['lng'])],
-            [(nearest_store['lat'], nearest_store['lng'])],
+        # Partner to store - use Directions API for actual road route
+        directions1 = gmaps.directions(
+            (nearest_partner['lat'], nearest_partner['lng']),
+            (nearest_store['lat'], nearest_store['lng']),
             mode='driving',
             departure_time='now'
         )
         
-        # Store to customer
-        result2 = gmaps.distance_matrix(
-            [(nearest_store['lat'], nearest_store['lng'])],
-            [(lat, lng)],
+        # Store to customer - use Directions API for actual road route
+        directions2 = gmaps.directions(
+            (nearest_store['lat'], nearest_store['lng']),
+            (lat, lng),
             mode='driving',
             departure_time='now'
         )
         
-        if result1['rows'][0]['elements'][0]['status'] == 'OK':
-            partner_to_store_real_km = result1['rows'][0]['elements'][0]['distance']['value'] / 1000.0
-            partner_to_store_time_min = result1['rows'][0]['elements'][0]['duration']['value'] / 60.0
+        if directions1 and len(directions1) > 0:
+            leg1 = directions1[0]['legs'][0]
+            partner_to_store_real_km = leg1['distance']['value'] / 1000.0
+            partner_to_store_time_min = leg1['duration']['value'] / 60.0
+            route1_polyline = directions1[0]['overview_polyline']['points']
         else:
-            partner_to_store_real_km = partner_to_store_distance
-            partner_to_store_time_min = partner_to_store_distance / 0.5  # ~30km/h avg
+            partner_to_store_real_km = partner_to_store_distance * 1.3  # Road factor
+            partner_to_store_time_min = partner_to_store_distance / 0.5
+            route1_polyline = None
         
-        if result2['rows'][0]['elements'][0]['status'] == 'OK':
-            store_to_customer_real_km = result2['rows'][0]['elements'][0]['distance']['value'] / 1000.0
-            store_to_customer_time_min = result2['rows'][0]['elements'][0]['duration']['value'] / 60.0
+        if directions2 and len(directions2) > 0:
+            leg2 = directions2[0]['legs'][0]
+            store_to_customer_real_km = leg2['distance']['value'] / 1000.0
+            store_to_customer_time_min = leg2['duration']['value'] / 60.0
+            route2_polyline = directions2[0]['overview_polyline']['points']
         else:
-            store_to_customer_real_km = store_distance
+            store_to_customer_real_km = store_distance * 1.3
             store_to_customer_time_min = store_distance / 0.5
+            route2_polyline = None
     
     except Exception as e:
         print(f"API Error: {e}")
-        partner_to_store_real_km = partner_to_store_distance
+        partner_to_store_real_km = partner_to_store_distance * 1.3
         partner_to_store_time_min = partner_to_store_distance / 0.5
-        store_to_customer_real_km = store_distance
+        store_to_customer_real_km = store_distance * 1.3
         store_to_customer_time_min = store_distance / 0.5
+        route1_polyline = None
+        route2_polyline = None
     
     total_distance = partner_to_store_real_km + store_to_customer_real_km
     total_time = partner_to_store_time_min + store_to_customer_time_min + 5  # +5 min pickup time
@@ -164,6 +186,10 @@ def place_order():
         },
         'assigned_store': nearest_store,
         'assigned_partner': nearest_partner,
+        'routes': {
+            'partner_to_store_polyline': route1_polyline,
+            'store_to_customer_polyline': route2_polyline
+        },
         'metrics': {
             'partner_to_store_km': round(partner_to_store_real_km, 2),
             'partner_to_store_min': round(partner_to_store_time_min, 1),
