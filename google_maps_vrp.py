@@ -582,6 +582,88 @@ def render_representation_map() -> None:
 
 # ===== Phase 1: Dataset generation and baselines =====
 
+# Distance matrix cache system
+DISTANCE_CACHE_FILE = os.path.join('outputs', 'distance_cache.json')
+
+def _load_distance_cache() -> Dict[str, float]:
+    if os.path.exists(DISTANCE_CACHE_FILE):
+        with open(DISTANCE_CACHE_FILE, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    return {}
+
+def _save_distance_cache(cache: Dict[str, float]) -> None:
+    os.makedirs(os.path.dirname(DISTANCE_CACHE_FILE), exist_ok=True)
+    with open(DISTANCE_CACHE_FILE, 'w', encoding='utf-8') as f:
+        json.dump(cache, f, indent=2)
+
+def _cache_key(origin: Tuple[float, float], dest: Tuple[float, float]) -> str:
+    return f"{origin[0]:.6f},{origin[1]:.6f}|{dest[0]:.6f},{dest[1]:.6f}"
+
+def get_real_distance(origin: Tuple[float, float], dest: Tuple[float, float], cache: Dict[str, float]) -> float:
+    """Get real driving distance from Google Distance Matrix API with caching"""
+    key = _cache_key(origin, dest)
+    if key in cache:
+        return cache[key]
+    
+    # Fetch from Google Distance Matrix API
+    try:
+        gmaps = create_gmaps_client()
+        result = gmaps.distance_matrix([origin], [dest], mode="driving", departure_time="now")
+        if result and result.get('rows'):
+            element = result['rows'][0]['elements'][0]
+            if element['status'] == 'OK':
+                distance_m = element['distance']['value']
+                distance_km = distance_m / 1000.0
+                cache[key] = distance_km
+                return distance_km
+    except Exception as e:
+        print(f"Warning: API error for {key}, falling back to haversine: {e}")
+    
+    # Fallback to haversine
+    dist = _haversine_km(origin, dest)
+    cache[key] = dist
+    return dist
+
+def batch_fetch_distances(pairs: List[Tuple[Tuple[float, float], Tuple[float, float]]]) -> Dict[str, float]:
+    """Batch fetch distances from Google Distance Matrix API"""
+    cache = _load_distance_cache()
+    
+    # Filter pairs not in cache
+    to_fetch = [(o, d) for (o, d) in pairs if _cache_key(o, d) not in cache]
+    
+    if not to_fetch:
+        print(f"All {len(pairs)} distances found in cache.")
+        return cache
+    
+    print(f"Fetching {len(to_fetch)} new distances from Google Distance Matrix API...")
+    
+    # Fetch in chunks of 25x25 (API limit)
+    gmaps = create_gmaps_client()
+    for i in range(0, len(to_fetch), 25):
+        chunk = to_fetch[i:i+25]
+        origins = [o for (o, d) in chunk]
+        dests = [d for (o, d) in chunk]
+        
+        try:
+            result = gmaps.distance_matrix(origins, dests, mode="driving", departure_time="now")
+            if result and result.get('rows'):
+                for idx, row in enumerate(result['rows']):
+                    for jdx, element in enumerate(row['elements']):
+                        if element['status'] == 'OK':
+                            origin = origins[idx]
+                            dest = dests[jdx]
+                            distance_km = element['distance']['value'] / 1000.0
+                            cache[_cache_key(origin, dest)] = distance_km
+            time.sleep(0.1)
+        except Exception as e:
+            print(f"Warning: API error in batch, falling back to haversine: {e}")
+            for (o, d) in chunk:
+                cache[_cache_key(o, d)] = _haversine_km(o, d)
+    
+    _save_distance_cache(cache)
+    print(f"Distance cache updated. Total cached: {len(cache)} pairs.")
+    return cache
+
 def _load_all_store_coords() -> List[Tuple[float, float]]:
     coords: List[Tuple[float, float]] = []
     for fname in ['stores_walmart.json','stores_dollarama.json','stores_sobeys.json']:
@@ -592,6 +674,57 @@ def _load_all_store_coords() -> List[Tuple[float, float]]:
             coords.extend([extract_lat_lng(x) for x in items])
     return coords
 
+
+def fetch_all_distances() -> None:
+    """Smart sampling: fetch distances for nearest 5 stores per customer + top 50 store pairs"""
+    dp = os.path.join('outputs', 'dataset', 'orders.json')
+    if not os.path.exists(dp):
+        print('Missing orders. Run --generate-demand first.')
+        return
+    with open(dp, 'r', encoding='utf-8') as f:
+        orders = json.load(f)
+    stores = _load_all_store_coords()
+    if not stores:
+        print('No stores found. Run --bootstrap first.')
+        return
+    
+    print(f"Smart sampling: {len(orders)} orders, {len(stores)} stores")
+    
+    # Build list of needed pairs using smart sampling
+    pairs = []
+    
+    # For each customer, only fetch distances to nearest 5 stores (by haversine)
+    for o in orders:
+        cust = (o['lat'], o['lng'])
+        # Sort stores by haversine distance
+        stores_with_dist = [(s, _haversine_km(cust, s)) for s in stores]
+        stores_with_dist.sort(key=lambda x: x[1])
+        # Take nearest 5
+        for store, _ in stores_with_dist[:5]:
+            pairs.append((store, cust))
+            pairs.append((cust, store))  # bidirectional
+    
+    # Identify top 50 most-used stores (those assigned to most orders in greedy)
+    store_usage = {}
+    for o in orders:
+        cust = (o['lat'], o['lng'])
+        nearest = min(stores, key=lambda s: _haversine_km(cust, s))
+        store_usage[nearest] = store_usage.get(nearest, 0) + 1
+    
+    top_stores = sorted(store_usage.keys(), key=lambda s: store_usage[s], reverse=True)[:50]
+    
+    # Store-to-store for top 50
+    for i, s1 in enumerate(top_stores):
+        for s2 in top_stores[i+1:]:
+            pairs.append((s1, s2))
+            pairs.append((s2, s1))
+    
+    # Deduplicate
+    pairs = list(set(pairs))
+    
+    print(f"Smart sampling: {len(pairs)} distance pairs (nearest 5 stores per customer + top 50 store pairs)")
+    batch_fetch_distances(pairs)
+    print("Distance fetching complete.")
 
 def generate_synthetic_demand(num_per_day: int = 150) -> None:
     import random
@@ -640,7 +773,7 @@ def _haversine_km(a: Tuple[float,float], b: Tuple[float,float]) -> float:
     return 2*R*math.asin(math.sqrt(x))
 
 
-def solve_greedy_baseline() -> None:
+def solve_greedy_baseline(use_real_distances: bool = False) -> None:
     # Load orders
     p = os.path.join('outputs', 'dataset', 'orders.json')
     if not os.path.exists(p):
@@ -652,24 +785,180 @@ def solve_greedy_baseline() -> None:
     if not stores:
         print('No stores found. Run --bootstrap first.')
         return
-    # Assign each order to nearest store by haversine (fast baseline)
+    
+    distance_cache = _load_distance_cache() if use_real_distances else {}
+    
+    def dist_func(a: Tuple[float, float], b: Tuple[float, float]) -> float:
+        if use_real_distances and distance_cache:
+            key = _cache_key(a, b)
+            if key in distance_cache:
+                return distance_cache[key]
+        return _haversine_km(a, b)
+    
+    # Assign each order to nearest store
     assignments: List[Dict[str, Any]] = []
     for o in orders:
         cust = (o['lat'], o['lng'])
-        nearest = min(stores, key=lambda s: _haversine_km(cust, s))
+        nearest = min(stores, key=lambda s: dist_func(cust, s))
         assignments.append({ 'order_id': o['id'], 'store_lat': nearest[0], 'store_lng': nearest[1], 'customer_lat': cust[0], 'customer_lng': cust[1] })
-    os.makedirs(os.path.join('outputs', 'baselines', 'greedy'), exist_ok=True)
-    with open(os.path.join('outputs', 'baselines', 'greedy', 'assignments.json'), 'w', encoding='utf-8') as f:
+    
+    suffix = '_real' if use_real_distances else ''
+    outdir = os.path.join('outputs', 'baselines', f'greedy{suffix}')
+    os.makedirs(outdir, exist_ok=True)
+    with open(os.path.join(outdir, 'assignments.json'), 'w', encoding='utf-8') as f:
         json.dump(assignments, f, indent=2)
-    print('Saved outputs/baselines/greedy/assignments.json')
+    print(f'Saved {outdir}/assignments.json (real distances: {use_real_distances})')
 
 
-def solve_ga_baseline() -> None:
-    # Placeholder simple GA stub wiring; implement later with permutations per store cluster
-    os.makedirs(os.path.join('outputs', 'baselines', 'ga'), exist_ok=True)
-    with open(os.path.join('outputs', 'baselines', 'ga', 'README.txt'), 'w', encoding='utf-8') as f:
-        f.write('GA baseline placeholder - implement permutations per store cluster with crossover/mutation')
-    print('Initialized outputs/baselines/ga/')
+def solve_ga_baseline(use_real_distances: bool = False) -> None:
+    import random
+    import copy
+    random.seed(42)
+    
+    # Load dataset
+    dp = os.path.join('outputs', 'dataset', 'orders.json')
+    if not os.path.exists(dp):
+        print('Missing orders. Run --generate-demand first.')
+        return
+    with open(dp, 'r', encoding='utf-8') as f:
+        orders = json.load(f)
+    stores = _load_all_store_coords()
+    if not stores:
+        print('No stores found. Run --bootstrap first.')
+        return
+    
+    distance_cache = _load_distance_cache() if use_real_distances else {}
+    
+    def dist_func(a: Tuple[float, float], b: Tuple[float, float]) -> float:
+        if use_real_distances and distance_cache:
+            key = _cache_key(a, b)
+            if key in distance_cache:
+                return distance_cache[key]
+        return _haversine_km(a, b)
+    
+    # Cluster orders by nearest store (greedy assignment)
+    clusters: Dict[int, List[int]] = {}
+    order_list = []
+    for i, o in enumerate(orders):
+        cust = (o['lat'], o['lng'])
+        nearest_idx = min(range(len(stores)), key=lambda si: dist_func(cust, stores[si]))
+        if nearest_idx not in clusters:
+            clusters[nearest_idx] = []
+        clusters[nearest_idx].append(i)
+        order_list.append((i, o['lat'], o['lng']))
+    
+    # GA parameters
+    population_size = 50
+    generations = 100
+    mutation_rate = 0.15
+    elite_size = 5
+    
+    # Chromosome: list of order indices; decode into routes per cluster
+    # Fitness: total distance
+    def fitness(chromosome: List[int]) -> float:
+        total = 0.0
+        for store_idx, order_indices in clusters.items():
+            # extract order sequence for this cluster
+            seq = [oi for oi in chromosome if oi in order_indices]
+            if not seq:
+                continue
+            store = stores[store_idx]
+            # tour: store -> orders in seq -> back to store
+            prev = store
+            for oi in seq:
+                o = orders[oi]
+                curr = (o['lat'], o['lng'])
+                total += dist_func(prev, curr)
+                prev = curr
+            total += dist_func(prev, store)
+        return total
+    
+    # Initialize population
+    pop = []
+    base_order = list(range(len(orders)))
+    for _ in range(population_size):
+        c = base_order[:]
+        random.shuffle(c)
+        pop.append(c)
+    
+    # PMX crossover
+    def pmx_crossover(p1: List[int], p2: List[int]) -> List[int]:
+        n = len(p1)
+        if n < 2:
+            return p1[:]
+        cx1, cx2 = sorted(random.sample(range(n), 2))
+        child = [-1]*n
+        child[cx1:cx2] = p1[cx1:cx2]
+        mapping = {p1[i]: p2[i] for i in range(cx1, cx2)}
+        for i in range(n):
+            if child[i] == -1:
+                val = p2[i]
+                while val in mapping:
+                    val = mapping[val]
+                child[i] = val
+        return child
+    
+    # Swap mutation
+    def swap_mutation(c: List[int]) -> List[int]:
+        c = c[:]
+        if len(c) < 2:
+            return c
+        i, j = random.sample(range(len(c)), 2)
+        c[i], c[j] = c[j], c[i]
+        return c
+    
+    # Evolution
+    best_solution = None
+    best_fitness = float('inf')
+    
+    for gen in range(generations):
+        # Evaluate
+        fits = [(fitness(c), c) for c in pop]
+        fits.sort()
+        if fits[0][0] < best_fitness:
+            best_fitness = fits[0][0]
+            best_solution = fits[0][1]
+        
+        # Selection: elitism + tournament
+        new_pop = [c for (f, c) in fits[:elite_size]]
+        while len(new_pop) < population_size:
+            # Tournament
+            t1, t2 = random.sample(fits, 2)
+            p1 = t1[1] if t1[0] < t2[0] else t2[1]
+            t3, t4 = random.sample(fits, 2)
+            p2 = t3[1] if t3[0] < t4[0] else t4[1]
+            child = pmx_crossover(p1, p2)
+            if random.random() < mutation_rate:
+                child = swap_mutation(child)
+            new_pop.append(child)
+        pop = new_pop
+        if gen % 20 == 0:
+            print(f'Gen {gen}: best fitness = {best_fitness:.2f} km')
+    
+    # Decode best solution into assignments
+    assignments = []
+    for store_idx, order_indices in clusters.items():
+        seq = [oi for oi in best_solution if oi in order_indices]
+        store = stores[store_idx]
+        for oi in seq:
+            o = orders[oi]
+            assignments.append({
+                'order_id': o['id'],
+                'store_lat': store[0],
+                'store_lng': store[1],
+                'customer_lat': o['lat'],
+                'customer_lng': o['lng']
+            })
+    
+    # Export
+    suffix = '_real' if use_real_distances else ''
+    outdir = os.path.join('outputs', 'baselines', f'ga{suffix}')
+    os.makedirs(outdir, exist_ok=True)
+    with open(os.path.join(outdir, 'assignments.json'), 'w', encoding='utf-8') as f:
+        json.dump(assignments, f, indent=2)
+    with open(os.path.join(outdir, 'metrics.json'), 'w', encoding='utf-8') as f:
+        json.dump({'num_orders': len(assignments), 'best_fitness_km': round(best_fitness, 3), 'real_distances': use_real_distances}, f, indent=2)
+    print(f'Saved GA baseline: best fitness = {best_fitness:.2f} km (real distances: {use_real_distances})')
 
 
 def evaluate_and_export() -> None:
@@ -684,25 +973,37 @@ def evaluate_and_export() -> None:
         orders = {o['id']: o for o in json.load(f)}
     with open(gp, 'r', encoding='utf-8') as f:
         assigns = json.load(f)
-
-    # Metrics
+    
+    # Cluster assignments by store to compute full tours (store -> customer -> back to store)
+    store_clusters: Dict[Tuple[float, float], List[Dict[str, Any]]] = {}
+    for a in assigns:
+        store_key = (a['store_lat'], a['store_lng'])
+        if store_key not in store_clusters:
+            store_clusters[store_key] = []
+        store_clusters[store_key].append(a)
+    
+    # Metrics with return trips
     total_dist = 0.0
     rows = []
-    for a in assigns:
-        dkm = _haversine_km((a['store_lat'], a['store_lng']), (a['customer_lat'], a['customer_lng']))
-        total_dist += dkm
-        rows.append([a['order_id'], a['store_lat'], a['store_lng'], a['customer_lat'], a['customer_lng'], round(dkm, 3)])
+    for store_coord, cluster in store_clusters.items():
+        # Each customer: store -> customer -> back to store
+        for a in cluster:
+            store_to_cust = _haversine_km(store_coord, (a['customer_lat'], a['customer_lng']))
+            cust_to_store = store_to_cust  # symmetric
+            trip_dist = store_to_cust + cust_to_store
+            total_dist += trip_dist
+            rows.append([a['order_id'], a['store_lat'], a['store_lng'], a['customer_lat'], a['customer_lng'], round(store_to_cust, 3), round(trip_dist, 3)])
     avg_dist = (total_dist / max(1, len(assigns)))
 
     outdir = os.path.join('outputs', 'baselines', 'greedy')
     os.makedirs(outdir, exist_ok=True)
     with open(os.path.join(outdir, 'assignments.csv'), 'w', newline='', encoding='utf-8') as fcsv:
         w = csv.writer(fcsv)
-        w.writerow(['order_id','store_lat','store_lng','customer_lat','customer_lng','distance_km'])
+        w.writerow(['order_id','store_lat','store_lng','customer_lat','customer_lng','one_way_km','round_trip_km'])
         w.writerows(rows)
     with open(os.path.join(outdir, 'metrics.json'), 'w', encoding='utf-8') as fm:
-        json.dump({'num_orders': len(assigns), 'total_distance_km': round(total_dist, 3), 'avg_distance_km': round(avg_dist, 3)}, fm, indent=2)
-    print('Saved greedy baseline metrics and CSV under outputs/baselines/greedy/')
+        json.dump({'num_orders': len(assigns), 'total_distance_km': round(total_dist, 3), 'avg_distance_km': round(avg_dist, 3), 'note': 'includes round trips'}, fm, indent=2)
+    print('Saved greedy baseline metrics and CSV under outputs/baselines/greedy/ (with round trips)')
 
 
 def render_eval_map() -> None:
@@ -776,8 +1077,10 @@ def main() -> None:
     parser.add_argument('--render-representation', action='store_true', help='Render combined stores + EV map to representation.html')
     # Phase 1 research dataset + baselines
     parser.add_argument('--generate-demand', action='store_true', help='Generate synthetic demand near stores')
+    parser.add_argument('--fetch-distances', action='store_true', help='Pre-fetch real driving distances from Google Distance Matrix API')
     parser.add_argument('--solve-greedy', action='store_true', help='Greedy baseline routing per store (nearest neighbor)')
     parser.add_argument('--solve-ga', action='store_true', help='Simple GA baseline routing per store')
+    parser.add_argument('--use-real-distances', action='store_true', help='Use cached real distances instead of haversine')
     parser.add_argument('--evaluate', action='store_true', help='Compute metrics and export CSVs for greedy baseline')
     parser.add_argument('--render-eval-map', action='store_true', help='Render map of orders and greedy assignments')
     args = parser.parse_args()
@@ -823,11 +1126,14 @@ def main() -> None:
     if args.generate_demand:
         generate_synthetic_demand()
 
+    if args.fetch_distances:
+        fetch_all_distances()
+
     if args.solve_greedy:
-        solve_greedy_baseline()
+        solve_greedy_baseline(use_real_distances=args.use_real_distances)
 
     if args.solve_ga:
-        solve_ga_baseline()
+        solve_ga_baseline(use_real_distances=args.use_real_distances)
 
     if args.evaluate:
         evaluate_and_export()
