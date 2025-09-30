@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NB Delivery VRP Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚚 New Brunswick Delivery Route Optimization</h1>
+            <p class="subtitle">Real-time order placement with intelligent routing</p>
+        </header>
+
+        <div class="main-layout">
+            <div id="map"></div>
+            
+            <div class="sidebar">
+                <div class="panel">
+                    <h2>📍 How to Use</h2>
+                    <ol>
+                        <li>Click anywhere on the map in New Brunswick</li>
+                        <li>System finds nearest store automatically</li>
+                        <li>Assigns closest available delivery partner</li>
+                        <li>Shows route with real Google Maps distances</li>
+                    </ol>
+                </div>
+
+                <div class="panel stats" id="stats-panel" style="display:none;">
+                    <h2>📊 Assignment Details</h2>
+                    <div class="stat-row">
+                        <span class="label">Assigned Store:</span>
+                        <span class="value" id="assigned-store">-</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="label">Store Chain:</span>
+                        <span class="value" id="store-chain">-</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="label">Assigned Partner:</span>
+                        <span class="value" id="assigned-partner">-</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="label">Vehicle Type:</span>
+                        <span class="value" id="partner-vehicle">-</span>
+                    </div>
+                </div>
+
+                <div class="panel metrics" id="metrics-panel" style="display:none;">
+                    <h2>🛣️ Route Metrics</h2>
+                    <div class="metric-card">
+                        <h3>Partner → Store</h3>
+                        <div class="metric-value" id="partner-to-store-km">-</div>
+                        <div class="metric-label">Distance</div>
+                        <div class="metric-value" id="partner-to-store-time">-</div>
+                        <div class="metric-label">Time</div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Store → Customer</h3>
+                        <div class="metric-value" id="store-to-customer-km">-</div>
+                        <div class="metric-label">Distance</div>
+                        <div class="metric-value" id="store-to-customer-time">-</div>
+                        <div class="metric-label">Time</div>
+                    </div>
+                    <div class="metric-card total">
+                        <h3>Total Delivery</h3>
+                        <div class="metric-value" id="total-distance">-</div>
+                        <div class="metric-label">Distance</div>
+                        <div class="metric-value large" id="estimated-time">-</div>
+                        <div class="metric-label">Estimated Time</div>
+                    </div>
+                </div>
+
+                <div class="panel legend">
+                    <h3>Map Legend</h3>
+                    <div class="legend-item">
+                        <span class="marker-icon walmart">●</span> Walmart
+                    </div>
+                    <div class="legend-item">
+                        <span class="marker-icon dollarama">●</span> Dollarama
+                    </div>
+                    <div class="legend-item">
+                        <span class="marker-icon sobeys">●</span> Sobeys
+                    </div>
+                    <div class="legend-item">
+                        <span class="marker-icon partner">◆</span> Delivery Partner
+                    </div>
+                    <div class="legend-item">
+                        <span class="marker-icon customer">★</span> Your Order
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Calculating optimal route...</p>
+        </div>
+    </div>
+
+    <script>
+        const API_KEY = "{{ api_key }}";
+    </script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ api_key }}&callback=initMap" async defer></script>
+</body>
+</html>
+
