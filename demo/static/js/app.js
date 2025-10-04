@@ -12,6 +12,13 @@ let markers = {
 };
 let polylines = [];
 
+// Toggle System Variables
+let toggleStates = {
+    stores: false,        // OFF by default
+    partners: false,      // OFF by default  
+    chargingStations: false, // OFF by default
+};
+
 const MARKER_ICONS = {
     walmart: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
     dollarama: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
@@ -56,12 +63,77 @@ async function loadData() {
         partners = data.partners;
         chargingStations = data.charging_stations || [];
         
-        renderStores();
-        renderPartners();
-        renderChargingStations();
+        // Initialize toggle buttons (all OFF by default)
+        initializeToggleButtons();
+        
+        // Don't render anything by default - user must toggle ON
+        console.log('Data loaded. Use toggle buttons to show markers.');
     } catch (error) {
         console.error('Error loading data:', error);
     }
+}
+
+function initializeToggleButtons() {
+    // Initialize all toggle buttons to OFF state
+    Object.keys(toggleStates).forEach(type => {
+        updateToggleButton(type);
+    });
+}
+
+// Toggle Functions
+function toggleMarkers(type) {
+    toggleStates[type] = !toggleStates[type];
+    updateToggleButton(type);
+    renderMarkersByType(type);
+}
+
+function updateToggleButton(type) {
+    const button = document.getElementById(`toggle-${type}`);
+    if (button) {
+        button.textContent = toggleStates[type] ? 'ON' : 'OFF';
+        button.className = `toggle-btn ${toggleStates[type] ? 'on' : 'off'}`;
+    }
+}
+
+function renderMarkersByType(type) {
+    switch(type) {
+        case 'stores':
+            if (toggleStates.stores) {
+                renderStores();
+            } else {
+                clearStores();
+            }
+            break;
+        case 'partners':
+            if (toggleStates.partners) {
+                renderPartners();
+            } else {
+                clearPartners();
+            }
+            break;
+        case 'chargingStations':
+            if (toggleStates.chargingStations) {
+                renderChargingStations();
+            } else {
+                clearChargingStations();
+            }
+            break;
+    }
+}
+
+function clearStores() {
+    markers.stores.forEach(m => m.setMap(null));
+    markers.stores = [];
+}
+
+function clearPartners() {
+    markers.partners.forEach(m => m.setMap(null));
+    markers.partners = [];
+}
+
+function clearChargingStations() {
+    markers.chargingStations.forEach(m => m.setMap(null));
+    markers.chargingStations = [];
 }
 
 function renderStores() {
@@ -359,4 +431,3 @@ function visualizeRoute(result) {
 if (typeof google !== 'undefined') {
     google.maps.event.addDomListener(window, 'load', initMap);
 }
-

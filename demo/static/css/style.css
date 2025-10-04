@@ -154,11 +154,12 @@ header h1 {
 }
 
 .legend-item {
-    padding: 8px 0;
+    padding: 10px 0;
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: 0.95rem;
+    justify-content: space-between;
 }
 
 .marker-icon {
@@ -171,6 +172,35 @@ header h1 {
 .marker-icon.sobeys { color: #e31837; }
 .marker-icon.partner { color: #34a853; }
 .marker-icon.customer { color: #ff6b6b; }
+.marker-icon.charging { color: #2196F3; }
+
+/* Toggle Button Styles */
+.toggle-btn {
+    padding: 6px 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: auto;
+    transition: all 0.3s ease;
+    min-width: 50px;
+}
+
+.toggle-btn.off {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+.toggle-btn.on {
+    background-color: #4ecdc4;
+    color: white;
+}
+
+.toggle-btn:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
 
 .loading {
     display: none;
@@ -244,4 +274,3 @@ header h1 {
         max-height: none;
     }
 }
-

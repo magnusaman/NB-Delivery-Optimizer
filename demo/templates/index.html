@@ -20,6 +20,7 @@
                 <div class="panel">
                     <h2>📍 How to Use</h2>
                     <ol>
+                        <li>Toggle markers ON to view stores, partners, or charging stations</li>
                         <li>Click anywhere on the map in New Brunswick</li>
                         <li>System finds nearest store automatically</li>
                         <li>Assigns closest available delivery partner</li>
@@ -75,19 +76,16 @@
                 <div class="panel legend">
                     <h3>Map Legend</h3>
                     <div class="legend-item">
-                        <span class="marker-icon walmart">●</span> Walmart
+                        <span class="marker-icon walmart">●</span> Stores
+                        <button id="toggle-stores" class="toggle-btn off" onclick="toggleMarkers('stores')">OFF</button>
                     </div>
                     <div class="legend-item">
-                        <span class="marker-icon dollarama">●</span> Dollarama
+                        <span class="marker-icon partner">◆</span> Delivery Partners
+                        <button id="toggle-partners" class="toggle-btn off" onclick="toggleMarkers('partners')">OFF</button>
                     </div>
                     <div class="legend-item">
-                        <span class="marker-icon sobeys">●</span> Sobeys
-                    </div>
-                    <div class="legend-item">
-                        <span class="marker-icon partner">◆</span> Delivery Partner
-                    </div>
-                    <div class="legend-item">
-                        <span class="marker-icon charging">⚡</span> EV Charging Station
+                        <span class="marker-icon charging">⚡</span> EV Charging Stations
+                        <button id="toggle-chargingStations" class="toggle-btn off" onclick="toggleMarkers('chargingStations')">OFF</button>
                     </div>
                     <div class="legend-item">
                         <span class="marker-icon customer">★</span> Your Order
@@ -109,4 +107,3 @@
     <script src="https://maps.googleapis.com/maps/api/js?key={{ api_key }}&libraries=geometry&callback=initMap" async defer></script>
 </body>
 </html>
-
