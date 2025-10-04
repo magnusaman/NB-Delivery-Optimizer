@@ -1,9 +1,11 @@
 let map;
 let stores = [];
 let partners = [];
+let chargingStations = [];
 let markers = {
     stores: [],
     partners: [],
+    chargingStations: [],
     customer: null,
     assignedStore: null,
     assignedPartner: null
@@ -15,6 +17,7 @@ const MARKER_ICONS = {
     dollarama: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
     sobeys: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
     partner: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+    charging: 'http://maps.google.com/mapfiles/ms/icons/ltblue-dot.png',
     customer: 'http://maps.google.com/mapfiles/ms/icons/pink-dot.png'
 };
 
@@ -51,9 +54,11 @@ async function loadData() {
         
         stores = data.stores;
         partners = data.partners;
+        chargingStations = data.charging_stations || [];
         
         renderStores();
         renderPartners();
+        renderChargingStations();
     } catch (error) {
         console.error('Error loading data:', error);
     }
@@ -70,7 +75,8 @@ function renderStores() {
             map: map,
             icon: MARKER_ICONS[store.chain.toLowerCase()],
             title: store.name,
-            opacity: 0.7
+            opacity: 0.7,
+            optimized: true  // Optimize for performance
         });
         
         const infoWindow = new google.maps.InfoWindow({
@@ -106,7 +112,8 @@ function renderPartners() {
                 strokeWeight: 2
             },
             title: `${partner.name} (${partner.vehicle})`,
-            opacity: 0.8
+            opacity: 0.8,
+            optimized: true  // Optimize for performance
         });
         
         const infoWindow = new google.maps.InfoWindow({
@@ -122,6 +129,44 @@ function renderPartners() {
         });
         
         markers.partners.push(marker);
+    });
+}
+
+function renderChargingStations() {
+    // Clear existing charging station markers
+    markers.chargingStations.forEach(m => m.setMap(null));
+    markers.chargingStations = [];
+    
+    chargingStations.forEach(station => {
+        const marker = new google.maps.Marker({
+            position: { lat: station.lat, lng: station.lng },
+            map: map,
+            icon: {
+                path: google.maps.SymbolPath.CIRCLE,
+                scale: 6,
+                fillColor: '#2196F3',
+                fillOpacity: 0.8,
+                strokeColor: 'white',
+                strokeWeight: 2
+            },
+            title: `⚡ ${station.name} (Rating: ${station.rating})`,
+            opacity: 0.8,
+            optimized: true  // Optimize for performance
+        });
+        
+        const infoWindow = new google.maps.InfoWindow({
+            content: `<div style="padding:10px">
+                <h3 style="margin:0 0 5px 0">⚡ ${station.name}</h3>
+                <p style="margin:0">Rating: ${station.rating}/5</p>
+                <p style="margin:0">Status: ${station.status}</p>
+            </div>`
+        });
+        
+        marker.addListener('click', () => {
+            infoWindow.open(map, marker);
+        });
+        
+        markers.chargingStations.push(marker);
     });
 }
 

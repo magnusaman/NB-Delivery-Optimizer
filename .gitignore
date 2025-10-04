@@ -21,14 +21,12 @@ wheels/
 *.egg
 MANIFEST
 
-# Virtual environments
-.env
-.venv
-env/
+# Virtual Environment
+.venv/
 venv/
 ENV/
-env.bak/
-venv.bak/
+env/
+.env
 
 # IDE
 .vscode/
@@ -39,24 +37,20 @@ venv.bak/
 
 # OS
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
 
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# pyenv
-.python-version
+# Logs
+*.log
+logs/
 
 # Temporary files
 *.tmp
 *.temp
-*.log
 
-# Large data files (optional - uncomment if you want to exclude large GPKG files)
-# *.gpkg
-# roads_clean.gpkg
+# API Keys (if stored locally)
+.env.local
+.env.development
+.env.production
+
+# Render
+.render/

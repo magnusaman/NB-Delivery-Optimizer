@@ -1,13 +1,12 @@
 services:
   - type: web
-    name: nb-delivery-demo
+    name: nb-delivery-vrp-demo
     env: python
-    rootDir: demo
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app --preload --workers=2 --threads=4 --timeout=120
+    plan: free
+    buildCommand: pip install -r demo/requirements.txt
+    startCommand: cd demo && gunicorn app:app
     envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
       - key: GOOGLE_MAPS_API_KEY
         sync: false
-    plan: free
-    autoDeploy: true
-

@@ -1,139 +1,85 @@
-# New Brunswick Delivery Routing (Google Maps Simplified)
+# New Brunswick Delivery VRP Demo
 
-This simplified system leverages Google Maps Platform (Places, Distance Matrix, Directions) to fetch real store and EV charging locations across New Brunswick and compute distances and routes without maintaining a local road network.
+A real-time delivery route optimization system for New Brunswick, featuring EV charging stations and intelligent partner assignment.
 
-## 🎯 Project Overview
+## Features
 
-This system implements a **Multi-Depot Vehicle Routing Problem (MDVRP)** solution that:
+- 🗺️ **Interactive Map** - Google Maps integration with real-time data
+- 🏪 **Store Discovery** - Walmart, Dollarama, and Sobeys locations
+- 🚗 **EV Charging Stations** - 200+ charging stations across NB
+- 👥 **Delivery Partners** - 72 partners with different vehicle types
+- ⚡ **EV Routing** - Battery-aware routing for electric vehicles
+- 🛣️ **Real Routes** - Google Directions API for accurate distances
 
-1. **Maps real store locations** (Walmart, Dollarama, Sobeys) across New Brunswick
-2. **Creates delivery partner networks** distributed across the province
-3. **Generates realistic customer orders** with priority levels
-4. **Optimizes delivery routes** using advanced algorithms
-5. **Exports results** to QGIS-ready format for visualization
+## Tech Stack
 
-## 🏗️ System Overview
+- **Backend**: Flask (Python)
+- **Frontend**: Vanilla JavaScript, HTML5, CSS3
+- **Maps**: Google Maps JavaScript API
+- **APIs**: Google Maps Directions API, Distance Matrix API, Places API
+- **Deployment**: Render
 
-- **Data Source**: Google Maps Places API (Walmart, Dollarama, Sobeys, EV charging)
-- **Routing**: Distance Matrix API for times/distances; Directions API for polylines
-- **Focus**: Your business logic (vehicles, partners, orders), not road graphs
+## Local Development
 
-## 📁 Project Structure
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd delivery-optimization
+   ```
 
-```
-├── google_maps_vrp.py              # Google Maps integration utilities
-├── requirements.txt                # Minimal dependencies
-├── .env                            # GOOGLE_MAPS_API_KEY=...
-├── nb_vrp_dataset/                 # Output JSONs (created on bootstrap)
-└── README.md
-```
+2. **Create virtual environment**
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+   ```
 
-## 🚀 Quick Start
+3. **Install dependencies**
+   ```bash
+   pip install -r demo/requirements.txt
+   ```
 
-### Prerequisites
-- Python 3.9+
-- Google Maps Platform key with: Places, Distance Matrix, Directions enabled
+4. **Set environment variables**
+   ```bash
+   export GOOGLE_MAPS_API_KEY="your-api-key-here"
+   ```
 
-### Installation
-```bash
-pip install -r requirements.txt
-```
+5. **Run the application**
+   ```bash
+   cd demo
+   python app.py
+   ```
 
-### Setup API Key
-Create a `.env` file in the project root:
-```
-GOOGLE_MAPS_API_KEY=YOUR_API_KEY
-```
+6. **Open in browser**
+   ```
+   http://localhost:5001
+   ```
 
-### Usage
-```bash
-# 1) Fetch stores and EV charging locations across NB (JSON output)
-python google_maps_vrp.py --bootstrap
+## Deployment on Render
 
-# 2) Build a demo distance matrix over fetched stores
-python google_maps_vrp.py --distance-matrix
-```
+1. **Connect your GitHub repository to Render**
+2. **Set environment variables**:
+   - `GOOGLE_MAPS_API_KEY`: Your Google Maps API key
+3. **Deploy automatically** - Render will detect the `render.yaml` configuration
 
-## 📊 Outputs
-- `nb_vrp_dataset/stores_walmart.json`
-- `nb_vrp_dataset/stores_dollarama.json`
-- `nb_vrp_dataset/stores_sobeys.json`
-- `nb_vrp_dataset/ev_charging.json`
-- `distance_matrix_demo.json`
+## API Endpoints
 
-## 🗺️ Visualization
+- `GET /` - Main application interface
+- `GET /api/data` - Returns stores, partners, and charging stations
+- `POST /api/place-order` - Places an order and returns route optimization
 
-### In QGIS:
-1. **Load `routes_only.gpkg`** → Shows delivery routes (colored lines)
-2. **Load `nb_verified_stores.gpkg`** → Shows store locations (colored dots)
-3. **Each route shows**: Partner → Store → Customer path
-4. **Realistic distances and times** for each delivery
+## Data Sources
 
-### What the Map Shows:
-- **46 colored dots** = Store locations (Walmart=blue, Dollarama=green, Sobeys=red)
-- **Colored lines** = Optimized delivery routes connecting stores to customers
-- **Road network** = Real New Brunswick roads (background)
+- **Stores**: Real store locations from Google Places API
+- **Charging Stations**: EV charging stations from Google Places API  
+- **Partners**: Generated delivery partners across NB cities
+- **Routes**: Real-time routing via Google Directions API
 
-## 🔧 Notes
-- Respect Google Maps Places query quotas; the bootstrap process uses paging and tiling.
-- Distance Matrix is chunked to comply with 25×25 limits per request.
+## Environment Variables
 
-## 📈 Performance Metrics
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `GOOGLE_MAPS_API_KEY` | Google Maps API key with Directions, Distance Matrix, and Places APIs enabled | Yes |
 
-- **Graph Construction**: ~30 seconds
-- **Distance Matrix**: ~60 seconds (50x50)
-- **OR-Tools Optimization**: <1 second
-- **Genetic Algorithm**: ~1 second (100 generations)
-- **Total Runtime**: ~2 minutes for complete optimization
+## License
 
-## 🎯 Key Features
-
-1. **Real-World Data**: Verified store locations from Google Maps
-2. **Scalable Network**: 658K+ node road network
-3. **Multiple Algorithms**: OR-Tools + Genetic Algorithm comparison
-4. **Production Ready**: QGIS-compatible output
-5. **Extensible**: Easy to add time windows, capacities, etc.
-
-## 🚀 Future Enhancements
-
-1. **Time Windows**: Add delivery time constraints
-2. **Vehicle Capacities**: Add load capacity limits
-3. **Dynamic Dispatch**: Real-time order assignment
-4. **Traffic Data**: Incorporate real-time traffic conditions
-5. **Cost Optimization**: Include fuel costs, driver wages
-6. **Multi-Objective**: Balance distance vs. time vs. cost
-
-## 📋 Requirements
-
-```
-googlemaps>=4.10.0
-python-dotenv>=1.0.0
-requests>=2.31.0
-```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🙏 Acknowledgments
-
-- New Brunswick road network data
-- Google Maps for store location verification
-- OpenStreetMap contributors
-- OR-Tools team for optimization algorithms
-
-## 📞 Contact
-
-For questions or support, please open an issue in the GitHub repository.
-
----
-
-**This system provides a solid foundation for real-world delivery route optimization in New Brunswick, with the flexibility to iterate and improve based on specific business requirements.**
+MIT License

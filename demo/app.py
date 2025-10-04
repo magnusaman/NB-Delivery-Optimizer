@@ -30,7 +30,7 @@ GOOGLE_MAPS_API_KEY = os.getenv('GOOGLE_MAPS_API_KEY', '')
 def load_stores():
     stores = []
     for fname in ['stores_walmart.json', 'stores_dollarama.json', 'stores_sobeys.json']:
-        path = os.path.join('..', 'nb_vrp_dataset', fname)
+        path = os.path.join('nb_vrp_dataset', fname)
         if os.path.exists(path):
             with open(path, 'r', encoding='utf-8') as f:
                 items = json.load(f)
@@ -79,6 +79,29 @@ def generate_partners():
 
 PARTNERS = generate_partners()
 
+# Load EV charging stations from the CORRECT file (Google Maps API data)
+def load_charging_stations():
+    stations = []
+    path = os.path.join('nb_vrp_dataset', 'ev_charging.json')  # Use the REAL Google Maps API file
+    if os.path.exists(path):
+        with open(path, 'r', encoding='utf-8') as f:
+            items = json.load(f)
+            for item in items:
+                loc = item.get('geometry', {}).get('location', {})
+                if loc and loc.get('lat') and loc.get('lng'):  # Ensure valid coordinates
+                    stations.append({
+                        'id': item.get('place_id', f'station_{len(stations)}'),
+                        'name': item.get('name', 'Charging Station'),
+                        'lat': loc.get('lat'),
+                        'lng': loc.get('lng'),
+                        'rating': item.get('rating', 4.0),
+                        'types': item.get('types', []),
+                        'status': 'available'
+                    })
+    return stations
+
+CHARGING_STATIONS = load_charging_stations()
+
 def haversine_km(lat1: float, lng1: float, lat2: float, lng2: float) -> float:
     R = 6371.0
     lat1_r, lng1_r = math.radians(lat1), math.radians(lng1)
@@ -96,10 +119,11 @@ def index():
 
 @app.route('/api/data')
 def get_data():
-    """Return stores and partners"""
+    """Return stores, partners, and charging stations"""
     return jsonify({
         'stores': STORES,  # Show all stores
-        'partners': PARTNERS
+        'partners': PARTNERS,
+        'charging_stations': CHARGING_STATIONS
     })
 
 
@@ -202,5 +226,7 @@ def place_order():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)
-
+    # Production settings for Render
+    port = int(os.environ.get('PORT', 5001))
+    debug = os.environ.get('FLASK_ENV') == 'development'
+    app.run(host='0.0.0.0', port=port, debug=debug)
